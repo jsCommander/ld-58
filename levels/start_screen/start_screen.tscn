@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx5c0c3vhjjr"]
+
+[ext_resource type="Script" uid="uid://8hg4x1eob83h" path="res://levels/start_screen/start_screen.gd" id="2_52a50"]
+[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://game_kit/assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_synii"]
+[ext_resource type="FontFile" uid="uid://cof01hgecqg2p" path="res://game_kit/assets/fonts/HennyPenny-Regular.ttf" id="3_qeg8x"]
+
+[sub_resource type="Gradient" id="Gradient_synii"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_evx84"]
+gradient = SubResource("Gradient_synii")
+
+[sub_resource type="LabelSettings" id="LabelSettings_skkyb"]
+font = ExtResource("3_qeg8x")
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxpo8"]
+font = ExtResource("3_qeg8x")
+font_size = 64
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("2_52a50")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("2_synii")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_evx84")
+
+[node name="NameContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 132.0
+offset_bottom = 360.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/NameContainer"]
+layout_mode = 2
+text = "LD-58"
+label_settings = SubResource("LabelSettings_skkyb")
+
+[node name="ActionContainers" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -242.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/ActionContainers"]
+layout_mode = 2
+text = "Press any button to start"
+label_settings = SubResource("LabelSettings_jxpo8")
+
+[connection signal="finished" from="Music" to="." method="_on_level_music_finished"]

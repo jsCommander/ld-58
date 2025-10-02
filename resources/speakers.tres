@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ConversationSpeakerArray" load_steps=7 format=3 uid="uid://4jtf7vktiy85"]
+
+[ext_resource type="Script" uid="uid://cfo1dhekpixoi" path="res://game_kit/dialogs/dialog_conversation/conversation_speaker_array.gd" id="1_4lehk"]
+[ext_resource type="Script" uid="uid://ctyppmyv6ebgq" path="res://game_kit/dialogs/dialog_conversation/conversation_speaker.gd" id="2_kfeoj"]
+[ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="3_437cj"]
+[ext_resource type="Texture2D" uid="uid://deopsjrkhlwqo" path="res://game_kit/assets/bee_vs_bear/enm_bear_@0.5x.png" id="4_437cj"]
+
+[sub_resource type="Resource" id="Resource_agdxm"]
+script = ExtResource("2_kfeoj")
+id = "man"
+name = "Man"
+texture = ExtResource("3_437cj")
+metadata/_custom_type_script = "uid://ctyppmyv6ebgq"
+
+[sub_resource type="Resource" id="Resource_pk1xi"]
+script = ExtResource("2_kfeoj")
+id = "bear"
+name = "Bear"
+texture = ExtResource("4_437cj")
+metadata/_custom_type_script = "uid://ctyppmyv6ebgq"
+
+[resource]
+script = ExtResource("1_4lehk")
+speakers = Array[ExtResource("2_kfeoj")]([SubResource("Resource_agdxm"), SubResource("Resource_pk1xi")])
+metadata/_custom_type_script = "uid://cfo1dhekpixoi"

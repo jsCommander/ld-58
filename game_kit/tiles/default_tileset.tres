@@ -1,0 +1,24 @@
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://daq7yoxlk2w4t"]
+
+[ext_resource type="Texture2D" uid="uid://c4w5iqvtgeqm8" path="res://game_kit/assets/tiles/tiles.png" id="1_xy01o"]
+[ext_resource type="PackedScene" path="res://scenes/tree_tile.tscn" id="2_hu1ey"]
+[ext_resource type="PackedScene" path="res://scenes/stump.tscn" id="3_q7pts"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hu1ey"]
+texture = ExtResource("1_xy01o")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_q7pts"]
+scenes/1/scene = ExtResource("2_hu1ey")
+scenes/2/scene = ExtResource("3_q7pts")
+
+[resource]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hu1ey")
+sources/1 = SubResource("TileSetScenesCollectionSource_q7pts")

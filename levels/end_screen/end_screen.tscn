@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://df5bshde6e3hs"]
+
+[ext_resource type="Script" uid="uid://dokceo1klx841" path="res://levels/end_screen/end_screen.gd" id="1_4u58m"]
+[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://game_kit/assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_55l2j"]
+[ext_resource type="FontFile" uid="uid://cof01hgecqg2p" path="res://game_kit/assets/fonts/HennyPenny-Regular.ttf" id="4_156x6"]
+
+[sub_resource type="Gradient" id="Gradient_synii"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55l2j"]
+gradient = SubResource("Gradient_synii")
+
+[sub_resource type="LabelSettings" id="LabelSettings_skkyb"]
+font = ExtResource("4_156x6")
+font_size = 128
+
+[node name="EndScreen" type="Node2D"]
+script = ExtResource("1_4u58m")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("2_55l2j")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_55l2j")
+
+[node name="MessageContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 132.0
+offset_bottom = 360.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MessageContainer"]
+layout_mode = 2
+text = "Thanks for playing!"
+label_settings = SubResource("LabelSettings_skkyb")
+
+[node name="ActionContainers" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -242.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ActionContainers"]
+layout_mode = 2
+theme_type_variation = &"MarginContainerLarge"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ActionContainers/MarginContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_type_variation = &"VBoxContainerLarge"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/ActionContainers/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ButtonLarge"
+text = "Play again"
+
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
+[connection signal="button_down" from="CanvasLayer/ActionContainers/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_button_down"]

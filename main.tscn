@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://degm4mli07pgb"]
+
+[ext_resource type="PackedScene" uid="uid://drcl7uvdhcq18" path="res://game_kit/scenes/base_game/base_game.tscn" id="1_bjl32"]
+[ext_resource type="Script" uid="uid://cdmy5vxita30l" path="res://main.gd" id="2_0xm2m"]
+
+[node name="BaseGame" instance=ExtResource("1_bjl32")]
+script = ExtResource("2_0xm2m")
