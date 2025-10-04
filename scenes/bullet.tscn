@@ -1,55 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpg3q56ths0dm"]
+[gd_scene load_steps=5 format=3 uid="uid://bpg3q56ths0dm"]
 
 [ext_resource type="Script" uid="uid://d7lkrpoy5vq0" path="res://scenes/bullet.gd" id="1_l5glv"]
-[ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_mkf8s"]
-[ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_y25gk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5glv"]
-resource_local_to_scene = true
-shader = ExtResource("2_y25gk")
-shader_parameter/active = false
-shader_parameter/color = Color(1, 1, 1, 1)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50oqr"]
-load_path = "res://.godot/imported/prop_honey_@0.5x.png-d5e9f8589a88bf72c8078c23f669dffe.ctex"
+[ext_resource type="PackedScene" uid="uid://dk56elq863m31" path="res://game_kit/scenes/base_shadow.tscn" id="3_l5glv"]
+[ext_resource type="Texture2D" uid="uid://cq1nq13efjskh" path="res://assets/bullets/prop_carrot_@0.5x.png" id="4_eoqba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
 resource_local_to_scene = true
-size = Vector2(64, 64)
+size = Vector2(64, 32)
 
 [node name="Bullet" type="CharacterBody2D"]
-position = Vector2(0, 96)
 script = ExtResource("1_l5glv")
 
-[node name="BaseRig" parent="." instance=ExtResource("1_mkf8s")]
-
-[node name="AnimationRig" parent="BaseRig" index="0"]
-material = SubResource("ShaderMaterial_l5glv")
-
-[node name="shadow" parent="BaseRig/AnimationRig" index="0"]
-scale = Vector2(0.222115, 0.222115)
-
-[node name="Body" parent="BaseRig/AnimationRig" index="1"]
-visible = false
-
-[node name="BulletTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="2"]
+[node name="BulletTexture" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 9)
-scale = Vector2(0.3, 0.3)
-texture = SubResource("CompressedTexture2D_50oqr")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_eoqba")
 
 [node name="Hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -112)
 collision_layer = 0
 collision_mask = 128
 monitorable = false
 
 [node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_l5glv")
 debug_color = Color(0.717647, 0, 0, 0.286275)
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[node name="shadow" parent="." instance=ExtResource("3_l5glv")]
+position = Vector2(0, 96)
+scale = Vector2(0.300836, 0.300836)
 
-[editable path="BaseRig"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

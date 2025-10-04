@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=4 uid="uid://d212jky4bpm8a"]
+
+[ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_b8lna"]
+[ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="2_uesfb"]
+[ext_resource type="Resource" uid="uid://cdemonhead001" path="res://resources/parts/demon_head.tres" id="3_6gsvy"]
+[ext_resource type="Resource" uid="uid://cbunnyhead001" path="res://resources/parts/bunny_head.tres" id="3_b8lna"]
+[ext_resource type="Resource" uid="uid://cdemonleg001" path="res://resources/parts/demon_leg.tres" id="4_d5aux"]
+[ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="4_uesfb"]
+[ext_resource type="Resource" uid="uid://bb0ds48m2aea" path="res://resources/parts/bunny_torso.tres" id="5_h6awm"]
+[ext_resource type="Resource" uid="uid://bta01s48m2aea" path="res://resources/parts/demon_torso.tres" id="8_d5aux"]
+[ext_resource type="Resource" uid="uid://bvuvw5u75qp1y" path="res://resources/parts/pumpkin_head.tres" id="9_5fuja"]
+[ext_resource type="Resource" uid="uid://co2f6cdbi7m3y" path="res://resources/parts/pumpkin_leg.tres" id="10_61q83"]
+[ext_resource type="Resource" uid="uid://bq6qwgn5aksdc" path="res://resources/parts/pumpkin_torso.tres" id="11_0ac2k"]
+
+[node name="BaseLevel2" instance=ExtResource("1_b8lna")]
+
+[node name="Objects" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD3//n/AAABAAQAAAD4//n/AAABAAQAAAD5//n/AAABAAQAAAD6//n/AAABAAQAAAD7//n/AAABAAQAAAD8//n/AAABAAQAAAD9//n/AAABAAQAAAD+//n/AAABAAQAAAD///n/AAABAAQAAAAAAPn/AAABAAQAAAABAPn/AAABAAQAAAACAPn/AAABAAQAAAADAPn/AAABAAQAAAAEAPn/AAABAAQAAAAFAPn/AAABAAQAAAAGAPn/AAABAAQAAAAHAPn/AAABAAQAAAAIAPn/AAABAAQAAAAJAPn/AAABAAQAAAD1//j/AAABAAMAAAD1//n/AAABAAMAAAD1//r/AAABAAMAAAD1//v/AAABAAMAAAD1//z/AAABAAMAAAD1//3/AAABAAMAAAD1//7/AAABAAMAAAD1////AAABAAMAAAD1/wAAAAABAAMAAAD1/wEAAAABAAMAAAD1/wIAAAABAAMAAAD1/wMAAAABAAMAAAD1/wQAAAABAAMAAAD1/wUAAAABAAMAAAD1/wYAAAABAAMAAAD1/wcAAAABAAMAAAD1/wgAAAABAAMAAAD2//j/AAABAAMAAAD2//n/AAABAAMAAAD2//r/AAACAAMAAAD2//v/AAACAAMAAAD2//z/AAACAAMAAAD2//3/AAACAAMAAAD2//7/AAACAAMAAAD2////AAACAAMAAAD2/wAAAAACAAMAAAD2/wEAAAACAAMAAAD2/wIAAAACAAMAAAD2/wMAAAACAAMAAAD2/wQAAAACAAMAAAD2/wUAAAACAAMAAAD2/wYAAAACAAMAAAD2/wcAAAABAAMAAAD2/wgAAAABAAMAAAD3//j/AAABAAMAAAD3/wcAAAABAAIAAAD3/wgAAAABAAMAAAD4//j/AAABAAMAAAD4/wcAAAABAAIAAAD4/wgAAAABAAMAAAD5//j/AAABAAMAAAD5/wcAAAABAAIAAAD5/wgAAAABAAMAAAD6//j/AAABAAMAAAD6/wcAAAABAAIAAAD6/wgAAAABAAMAAAD7//j/AAABAAMAAAD7/wcAAAABAAIAAAD7/wgAAAABAAMAAAD8//j/AAABAAMAAAD8/wcAAAABAAIAAAD8/wgAAAABAAMAAAD9//j/AAABAAMAAAD9/wcAAAABAAIAAAD9/wgAAAABAAMAAAD+//j/AAABAAMAAAD+/wcAAAABAAIAAAD+/wgAAAABAAMAAAD///j/AAABAAMAAAD//wcAAAABAAIAAAD//wgAAAABAAMAAAAAAPj/AAABAAMAAAAAAAcAAAABAAIAAAAAAAgAAAABAAMAAAABAPj/AAABAAMAAAABAAcAAAABAAIAAAABAAgAAAABAAMAAAACAPj/AAABAAMAAAACAAcAAAABAAIAAAACAAgAAAABAAMAAAADAPj/AAABAAMAAAADAAcAAAABAAIAAAADAAgAAAABAAMAAAAEAPj/AAABAAMAAAAEAAcAAAABAAIAAAAEAAgAAAABAAMAAAAFAPj/AAABAAMAAAAFAAcAAAABAAIAAAAFAAgAAAABAAMAAAAGAPj/AAABAAMAAAAGAAcAAAABAAIAAAAGAAgAAAABAAMAAAAHAPj/AAABAAMAAAAHAAcAAAABAAIAAAAHAAgAAAABAAMAAAAIAPj/AAABAAMAAAAIAAcAAAABAAIAAAAIAAgAAAABAAMAAAAJAPj/AAABAAMAAAAJAAcAAAABAAIAAAAJAAgAAAABAAMAAAAKAPj/AAABAAMAAAAKAPn/AAABAAMAAAAKAPr/AAAAAAMAAAAKAPv/AAAAAAMAAAAKAPz/AAAAAAMAAAAKAP3/AAAAAAMAAAAKAP7/AAAAAAMAAAAKAP//AAAAAAMAAAAKAAAAAAAAAAMAAAAKAAEAAAAAAAMAAAAKAAIAAAAAAAMAAAAKAAMAAAAAAAMAAAAKAAQAAAAAAAMAAAAKAAUAAAAAAAMAAAAKAAYAAAAAAAMAAAAKAAcAAAABAAMAAAAKAAgAAAABAAMAAAALAPj/AAABAAMAAAALAPn/AAABAAMAAAALAPr/AAABAAMAAAALAPv/AAABAAMAAAALAPz/AAABAAMAAAALAP3/AAABAAMAAAALAP7/AAABAAMAAAALAP//AAABAAMAAAALAAAAAAABAAMAAAALAAEAAAABAAMAAAALAAIAAAABAAMAAAALAAMAAAABAAMAAAALAAQAAAABAAMAAAALAAUAAAABAAMAAAALAAYAAAABAAMAAAALAAcAAAABAAMAAAALAAgAAAABAAMAAAA=")
+
+[node name="LevelFinish" parent="." index="5"]
+position = Vector2(0, 512)
+
+[node name="CollisionShape2D" parent="LevelFinish" index="0"]
+position = Vector2(-8.0533, 7.97302)
+scale = Vector2(5.78823, 4.23564)
+
+[node name="Sprite2D" parent="LevelFinish" index="1"]
+position = Vector2(-8.0533, 7.97303)
+scale = Vector2(5.78823, 4.23564)
+
+[node name="Node" type="Node2D" parent="." index="7"]
+
+[node name="PartDrops4" parent="Node" index="0" instance=ExtResource("2_uesfb")]
+position = Vector2(-832, -256)
+part = ExtResource("3_b8lna")
+
+[node name="PartDrop6" parent="Node" index="1" instance=ExtResource("2_uesfb")]
+position = Vector2(-384, -256)
+part = ExtResource("4_uesfb")
+
+[node name="PartDrop5" parent="Node" index="2" instance=ExtResource("2_uesfb")]
+position = Vector2(-608, -256)
+part = ExtResource("5_h6awm")
+
+[node name="PartDrop7" parent="Node" index="3" instance=ExtResource("2_uesfb")]
+position = Vector2(480, -256)
+part = ExtResource("3_6gsvy")
+
+[node name="PartDrop8" parent="Node" index="4" instance=ExtResource("2_uesfb")]
+position = Vector2(928, -256)
+part = ExtResource("4_d5aux")
+
+[node name="PartDrop9" parent="Node" index="5" instance=ExtResource("2_uesfb")]
+position = Vector2(704, -256)
+part = ExtResource("8_d5aux")
+
+[node name="PartDrop10" parent="Node" index="6" instance=ExtResource("2_uesfb")]
+position = Vector2(480, 160)
+part = ExtResource("9_5fuja")
+
+[node name="PartDrop11" parent="Node" index="7" instance=ExtResource("2_uesfb")]
+position = Vector2(928, 160)
+part = ExtResource("10_61q83")
+
+[node name="PartDrop12" parent="Node" index="8" instance=ExtResource("2_uesfb")]
+position = Vector2(704, 160)
+part = ExtResource("11_0ac2k")

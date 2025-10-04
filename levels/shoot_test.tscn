@@ -1,16 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://che0io3yln5jh"]
+[gd_scene load_steps=8 format=4 uid="uid://che0io3yln5jh"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_pss4d"]
-[ext_resource type="Resource" uid="uid://clvqu5y7lp0sp" path="res://resources/parts/girl_leg.tres" id="4_1qudv"]
+[ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="2_pss4d"]
+[ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="4_pss4d"]
+[ext_resource type="Resource" uid="uid://bb0ds48m2aea" path="res://resources/parts/bunny_torso.tres" id="5_aips6"]
+[ext_resource type="Resource" uid="uid://bta01s48m2aea" path="res://resources/parts/demon_torso.tres" id="5_kdpsx"]
 [ext_resource type="PackedScene" uid="uid://dpg8ept1feg5s" path="res://scenes/base_enemy.tscn" id="6_aips6"]
+[ext_resource type="Resource" uid="uid://bq6qwgn5aksdc" path="res://resources/parts/pumpkin_torso.tres" id="7_1qudv"]
 
 [node name="BaseLevel2" instance=ExtResource("1_pss4d")]
 
+[node name="Objects" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD8//z/AAABAAQAAAD9//z/AAABAAQAAAD+//z/AAABAAQAAAD///z/AAABAAQAAAAAAPz/AAABAAQAAAABAPz/AAABAAQAAAACAPz/AAABAAQAAAADAPz/AAABAAQAAAAEAPz/AAABAAQAAAAFAPz/AAABAAQAAAAGAPz/AAABAAQAAAAHAPz/AAABAAQAAAAIAPz/AAABAAQAAAAJAPz/AAABAAQAAAAKAPz/AAABAAQAAAALAPz/AAABAAQAAAAMAPz/AAABAAQAAAANAPz/AAABAAQAAAD7//3/AAACAAMAAAD7//7/AAACAAMAAAD7////AAACAAMAAAD7/wAAAAACAAMAAAD7/wEAAAACAAMAAAD7/wIAAAACAAMAAAD7/wMAAAACAAMAAAD7/wQAAAACAAMAAAD7/wUAAAACAAMAAAD7/wYAAAACAAMAAAD8/wcAAAABAAIAAAD9/wcAAAABAAIAAAD+/wcAAAABAAIAAAD//wcAAAABAAIAAAAAAAcAAAABAAIAAAABAAcAAAABAAIAAAACAAcAAAABAAIAAAADAAcAAAABAAIAAAAEAAcAAAABAAIAAAAFAAcAAAABAAIAAAAGAAcAAAABAAIAAAAHAAcAAAABAAIAAAAIAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAANAAcAAAABAAIAAAAOAP3/AAAAAAMAAAAOAP7/AAAAAAMAAAAOAP//AAAAAAMAAAAOAAAAAAAAAAMAAAAOAAEAAAAAAAMAAAAOAAIAAAAAAAMAAAAOAAMAAAAAAAMAAAAOAAQAAAAAAAMAAAAOAAUAAAAAAAMAAAAOAAYAAAAAAAMAAAAOAPz/AAABAAMAAAD7//z/AAABAAMAAAD7/wcAAAABAAMAAAAOAAcAAAABAAMAAAAOAAgAAAABAAMAAAANAAgAAAABAAMAAAAMAAgAAAABAAMAAAALAAgAAAABAAMAAAAKAAgAAAABAAMAAAAJAAgAAAABAAMAAAAIAAgAAAABAAMAAAAHAAgAAAABAAMAAAAGAAgAAAABAAMAAAAFAAgAAAABAAMAAAAEAAgAAAABAAMAAAADAAgAAAABAAMAAAACAAgAAAABAAMAAAABAAgAAAABAAMAAAAAAAgAAAABAAMAAAD//wgAAAABAAMAAAD+/wgAAAABAAMAAAD9/wgAAAABAAMAAAD8/wgAAAABAAMAAAD7/wgAAAABAAMAAAD6/wgAAAABAAMAAAD6/wcAAAABAAMAAAD6/wYAAAABAAMAAAD6/wUAAAABAAMAAAD6/wQAAAABAAMAAAD6/wMAAAABAAMAAAD6/wIAAAABAAMAAAD6/wEAAAABAAMAAAD6/wAAAAABAAMAAAD6////AAABAAMAAAD6//7/AAABAAMAAAD6//3/AAABAAMAAAD6//z/AAABAAMAAAD6//v/AAABAAMAAAD7//v/AAABAAMAAAD8//v/AAABAAMAAAD9//v/AAABAAMAAAD+//v/AAABAAMAAAD///v/AAABAAMAAAAAAPv/AAABAAMAAAABAPv/AAABAAMAAAACAPv/AAABAAMAAAADAPv/AAABAAMAAAAEAPv/AAABAAMAAAAFAPv/AAABAAMAAAAGAPv/AAABAAMAAAAHAPv/AAABAAMAAAAIAPv/AAABAAMAAAAJAPv/AAABAAMAAAAKAPv/AAABAAMAAAALAPv/AAABAAMAAAAMAPv/AAABAAMAAAANAPv/AAABAAMAAAAOAPv/AAABAAMAAAAPAPv/AAABAAMAAAAPAPz/AAABAAMAAAAPAP3/AAABAAMAAAAPAP7/AAABAAMAAAAPAP//AAABAAMAAAAPAAAAAAABAAMAAAAPAAEAAAABAAMAAAAPAAIAAAABAAMAAAAPAAMAAAABAAMAAAAPAAQAAAABAAMAAAAPAAUAAAABAAMAAAAPAAYAAAABAAMAAAAPAAcAAAABAAMAAAAPAAgAAAABAAMAAAA=")
+
 [node name="Player" parent="." index="2"]
-legs = ExtResource("4_1qudv")
+position = Vector2(16, 400)
+legs = ExtResource("2_pss4d")
 
 [node name="LevelFinish" parent="." index="5"]
-position = Vector2(1536, -32)
+position = Vector2(1536, 384)
+
+[node name="CollisionShape2D" parent="LevelFinish" index="0"]
+position = Vector2(-8.0531, 15.9459)
 
 [node name="BaseEnemy" parent="." index="6" instance=ExtResource("6_aips6")]
-position = Vector2(864, 416)
+position = Vector2(1056, 16)
+
+[node name="BaseEnemy2" parent="." index="7" instance=ExtResource("6_aips6")]
+position = Vector2(1072, 448)
+
+[node name="BaseEnemy3" parent="." index="8" instance=ExtResource("6_aips6")]
+position = Vector2(1056, 832)
+
+[node name="PartDrop5" parent="." index="10" instance=ExtResource("4_pss4d")]
+position = Vector2(-272, 384)
+part = ExtResource("5_kdpsx")
+
+[node name="PartDrop6" parent="." index="11" instance=ExtResource("4_pss4d")]
+position = Vector2(-256, 144)
+part = ExtResource("5_aips6")
+
+[node name="PartDrop7" parent="." index="12" instance=ExtResource("4_pss4d")]
+position = Vector2(-272, 624)
+part = ExtResource("7_1qudv")

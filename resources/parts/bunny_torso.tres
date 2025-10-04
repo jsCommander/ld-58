@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PartTorso" load_steps=4 format=3 uid="uid://bb0ds48m2aea"]
+
+[ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://scripts/part_torso.gd" id="1_bunny"]
+[ext_resource type="Resource" uid="uid://b2s2bs6gjbt8c" path="res://resources/bullets/carrot_bullet.tres" id="1_fylp4"]
+[ext_resource type="Texture2D" uid="uid://hdt10t37o23b" path="res://assets/chr/chr_bunny_@0.5x.png" id="2_bunny"]
+
+[resource]
+script = ExtResource("1_bunny")
+bullet = ExtResource("1_fylp4")
+shoot_cooldown = 0.5
+max_health = 100
+invulnebility_time = 0.1
+texture = ExtResource("2_bunny")
+metadata/_custom_type_script = "uid://cbbvmutb7jhuq"

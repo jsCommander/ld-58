@@ -1,9 +1,26 @@
-[gd_scene load_steps=5 format=4 uid="uid://bwarhbi3m4p43"]
+[gd_scene load_steps=9 format=4 uid="uid://bwarhbi3m4p43"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_gyelk"]
 [ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="2_eqvwy"]
-[ext_resource type="Resource" uid="uid://clvqu5y7lp0sp" path="res://resources/parts/girl_leg.tres" id="3_bljd2"]
-[ext_resource type="Resource" uid="uid://cevms8k5koono" path="res://resources/parts/girl_torso.tres" id="4_eqvwy"]
+[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://scripts/part_leg.gd" id="2_i8yea"]
+[ext_resource type="Texture2D" uid="uid://c24dprnvaigvb" path="res://game_kit/assets/char/char_girl_happy_@0.5x.png" id="3_e1wdb"]
+[ext_resource type="Resource" path="res://resources/bullets/robo_bullet.tres" id="5_qi5n3"]
+[ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://scripts/part_torso.gd" id="6_pikdm"]
+
+[sub_resource type="Resource" id="Resource_aips6"]
+script = ExtResource("2_i8yea")
+speed = 1000
+texture = ExtResource("3_e1wdb")
+metadata/_custom_type_script = "uid://k1r7e4ob2nu6"
+
+[sub_resource type="Resource" id="Resource_84wqu"]
+script = ExtResource("6_pikdm")
+bullet = ExtResource("5_qi5n3")
+shoot_cooldown = 0.5
+max_health = 100
+invulnebility_time = 0.1
+texture = ExtResource("3_e1wdb")
+metadata/_custom_type_script = "uid://cbbvmutb7jhuq"
 
 [node name="BaseLevel2" instance=ExtResource("1_gyelk")]
 
@@ -15,7 +32,7 @@ tile_map_data = PackedByteArray("AAD9/wEAAAACAAAAAAD+/wEAAAADAAAAAAD//wIAAAADAAA
 
 [node name="Player" parent="." index="2"]
 position = Vector2(-900, 1346)
-legs = ExtResource("3_bljd2")
+legs = SubResource("Resource_aips6")
 
 [node name="CameraMan" parent="." index="4"]
 position = Vector2(-1108, -16)
@@ -25,8 +42,8 @@ position = Vector2(1725, -286)
 
 [node name="PartDrop" parent="." index="6" instance=ExtResource("2_eqvwy")]
 position = Vector2(1210, 1748)
-part = ExtResource("4_eqvwy")
+part = SubResource("Resource_84wqu")
 
 [node name="PartDrop2" parent="." index="7" instance=ExtResource("2_eqvwy")]
 position = Vector2(-458, -381)
-part = ExtResource("4_eqvwy")
+part = SubResource("Resource_84wqu")

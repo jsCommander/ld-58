@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BulletStat" load_steps=3 format=3 uid="uid://bcjn5rcyr4eyq"]
+
+[ext_resource type="Script" uid="uid://bhsrgfx0dgt63" path="res://scripts/bullet_stat.gd" id="1_pumpkinseed"]
+[ext_resource type="Texture2D" uid="uid://rwjb27joafad" path="res://assets/bullets/prop_pumpkin-seed_@0.5x.png" id="2_pumpkinseed"]
+
+[resource]
+script = ExtResource("1_pumpkinseed")
+texture = ExtResource("2_pumpkinseed")
+speed = 700
+damage = 8
+attack_range = 800
+metadata/_custom_type_script = "uid://bhsrgfx0dgt63"

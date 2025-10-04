@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PartLeg" load_steps=3 format=3 uid="uid://co2f6cdbi7m3y"]
+
+[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://scripts/part_leg.gd" id="1_pumpkin"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="2_pumpkin"]
+
+[resource]
+script = ExtResource("1_pumpkin")
+speed = 400
+texture = ExtResource("2_pumpkin")
+metadata/_custom_type_script = "uid://k1r7e4ob2nu6"

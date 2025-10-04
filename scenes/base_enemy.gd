@@ -25,7 +25,9 @@ func apply_damage(damage: int, _attacker: Node2D) -> void:
 		return
 
 	Logger.log_debug(self.name, "Applied damage: %s from %s" % [damage, _attacker.name])
+	base_rig.flash()
 	_update_health(current_health - damage)
+	
 
 func _update_health(health: int) -> void:
 	current_health = clamp(health, 0, stat.max_health)

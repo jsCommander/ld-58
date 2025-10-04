@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PartTorso" load_steps=4 format=3 uid="uid://bta01s48m2aea"]
+
+[ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://scripts/part_torso.gd" id="1_demon"]
+[ext_resource type="Resource" uid="uid://basu0aqp07s5u" path="res://resources/bullets/fireball_bullet.tres" id="1_fbug3"]
+[ext_resource type="Texture2D" uid="uid://bo2dwr43sj36d" path="res://assets/chr/chr_demon_@0.5x.png" id="2_demon"]
+
+[resource]
+script = ExtResource("1_demon")
+bullet = ExtResource("1_fbug3")
+shoot_cooldown = 0.5
+max_health = 100
+invulnebility_time = 0.1
+texture = ExtResource("2_demon")
+metadata/_custom_type_script = "uid://cbbvmutb7jhuq"

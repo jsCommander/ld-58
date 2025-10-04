@@ -17,6 +17,7 @@ signal killed()
 @onready var hurt_sfx: AudioStreamPlayer2D = %HurtSfx
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var hurtbox_collider: CollisionShape2D = %HurtboxCollider
+@onready var bullet_spawn: Marker2D = %BulletSpawn
 
 var is_dead = false
 var is_shoot_cooldown: bool = false
@@ -38,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 
 	base_rig.update_walk_animation(velocity)
-	base_rig.set_animation_rig_direction(velocity)
+	#base_rig.set_animation_rig_direction(velocity)
 	move_and_slide()
 
 	if Input.is_action_pressed("action_main"):
@@ -118,10 +119,10 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 	old_part_drop.part = old_part
 	old_part_drop.global_position = part_drop.global_position
 	
-	get_tree().root.add_child(old_part_drop)
-	old_part_drop.disable_usebox(2.0)
+	get_parent().call_deferred("add_child", old_part_drop)
+	old_part_drop.call_deferred("disable_usebox", 2.0)
 
-func _spawn_bullet(fly_direction: Vector2) -> void:
+func _spawn_bullet(target_position: Vector2) -> void:
 	if not torso.bullet:
 		Logger.log_debug(self.name, "Can't spawn bullet, no bullet stat")
 		return
@@ -132,8 +133,8 @@ func _spawn_bullet(fly_direction: Vector2) -> void:
 	var bullet = BULLET.instantiate()
 	bullet.stat = torso.bullet
 
-	get_tree().root.add_child(bullet)
-	bullet.init_bullet(global_position, fly_direction)
+	get_parent().add_child(bullet)
+	bullet.init_bullet(bullet_spawn.global_position, target_position)
 
 	_start_shoot_cooldown(torso.shoot_cooldown)
 

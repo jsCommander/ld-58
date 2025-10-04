@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PartLeg" load_steps=3 format=3 uid="uid://cdemonleg001"]
+
+[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://scripts/part_leg.gd" id="1_demon"]
+[ext_resource type="Texture2D" uid="uid://bo2dwr43sj36d" path="res://assets/chr/chr_demon_@0.5x.png" id="2_demon"]
+
+[resource]
+script = ExtResource("1_demon")
+speed = 400
+texture = ExtResource("2_demon")
+metadata/_custom_type_script = "uid://k1r7e4ob2nu6"

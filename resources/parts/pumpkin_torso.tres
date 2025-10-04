@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PartTorso" load_steps=4 format=3 uid="uid://bq6qwgn5aksdc"]
+
+[ext_resource type="Resource" uid="uid://bcjn5rcyr4eyq" path="res://resources/bullets/pumpkin_seed_bullet.tres" id="1_8h803"]
+[ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://scripts/part_torso.gd" id="1_pumpkin"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="2_pumpkin"]
+
+[resource]
+script = ExtResource("1_pumpkin")
+bullet = ExtResource("1_8h803")
+shoot_cooldown = 0.5
+max_health = 100
+invulnebility_time = 0.1
+texture = ExtResource("2_pumpkin")
+metadata/_custom_type_script = "uid://cbbvmutb7jhuq"

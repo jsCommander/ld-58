@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="2_64ljx"]
 [ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_tonni"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="3_tonni"]
-[ext_resource type="Texture2D" uid="uid://dihlosdhoe1ka" path="res://assets/ld-58/pumkin_@0.5x.png" id="4_j4o54"]
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="5_64ljx"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="5_tonni"]
 
 [sub_resource type="Resource" id="Resource_j4o54"]
 script = ExtResource("2_tonni")
@@ -25,18 +25,18 @@ shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4w8v"]
 resource_local_to_scene = true
-size = Vector2(128, 192)
+size = Vector2(96, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tonni"]
 resource_local_to_scene = true
-size = Vector2(160, 176)
+size = Vector2(96, 168)
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 script = ExtResource("1_kegi0")
 stat = SubResource("Resource_j4o54")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, -53)
+position = Vector2(0, -80)
 shape = SubResource("RectangleShape2D_xwavj")
 
 [node name="BaseRig" parent="." instance=ExtResource("2_64ljx")]
@@ -45,9 +45,8 @@ shape = SubResource("RectangleShape2D_xwavj")
 material = SubResource("ShaderMaterial_c4w8v")
 
 [node name="Body" parent="BaseRig/AnimationRig" index="1"]
-position = Vector2(0, 9)
-scale = Vector2(1.45267, 1.45267)
-texture = ExtResource("4_j4o54")
+position = Vector2(0, -7)
+texture = ExtResource("5_tonni")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(-16, -144)
@@ -56,15 +55,15 @@ collision_mask = 0
 monitoring = false
 
 [node name="HurtboxCollider" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(16, 48)
+position = Vector2(16, 52)
 shape = SubResource("RectangleShape2D_c4w8v")
 debug_color = Color(0.235294, 0.521569, 0.345098, 0.407843)
 
 [node name="HealthBar" parent="." instance=ExtResource("5_64ljx")]
 unique_name_in_owner = true
 offset_left = -48.0
-offset_top = -208.0
-offset_bottom = -200.0
+offset_top = -320.0
+offset_bottom = -312.0
 theme_type_variation = &"ProgressBarHealth"
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -73,7 +72,7 @@ collision_mask = 64
 monitorable = false
 
 [node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -88)
+position = Vector2(0, -92)
 shape = SubResource("RectangleShape2D_tonni")
 debug_color = Color(0.717647, 0, 0, 0.286275)
 
