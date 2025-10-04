@@ -3,13 +3,15 @@
 [ext_resource type="Script" uid="uid://d7lkrpoy5vq0" path="res://scenes/bullet.gd" id="1_l5glv"]
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_mkf8s"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_y25gk"]
-[ext_resource type="Texture2D" uid="uid://sh8m67isgj06" path="res://game_kit/assets/bee_vs_bear/prop_honey_@0.5x.png" id="4_eoqba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l5glv"]
 resource_local_to_scene = true
 shader = ExtResource("2_y25gk")
 shader_parameter/active = false
 shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50oqr"]
+load_path = "res://.godot/imported/prop_honey_@0.5x.png-d5e9f8589a88bf72c8078c23f669dffe.ctex"
 
 [node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_l5glv")
@@ -28,6 +30,6 @@ visible = false
 [node name="BulletTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="2"]
 unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_eoqba")
+texture = SubResource("CompressedTexture2D_50oqr")
 
 [editable path="BaseRig"]

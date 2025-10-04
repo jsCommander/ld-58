@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbp8c68l4btdf"
-path="res://.godot/imported/prop_flower_@0.5x.png-83fccfb6e97d3e625ed76b031c5edc05.ctex"
+uid="uid://r8l2gr26bym7"
+path="res://.godot/imported/prop_tree_dead_@0.5x.png-c6d9d5f0ff26ede15f50f9d03eafb3e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_flower_@0.5x.png"
-dest_files=["res://.godot/imported/prop_flower_@0.5x.png-83fccfb6e97d3e625ed76b031c5edc05.ctex"]
+source_file="res://assets/ld-58/prop_tree_dead_@0.5x.png"
+dest_files=["res://.godot/imported/prop_tree_dead_@0.5x.png-c6d9d5f0ff26ede15f50f9d03eafb3e7.ctex"]
 
 [params]
 

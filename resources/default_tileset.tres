@@ -1,0 +1,34 @@
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://daq7yoxlk2w4t"]
+
+[ext_resource type="Texture2D" uid="uid://c06pjqopv1p57" path="res://assets/tiles/tiles_@0.5x.png" id="1_hpfdd"]
+[ext_resource type="PackedScene" uid="uid://lsx8o37kew35" path="res://scenes/tiles/tile_forest.tscn" id="2_fbgq7"]
+[ext_resource type="PackedScene" uid="uid://vd4nnumlya1n" path="res://scenes/tiles/stump.tscn" id="3_yhbi4"]
+[ext_resource type="PackedScene" uid="uid://txadi4x7ek66" path="res://scenes/tiles/dead_tree.tscn" id="4_a3pl1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xy01o"]
+vertices = PackedVector2Array(128, 128, -128, 128, -128, -128, 128, -128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hu1ey"]
+texture = ExtResource("1_hpfdd")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_xy01o")
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_q7pts"]
+scenes/1/scene = ExtResource("2_fbgq7")
+scenes/2/scene = ExtResource("3_yhbi4")
+scenes/3/scene = ExtResource("4_a3pl1")
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_hu1ey")
+sources/1 = SubResource("TileSetScenesCollectionSource_q7pts")

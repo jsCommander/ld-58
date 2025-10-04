@@ -5,6 +5,6 @@
 [node name="shadow" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 scale = Vector2(1.73438, 0.59375)
 texture = ExtResource("1_1xhbg")

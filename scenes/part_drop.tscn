@@ -4,13 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_x52g2"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_t0kxb"]
 [ext_resource type="Resource" uid="uid://bv1x7rrvs6l73" path="res://resources/parts/man_torso.tres" id="2_t5ubn"]
-[ext_resource type="Texture2D" uid="uid://sh8m67isgj06" path="res://game_kit/assets/bee_vs_bear/prop_honey_@0.5x.png" id="4_50oqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ki5e"]
 resource_local_to_scene = true
 shader = ExtResource("2_t0kxb")
 shader_parameter/active = false
 shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50oqr"]
+load_path = "res://.godot/imported/prop_honey_@0.5x.png-d5e9f8589a88bf72c8078c23f669dffe.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50oqr"]
 resource_local_to_scene = true
@@ -31,7 +33,7 @@ scale = Vector2(0.412917, 0.412917)
 [node name="Body" parent="BaseRig/AnimationRig" index="1"]
 position = Vector2(0, 57)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_50oqr")
+texture = SubResource("CompressedTexture2D_50oqr")
 
 [node name="Usebox" type="Area2D" parent="."]
 collision_layer = 16

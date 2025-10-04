@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://vd4nnumlya1n"]
+
+[ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_4y0mu"]
+[ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_vll2o"]
+[ext_resource type="Texture2D" uid="uid://dlxpqrxkm08ki" path="res://assets/ld-58/prop_stump_@0.5x.png" id="3_xstsb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2aq2g"]
+resource_local_to_scene = true
+shader = ExtResource("2_vll2o")
+shader_parameter/active = false
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[node name="Stump" type="StaticBody2D"]
+
+[node name="BaseRig" parent="." instance=ExtResource("1_4y0mu")]
+
+[node name="AnimationRig" parent="BaseRig" index="0"]
+material = SubResource("ShaderMaterial_2aq2g")
+
+[node name="shadow" parent="BaseRig/AnimationRig" index="0"]
+scale = Vector2(0.45656, 0.45656)
+
+[node name="Body" parent="BaseRig/AnimationRig" index="1"]
+position = Vector2(0, 87)
+scale = Vector2(0.467854, 0.467854)
+texture = ExtResource("3_xstsb")
+
+[editable path="BaseRig"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6543v2d10e0j"
-path="res://.godot/imported/prop_booze_shop.png-97d1bdf29bc5013ecbbeb5c2dd686035.ctex"
+uid="uid://bso17bvhtgcug"
+path="res://.godot/imported/prop_tree1_@0.5x.png-fbfd8d3458829e1c1d1788733f17633a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_booze_shop.png"
-dest_files=["res://.godot/imported/prop_booze_shop.png-97d1bdf29bc5013ecbbeb5c2dd686035.ctex"]
+source_file="res://assets/ld-58/prop_tree1_@0.5x.png"
+dest_files=["res://.godot/imported/prop_tree1_@0.5x.png-fbfd8d3458829e1c1d1788733f17633a.ctex"]
 
 [params]
 

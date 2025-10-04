@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djtb1la6jkj7u"
-path="res://.godot/imported/prop_thinkbox_@0.5x.png-8b75d13d12a158ed3d91147fe0256901.ctex"
+uid="uid://cy68gm742s4ni"
+path="res://.godot/imported/enm_bear_@0.5x.png-ee694becaa71491aa5bfe7a68b503ba5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_thinkbox_@0.5x.png"
-dest_files=["res://.godot/imported/prop_thinkbox_@0.5x.png-8b75d13d12a158ed3d91147fe0256901.ctex"]
+source_file="res://assets/ld-58/enm_bear_@0.5x.png"
+dest_files=["res://.godot/imported/enm_bear_@0.5x.png-ee694becaa71491aa5bfe7a68b503ba5.ctex"]
 
 [params]
 

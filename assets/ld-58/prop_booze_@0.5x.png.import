@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d01lqmtiv8g4j"
-path="res://.godot/imported/prop_honey_labeled_@0.5x.png-8df86ff951c00e29d7a5a41c1cd862be.ctex"
+uid="uid://cmocjrc5324vs"
+path="res://.godot/imported/prop_booze_@0.5x.png-9dee427df6af3b697cf6395563e8785a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_honey_labeled_@0.5x.png"
-dest_files=["res://.godot/imported/prop_honey_labeled_@0.5x.png-8df86ff951c00e29d7a5a41c1cd862be.ctex"]
+source_file="res://assets/ld-58/prop_booze_@0.5x.png"
+dest_files=["res://.godot/imported/prop_booze_@0.5x.png-9dee427df6af3b697cf6395563e8785a.ctex"]
 
 [params]
 

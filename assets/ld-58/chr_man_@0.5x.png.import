@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dune57ktgvlr4"
-path="res://.godot/imported/chr_man_head_@0.5x.png-8429c80da576984860c74641f9405f77.ctex"
+uid="uid://cyi0bognfd8kc"
+path="res://.godot/imported/chr_man_@0.5x.png-4e223e5df6748d469c75bc8198377227.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/chr_man_head_@0.5x.png"
-dest_files=["res://.godot/imported/chr_man_head_@0.5x.png-8429c80da576984860c74641f9405f77.ctex"]
+source_file="res://assets/ld-58/chr_man_@0.5x.png"
+dest_files=["res://.godot/imported/chr_man_@0.5x.png-4e223e5df6748d469c75bc8198377227.ctex"]
 
 [params]
 

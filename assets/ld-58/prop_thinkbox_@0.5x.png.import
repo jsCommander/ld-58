@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oa1uttf64rcn"
-path="res://.godot/imported/prop_farmbox_@0.5x.png-2ba8944f449719002bd945cce4397f1f.ctex"
+uid="uid://b1chaeftgf7fo"
+path="res://.godot/imported/prop_thinkbox_@0.5x.png-582e948e285264a35ecc8bdc515c42bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_farmbox_@0.5x.png"
-dest_files=["res://.godot/imported/prop_farmbox_@0.5x.png-2ba8944f449719002bd945cce4397f1f.ctex"]
+source_file="res://assets/ld-58/prop_thinkbox_@0.5x.png"
+dest_files=["res://.godot/imported/prop_thinkbox_@0.5x.png-582e948e285264a35ecc8bdc515c42bf.ctex"]
 
 [params]
 

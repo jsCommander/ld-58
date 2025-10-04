@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://bv1x7rrvs6l73" path="res://resources/parts/man_torso.tres" id="3_ur7pv"]
 [ext_resource type="Resource" uid="uid://b4o56637qd3ih" path="res://resources/parts/man_leg.tres" id="4_y4r1p"]
 [ext_resource type="Shader" uid="uid://bcy08pqpq35y1" path="res://game_kit/shaders/crop_rect.gdshader" id="5_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="8_smehm"]
+[ext_resource type="Texture2D" uid="uid://cyi0bognfd8kc" path="res://assets/ld-58/chr_man_@0.5x.png" id="8_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
-size = Vector2(128, 224)
+size = Vector2(96, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
 resource_local_to_scene = true
@@ -42,7 +42,7 @@ torso = ExtResource("3_ur7pv")
 legs = ExtResource("4_y4r1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -112)
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_smehm")
 
 [node name="BaseRig" parent="." instance=ExtResource("1_3vyb7")]
@@ -72,6 +72,7 @@ position = Vector2(0, -11)
 texture = ExtResource("8_smehm")
 
 [node name="Usebox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 monitorable = false

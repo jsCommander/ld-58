@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sh8m67isgj06"
-path="res://.godot/imported/prop_honey_@0.5x.png-d5e9f8589a88bf72c8078c23f669dffe.ctex"
+uid="uid://bipfycl7kjl1a"
+path="res://.godot/imported/chr_man_head_@0.5x.png-0beebd518dcc2bdc6b319b78f5e18c8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_honey_@0.5x.png"
-dest_files=["res://.godot/imported/prop_honey_@0.5x.png-d5e9f8589a88bf72c8078c23f669dffe.ctex"]
+source_file="res://assets/ld-58/chr_man_head_@0.5x.png"
+dest_files=["res://.godot/imported/chr_man_head_@0.5x.png-0beebd518dcc2bdc6b319b78f5e18c8a.ctex"]
 
 [params]
 

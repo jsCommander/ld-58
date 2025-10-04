@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1rchynihsc5e"
-path="res://.godot/imported/prop_stump_@0.5x.png-908928e55f946d53e8b42cc5887230e7.ctex"
+uid="uid://bevfegba5umy3"
+path="res://.godot/imported/prop_ulei_@0.5x.png-a6267e283126bd568240a0f0c106c56b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_stump_@0.5x.png"
-dest_files=["res://.godot/imported/prop_stump_@0.5x.png-908928e55f946d53e8b42cc5887230e7.ctex"]
+source_file="res://assets/ld-58/prop_ulei_@0.5x.png"
+dest_files=["res://.godot/imported/prop_ulei_@0.5x.png-a6267e283126bd568240a0f0c106c56b.ctex"]
 
 [params]
 

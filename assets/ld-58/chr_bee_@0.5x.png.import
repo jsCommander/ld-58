@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caosjlwnipc76"
-path="res://.godot/imported/prop_bush_@0.5x.png-4dd22ee1facc2bdc90ce57f6973fdf23.ctex"
+uid="uid://cfxxmqfdgblqd"
+path="res://.godot/imported/chr_bee_@0.5x.png-96d90f3fc1a337d0104bd1b0746f76fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_kit/assets/bee_vs_bear/prop_bush_@0.5x.png"
-dest_files=["res://.godot/imported/prop_bush_@0.5x.png-4dd22ee1facc2bdc90ce57f6973fdf23.ctex"]
+source_file="res://assets/ld-58/chr_bee_@0.5x.png"
+dest_files=["res://.godot/imported/chr_bee_@0.5x.png-96d90f3fc1a337d0104bd1b0746f76fb.ctex"]
 
 [params]
 

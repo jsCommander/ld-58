@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://cu76wfjt4yan6"]
 
-[ext_resource type="TileSet" uid="uid://daq7yoxlk2w4t" path="res://game_kit/tiles/default_tileset.tres" id="1_u2bgr"]
+[ext_resource type="TileSet" uid="uid://daq7yoxlk2w4t" path="res://resources/default_tileset.tres" id="1_u2bgr"]
 [ext_resource type="Texture2D" uid="uid://bfps7v2dhx2wo" path="res://game_kit/assets/char/char_man_mustache_@0.5x.png" id="2_50nkd"]
 [ext_resource type="Script" uid="uid://cr8krx1ilgveg" path="res://scenes/test/character_body_2d.gd" id="2_h1w80"]
 [ext_resource type="Texture2D" uid="uid://b2i3sw0uqe3j2" path="res://game_kit/assets/char/char_robot_smile_@0.5x.png" id="4_xcf2k"]
