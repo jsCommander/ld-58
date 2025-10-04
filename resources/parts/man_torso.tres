@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="PartTorso" load_steps=4 format=3 uid="uid://bv1x7rrvs6l73"]
+[gd_resource type="Resource" script_class="PartTorso" load_steps=3 format=3 uid="uid://bv1x7rrvs6l73"]
 
-[ext_resource type="Resource" uid="uid://ct83143av6van" path="res://resources/bullets/bee_bullet.tres" id="1_f3wd7"]
 [ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://scripts/part_torso.gd" id="2_regio"]
 [ext_resource type="Texture2D" uid="uid://cyi0bognfd8kc" path="res://assets/ld-58/chr_man_@0.5x.png" id="3_f3wd7"]
 
 [resource]
 script = ExtResource("2_regio")
-bullet = ExtResource("1_f3wd7")
 shoot_cooldown = 0.5
 texture = ExtResource("3_f3wd7")
 metadata/_custom_type_script = "uid://cbbvmutb7jhuq"
