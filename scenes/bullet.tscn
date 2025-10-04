@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpg3q56ths0dm"]
+[gd_scene load_steps=7 format=3 uid="uid://bpg3q56ths0dm"]
 
 [ext_resource type="Script" uid="uid://d7lkrpoy5vq0" path="res://scenes/bullet.gd" id="1_l5glv"]
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_mkf8s"]
@@ -13,7 +13,12 @@ shader_parameter/color = Color(1, 1, 1, 1)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50oqr"]
 load_path = "res://.godot/imported/prop_honey_@0.5x.png-d5e9f8589a88bf72c8078c23f669dffe.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
 [node name="Bullet" type="CharacterBody2D"]
+position = Vector2(0, 96)
 script = ExtResource("1_l5glv")
 
 [node name="BaseRig" parent="." instance=ExtResource("1_mkf8s")]
@@ -29,7 +34,22 @@ visible = false
 
 [node name="BulletTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="2"]
 unique_name_in_owner = true
-scale = Vector2(0.2, 0.2)
+position = Vector2(0, 9)
+scale = Vector2(0.3, 0.3)
 texture = SubResource("CompressedTexture2D_50oqr")
+
+[node name="Hitbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -112)
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+
+[node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_l5glv")
+debug_color = Color(0.717647, 0, 0, 0.286275)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 
 [editable path="BaseRig"]

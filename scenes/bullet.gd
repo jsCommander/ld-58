@@ -5,6 +5,7 @@ class_name Bullet
 
 @onready var base_rig: BaseRig = $BaseRig
 @onready var bullet_texture: Sprite2D = %BulletTexture
+@onready var hitbox: Area2D = %Hitbox
 
 var spawn_position: Vector2
 var fly_direction: Vector2
@@ -39,3 +40,12 @@ func kill() -> void:
 func update_bullet_texture() -> void:
 	if bullet_texture.texture != stat.texture:
 		bullet_texture.texture = stat.texture
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	var body = area.get_parent()
+
+	if body is BaseEnemy:
+		var enemy = body as BaseEnemy
+		enemy.apply_damage(stat.damage, self)
+		kill()

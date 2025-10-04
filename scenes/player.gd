@@ -7,13 +7,20 @@ const PART_DROP = preload("res://scenes/part_drop.tscn")
 @export var torso: PartTorso
 @export var legs: PartLeg
 
+signal killed()
+
 @onready var leg_texture: Sprite2D = %LegTexture
 @onready var torso_texture: Sprite2D = %TorsoTexture
 @onready var head_texture: Sprite2D = %HeadTexture
 @onready var base_rig: BaseRig = $BaseRig
+@onready var hurt_sfx: AudioStreamPlayer2D = %HurtSfx
 
 var is_dead = false
 var is_shoot_cooldown: bool = false
+var current_health: int = 0
+
+func _ready() -> void:
+	current_health = torso.max_health
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
@@ -34,6 +41,27 @@ func _physics_process(_delta: float) -> void:
 		_spawn_bullet(get_global_mouse_position())
 
 	_update_parts()
+
+func apply_damage(damage: int, attacker: Node2D) -> void:
+	if is_dead:
+		return
+
+	_update_health(damage)
+	
+	Logger.log_debug(self.name, "Applied damage: %s from %s" % [damage, attacker.name])
+	
+	base_rig.flash()
+	hurt_sfx.play()
+
+func kill() -> void:
+	if is_dead:
+		return
+
+	is_dead = true
+	killed.emit()
+
+func _update_health(health: int) -> void:
+	current_health = clamp(health, 0, torso.max_health)
 
 func _update_parts() -> void:
 	if leg_texture.texture != legs.texture:
