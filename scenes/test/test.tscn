@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnjnsn4dgjy4e"]
+
+[ext_resource type="Script" uid="uid://dbfdph4avk7h8" path="res://scenes/test/test.gd" id="1_bl13t"]
+[ext_resource type="Texture2D" uid="uid://hmvi6kfegic" path="res://game_kit/assets/char/char_minion_coffee_@0.5x.png" id="1_errlg"]
+[ext_resource type="Texture2D" uid="uid://bfps7v2dhx2wo" path="res://game_kit/assets/char/char_man_mustache_@0.5x.png" id="2_j5jx5"]
+[ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="3_iyx0m"]
+[ext_resource type="Texture2D" uid="uid://b2i3sw0uqe3j2" path="res://game_kit/assets/char/char_robot_smile_@0.5x.png" id="3_lpvoh"]
+
+[sub_resource type="Gradient" id="Gradient_ij1v8"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_errlg"]
+gradient = SubResource("Gradient_ij1v8")
+width = 256
+height = 69
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bl13t"]
+gradient = SubResource("Gradient_ij1v8")
+width = 256
+height = 128
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_bl13t")
+legsTexture = ExtResource("2_j5jx5")
+bodyTexture = ExtResource("3_lpvoh")
+headTexture = ExtResource("1_errlg")
+
+[node name="LegsMask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(0, -35)
+texture = SubResource("GradientTexture2D_errlg")
+
+[node name="Legs" type="Sprite2D" parent="LegsMask"]
+unique_name_in_owner = true
+position = Vector2(0, -80)
+texture = ExtResource("2_j5jx5")
+
+[node name="BodyMask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(0, -104)
+texture = SubResource("GradientTexture2D_errlg")
+
+[node name="Body" type="Sprite2D" parent="BodyMask"]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+texture = ExtResource("3_lpvoh")
+
+[node name="HeadMask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(0, -202)
+texture = SubResource("GradientTexture2D_bl13t")
+
+[node name="Head" type="Sprite2D" parent="HeadMask"]
+unique_name_in_owner = true
+position = Vector2(0, 90)
+texture = ExtResource("1_errlg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-233, -107)
+texture = ExtResource("3_iyx0m")
+
+[node name="Camera2D" type="Camera2D" parent="."]

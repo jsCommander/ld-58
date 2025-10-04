@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PartHead" load_steps=3 format=3 uid="uid://ccqi82fhe4ipx"]
+
+[ext_resource type="Script" uid="uid://8n1kgor3yh8" path="res://resources/part_head.gd" id="1_kxp4d"]
+[ext_resource type="Texture2D" uid="uid://c24dprnvaigvb" path="res://game_kit/assets/char/char_girl_happy_@0.5x.png" id="2_pfa6w"]
+
+[resource]
+script = ExtResource("1_kxp4d")
+texture = ExtResource("2_pfa6w")
+metadata/_custom_type_script = "uid://8n1kgor3yh8"

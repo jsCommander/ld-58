@@ -3,9 +3,11 @@ class_name Game
 
 const START_SCREEN = preload("res://levels/start_screen/start_screen.tscn")
 const END_SCREEN = preload("res://levels/end_screen/end_screen.tscn")
+const TEST = preload("res://levels/test.tscn")
 
 const SCENE_TRANSITIONS: Dictionary[PackedScene, PackedScene] = {
-	START_SCREEN: END_SCREEN,
+	START_SCREEN: TEST,
+	TEST: END_SCREEN,
 	END_SCREEN: START_SCREEN
 }
 

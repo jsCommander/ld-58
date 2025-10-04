@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PartHead" load_steps=3 format=3 uid="uid://782d6yx3yuai"]
+
+[ext_resource type="Script" uid="uid://8n1kgor3yh8" path="res://resources/part_head.gd" id="1_atsqe"]
+[ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="2_ho512"]
+
+[resource]
+script = ExtResource("1_atsqe")
+texture = ExtResource("2_ho512")
+metadata/_custom_type_script = "uid://8n1kgor3yh8"

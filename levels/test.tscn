@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnk6bbhdjdmki"]
+
+[ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_72lju"]
+[ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="2_pnvjf"]
+[ext_resource type="Resource" uid="uid://ccqi82fhe4ipx" path="res://resources/girl_head.tres" id="3_6g8e2"]
+[ext_resource type="Resource" uid="uid://clvqu5y7lp0sp" path="res://resources/girl_leg.tres" id="4_u45fp"]
+[ext_resource type="Resource" uid="uid://cevms8k5koono" path="res://resources/girl_torso.tres" id="5_2grjb"]
+
+[node name="BaseLevel" instance=ExtResource("1_72lju")]
+
+[node name="PartDrop4" parent="." index="4" instance=ExtResource("2_pnvjf")]
+position = Vector2(448, 144)
+part = ExtResource("3_6g8e2")
+
+[node name="PartDrop5" parent="." index="5" instance=ExtResource("2_pnvjf")]
+position = Vector2(992, -224)
+part = ExtResource("4_u45fp")
+
+[node name="PartDrop6" parent="." index="6" instance=ExtResource("2_pnvjf")]
+position = Vector2(1072, 208)
+part = ExtResource("5_2grjb")
+
+[node name="LevelFinish" parent="." index="7"]
+position = Vector2(1536, -32)

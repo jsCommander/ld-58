@@ -1,0 +1,86 @@
+[gd_scene load_steps=15 format=3 uid="uid://bo0k7rb6v04lk"]
+
+[ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
+[ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_g2els"]
+[ext_resource type="Resource" uid="uid://782d6yx3yuai" path="res://resources/man_head.tres" id="2_ur7pv"]
+[ext_resource type="Resource" uid="uid://bv1x7rrvs6l73" path="res://resources/man_torso.tres" id="3_ur7pv"]
+[ext_resource type="Resource" uid="uid://b4o56637qd3ih" path="res://resources/man_leg.tres" id="4_y4r1p"]
+[ext_resource type="Shader" uid="uid://bcy08pqpq35y1" path="res://game_kit/shaders/crop_rect.gdshader" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="8_smehm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
+size = Vector2(128, 224)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
+resource_local_to_scene = true
+shader = ExtResource("2_g2els")
+shader_parameter/active = false
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
+shader = ExtResource("5_qlg0r")
+shader_parameter/crop_rect = Vector4(0, 0.666, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tuyoq"]
+shader = ExtResource("5_qlg0r")
+shader_parameter/crop_rect = Vector4(0, 0.333, 1, 0.333)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrip"]
+shader = ExtResource("5_qlg0r")
+shader_parameter/crop_rect = Vector4(0, 0, 1, 0.333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7pv"]
+resource_local_to_scene = true
+size = Vector2(128, 224)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_qlg0r")
+head = ExtResource("2_ur7pv")
+torso = ExtResource("3_ur7pv")
+legs = ExtResource("4_y4r1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -112)
+shape = SubResource("RectangleShape2D_smehm")
+
+[node name="BaseRig" parent="." instance=ExtResource("1_3vyb7")]
+
+[node name="AnimationRig" parent="BaseRig" index="0"]
+material = SubResource("ShaderMaterial_qhqgy")
+
+[node name="Body" parent="BaseRig/AnimationRig" index="1"]
+visible = false
+
+[node name="LegTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="2"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qlg0r")
+position = Vector2(0, -11)
+texture = ExtResource("8_smehm")
+
+[node name="TorsoTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="3"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tuyoq")
+position = Vector2(0, -11)
+texture = ExtResource("8_smehm")
+
+[node name="HeadTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="4"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fjrip")
+position = Vector2(0, -11)
+texture = ExtResource("8_smehm")
+
+[node name="Usebox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+
+[node name="UseboxCollider" type="CollisionShape2D" parent="Usebox"]
+position = Vector2(0, -112)
+shape = SubResource("RectangleShape2D_ur7pv")
+debug_color = Color(0.713726, 0.141176, 0.709804, 0.301961)
+
+[connection signal="area_entered" from="Usebox" to="." method="_on_usebox_area_entered"]
+
+[editable path="BaseRig"]

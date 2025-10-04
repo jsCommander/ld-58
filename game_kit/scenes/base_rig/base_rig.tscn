@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://2puc6ypy6of"]
 
-[ext_resource type="PackedScene" uid="uid://dk56elq863m31" path="res://game_kit/scenes/base_shadow.tscn" id="1_3i71o"]
+[ext_resource type="PackedScene" path="res://game_kit/scenes/base_shadow.tscn" id="1_3i71o"]
 [ext_resource type="Script" uid="uid://bl3f8qh30tt1y" path="res://game_kit/scenes/base_rig/base_rig.gd" id="1_c1do8"]
 [ext_resource type="Texture2D" uid="uid://bfps7v2dhx2wo" path="res://game_kit/assets/char/char_man_mustache_@0.5x.png" id="2_c1do8"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="3_4agpl"]
