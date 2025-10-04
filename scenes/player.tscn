@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo0k7rb6v04lk"]
+[gd_scene load_steps=18 format=3 uid="uid://bo0k7rb6v04lk"]
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -7,7 +7,8 @@
 [ext_resource type="Resource" uid="uid://bv1x7rrvs6l73" path="res://resources/parts/man_torso.tres" id="3_ur7pv"]
 [ext_resource type="Resource" uid="uid://b4o56637qd3ih" path="res://resources/parts/man_leg.tres" id="4_y4r1p"]
 [ext_resource type="Shader" uid="uid://bcy08pqpq35y1" path="res://game_kit/shaders/crop_rect.gdshader" id="5_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cyi0bognfd8kc" path="res://assets/ld-58/chr_man_@0.5x.png" id="8_smehm"]
+[ext_resource type="Texture2D" path="res://assets/ld-58/chr_man_@0.5x.png" id="8_smehm"]
+[ext_resource type="Texture2D" uid="uid://d1o8xk5qcpq61" path="res://assets/chr/chr_ghost_@0.5x.png" id="8_y4r1p"]
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="9_ur7pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
@@ -62,8 +63,8 @@ visible = false
 [node name="LegTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="2"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_qlg0r")
-position = Vector2(0, -11)
-texture = ExtResource("8_smehm")
+position = Vector2(0, -7)
+texture = ExtResource("8_y4r1p")
 
 [node name="TorsoTexture" type="Sprite2D" parent="BaseRig/AnimationRig" index="3"]
 unique_name_in_owner = true

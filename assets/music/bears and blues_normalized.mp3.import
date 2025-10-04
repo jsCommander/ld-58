@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtbsmjkfdtye2"
+path="res://.godot/imported/bears and blues_normalized.mp3-e01eb0539a76788bc79cbebf191829f9.mp3str"
+
+[deps]
+
+source_file="res://assets/music/bears and blues_normalized.mp3"
+dest_files=["res://.godot/imported/bears and blues_normalized.mp3-e01eb0539a76788bc79cbebf191829f9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b65f13xb0jdcw"
-path="res://.godot/imported/prop_tree2_@0.5x.png-1ef3619c8d807628089bc9ee3c4c1c1b.ctex"
+uid="uid://cq1nq13efjskh"
+path="res://.godot/imported/prop_carrot_@0.5x.png-90d4bf2304fbe2cb079692099a42de39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ld-58/prop_tree2_@0.5x.png"
-dest_files=["res://.godot/imported/prop_tree2_@0.5x.png-1ef3619c8d807628089bc9ee3c4c1c1b.ctex"]
+source_file="res://assets/bullets/prop_carrot_@0.5x.png"
+dest_files=["res://.godot/imported/prop_carrot_@0.5x.png-90d4bf2304fbe2cb079692099a42de39.ctex"]
 
 [params]
 

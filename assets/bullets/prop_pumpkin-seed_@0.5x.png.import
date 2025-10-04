@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b65f13xb0jdcw"
-path="res://.godot/imported/prop_tree2_@0.5x.png-1ef3619c8d807628089bc9ee3c4c1c1b.ctex"
+uid="uid://rwjb27joafad"
+path="res://.godot/imported/prop_pumpkin-seed_@0.5x.png-4e7d04ea1321a4442ebb54158588671d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ld-58/prop_tree2_@0.5x.png"
-dest_files=["res://.godot/imported/prop_tree2_@0.5x.png-1ef3619c8d807628089bc9ee3c4c1c1b.ctex"]
+source_file="res://assets/bullets/prop_pumpkin-seed_@0.5x.png"
+dest_files=["res://.godot/imported/prop_pumpkin-seed_@0.5x.png-4e7d04ea1321a4442ebb54158588671d.ctex"]
 
 [params]
 

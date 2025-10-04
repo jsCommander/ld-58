@@ -117,6 +117,7 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 	var old_part_drop = PART_DROP.instantiate()
 	old_part_drop.part = old_part
 	old_part_drop.global_position = part_drop.global_position
+	
 	get_tree().root.add_child(old_part_drop)
 	old_part_drop.disable_usebox(2.0)
 
