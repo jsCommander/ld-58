@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("2_regio")
 shoot_cooldown = 0.5
+max_health = 100
 texture = ExtResource("3_f3wd7")
 metadata/_custom_type_script = "uid://cbbvmutb7jhuq"
