@@ -25,7 +25,6 @@ func apply_damage(damage: int, _attacker: Node2D) -> void:
 		return
 
 	Logger.log_debug(self.name, "Applied damage: %s from %s" % [damage, _attacker.name])
-	base_rig.flash()
 	_update_health(current_health - damage)
 
 func _update_health(health: int) -> void:
@@ -36,3 +35,11 @@ func _update_health(health: int) -> void:
 	
 	if current_health <= 0:
 		kill()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	var body = area.get_parent()
+
+	if body is Player:
+		var player = body as Player
+		player.apply_damage(stat.damage, self)

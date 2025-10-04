@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const BULLET = preload("res://scenes/bullet.tscn")
 const PART_DROP = preload("res://scenes/part_drop.tscn")
@@ -14,13 +15,16 @@ signal killed()
 @onready var head_texture: Sprite2D = %HeadTexture
 @onready var base_rig: BaseRig = $BaseRig
 @onready var hurt_sfx: AudioStreamPlayer2D = %HurtSfx
+@onready var health_bar: ProgressBar = %HealthBar
+@onready var hurtbox_collider: CollisionShape2D = %HurtboxCollider
 
 var is_dead = false
 var is_shoot_cooldown: bool = false
+var is_invulnebility: bool = false
 var current_health: int = 0
 
 func _ready() -> void:
-	current_health = torso.max_health
+	_update_health(torso.max_health)
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
@@ -43,15 +47,18 @@ func _physics_process(_delta: float) -> void:
 	_update_parts()
 
 func apply_damage(damage: int, attacker: Node2D) -> void:
-	if is_dead:
+	if is_dead or is_invulnebility:
 		return
 
-	_update_health(damage)
+	_update_health(current_health - damage)
 	
 	Logger.log_debug(self.name, "Applied damage: %s from %s" % [damage, attacker.name])
 	
 	base_rig.flash()
 	hurt_sfx.play()
+
+	if torso.invulnebility_time > 0.0:
+		_start_invulnebility(torso.invulnebility_time)
 
 func kill() -> void:
 	if is_dead:
@@ -62,6 +69,11 @@ func kill() -> void:
 
 func _update_health(health: int) -> void:
 	current_health = clamp(health, 0, torso.max_health)
+	health_bar.value = current_health
+	health_bar.max_value = torso.max_health
+
+	if current_health <= 0:
+		kill()
 
 func _update_parts() -> void:
 	if leg_texture.texture != legs.texture:
@@ -128,3 +140,10 @@ func _start_shoot_cooldown(cooldown: float) -> void:
 	is_shoot_cooldown = true
 	await get_tree().create_timer(cooldown).timeout
 	is_shoot_cooldown = false
+
+func _start_invulnebility(time: float) -> void:
+	is_invulnebility = true
+	hurtbox_collider.set_deferred("disabled", true)
+	await get_tree().create_timer(time).timeout
+	is_invulnebility = false
+	hurtbox_collider.set_deferred("disabled", false)

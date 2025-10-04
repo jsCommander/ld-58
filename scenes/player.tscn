@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bo0k7rb6v04lk"]
+[gd_scene load_steps=17 format=3 uid="uid://bo0k7rb6v04lk"]
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://b4o56637qd3ih" path="res://resources/parts/man_leg.tres" id="4_y4r1p"]
 [ext_resource type="Shader" uid="uid://bcy08pqpq35y1" path="res://game_kit/shaders/crop_rect.gdshader" id="5_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cyi0bognfd8kc" path="res://assets/ld-58/chr_man_@0.5x.png" id="8_smehm"]
+[ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="9_ur7pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
 size = Vector2(96, 64)
@@ -76,6 +77,13 @@ material = SubResource("ShaderMaterial_fjrip")
 position = Vector2(0, -11)
 texture = ExtResource("8_smehm")
 
+[node name="HealthBar" parent="BaseRig" instance=ExtResource("9_ur7pv")]
+unique_name_in_owner = true
+offset_left = -48.0
+offset_top = -240.0
+offset_bottom = -232.0
+theme_type_variation = &"ProgressBarHealth"
+
 [node name="Usebox" type="Area2D" parent="."]
 visible = false
 collision_layer = 0
@@ -93,6 +101,7 @@ collision_mask = 0
 monitoring = false
 
 [node name="HurtboxCollider" type="CollisionShape2D" parent="Hurtbox"]
+unique_name_in_owner = true
 position = Vector2(0, -88)
 shape = SubResource("RectangleShape2D_y4r1p")
 debug_color = Color(0.235294, 0.521569, 0.345098, 0.407843)

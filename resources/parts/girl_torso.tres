@@ -8,5 +8,7 @@
 script = ExtResource("2_aer50")
 bullet = ExtResource("1_rkgrg")
 shoot_cooldown = 0.5
+max_health = 100
+invulnebility_time = 0.1
 texture = ExtResource("3_6qygr")
 metadata/_custom_type_script = "uid://cbbvmutb7jhuq"

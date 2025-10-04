@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4n5ceqw63m7i"]
+[gd_scene load_steps=9 format=4 uid="uid://c4n5ceqw63m7i"]
 
 [ext_resource type="Script" uid="uid://dp5jij0b6u4ag" path="res://levels/base_level.gd" id="1_wevqg"]
 [ext_resource type="TileSet" uid="uid://daq7yoxlk2w4t" path="res://resources/default_tileset.tres" id="2_ew5uy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bo0k7rb6v04lk" path="res://scenes/player.tscn" id="4_satuh"]
 [ext_resource type="Script" uid="uid://bo41jxf5bh1ru" path="res://game_kit/camera/camera_man.gd" id="5_p5284"]
 [ext_resource type="Texture2D" uid="uid://beplhvlaukcbb" path="res://game_kit/assets/char/char_bee_smile_@0.5x.png" id="6_46036"]
+[ext_resource type="PackedScene" uid="uid://pctqnliuvj64" path="res://game_kit/dialogs/dialog_manager/dialog_manager.tscn" id="7_maq6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5284"]
 size = Vector2(240, 208)
@@ -50,5 +51,7 @@ debug_color = Color(0.248103, 0.000726245, 0.544395, 0.42)
 visible = false
 position = Vector2(16, 0)
 texture = ExtResource("6_46036")
+
+[node name="DialogManager" parent="." instance=ExtResource("7_maq6b")]
 
 [connection signal="body_entered" from="LevelFinish" to="." method="_on_level_finish_body_entered"]
