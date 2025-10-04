@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PartLeg" load_steps=3 format=3 uid="uid://b4o56637qd3ih"]
 
-[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://resources/part_leg.gd" id="1_c8ee2"]
+[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://scripts/part_leg.gd" id="1_c8ee2"]
 [ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="2_fxehl"]
 
 [resource]

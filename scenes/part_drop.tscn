@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8xg0hm7f67tc" path="res://scenes/part_drop.gd" id="1_8ki5e"]
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_x52g2"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_t0kxb"]
-[ext_resource type="Resource" uid="uid://bv1x7rrvs6l73" path="res://resources/man_torso.tres" id="2_t5ubn"]
+[ext_resource type="Resource" uid="uid://bv1x7rrvs6l73" path="res://resources/parts/man_torso.tres" id="2_t5ubn"]
 [ext_resource type="Texture2D" uid="uid://sh8m67isgj06" path="res://game_kit/assets/bee_vs_bear/prop_honey_@0.5x.png" id="4_50oqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ki5e"]

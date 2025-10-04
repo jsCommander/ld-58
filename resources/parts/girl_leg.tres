@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PartLeg" load_steps=3 format=3 uid="uid://clvqu5y7lp0sp"]
 
-[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://resources/part_leg.gd" id="1_1h3e6"]
+[ext_resource type="Script" uid="uid://k1r7e4ob2nu6" path="res://scripts/part_leg.gd" id="1_1h3e6"]
 [ext_resource type="Texture2D" uid="uid://c24dprnvaigvb" path="res://game_kit/assets/char/char_girl_happy_@0.5x.png" id="2_1h3e6"]
 
 [resource]

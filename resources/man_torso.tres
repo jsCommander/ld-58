@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="PartTorso" load_steps=3 format=3 uid="uid://bv1x7rrvs6l73"]
-
-[ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://resources/part_torso.gd" id="1_lefo5"]
-[ext_resource type="Texture2D" uid="uid://cikkb8gl6yni4" path="res://game_kit/assets/bee_vs_bear/chr_man_@0.5x.png" id="2_qxghv"]
-
-[resource]
-script = ExtResource("1_lefo5")
-texture = ExtResource("2_qxghv")
-metadata/_custom_type_script = "uid://cbbvmutb7jhuq"

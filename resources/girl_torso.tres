@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="PartTorso" load_steps=3 format=3 uid="uid://cevms8k5koono"]
-
-[ext_resource type="Script" uid="uid://cbbvmutb7jhuq" path="res://resources/part_torso.gd" id="1_6qs7s"]
-[ext_resource type="Texture2D" uid="uid://c24dprnvaigvb" path="res://game_kit/assets/char/char_girl_happy_@0.5x.png" id="2_6qs7s"]
-
-[resource]
-script = ExtResource("1_6qs7s")
-texture = ExtResource("2_6qs7s")
-metadata/_custom_type_script = "uid://cbbvmutb7jhuq"
