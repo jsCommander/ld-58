@@ -48,6 +48,8 @@ resource_local_to_scene = true
 size = Vector2(64, 144)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_qlg0r")
 head = ExtResource("2_smehm")

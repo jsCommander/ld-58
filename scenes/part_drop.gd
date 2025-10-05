@@ -18,8 +18,11 @@ class_name PartDrop
 var _part: BasePart
 
 func _ready() -> void:
-	#base_rig.start_pulse_animation()
 	_update_textures()
+	
+	if not Engine.is_editor_hint():
+		base_rig.start_pulse_animation()
+
 
 func kill() -> void:
 	queue_free()

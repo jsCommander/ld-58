@@ -23,7 +23,11 @@ font = ExtResource("7_0rg8l")
 font_size = 48
 
 [node name="BaseLevel" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_wevqg")
+
+[node name="Player" parent="." instance=ExtResource("4_satuh")]
+position = Vector2(-16, 160)
 
 [node name="Terrain" type="TileMapLayer" parent="."]
 z_index = -10
@@ -31,10 +35,9 @@ tile_map_data = PackedByteArray("AAD9//3/AAABAAAAAAD9//7/AAABAAAAAAD9////AAABAAA
 tile_set = ExtResource("2_ew5uy")
 
 [node name="Objects" type="TileMapLayer" parent="."]
+z_index = 5
+y_sort_enabled = true
 tile_set = ExtResource("2_ew5uy")
-
-[node name="Player" parent="." instance=ExtResource("4_satuh")]
-position = Vector2(-16, 160)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

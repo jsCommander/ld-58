@@ -33,7 +33,7 @@ func start_pulse_animation() -> void:
 		return
 
 	is_pulsing = true
-	pulse_tween = Animations.pulse(animation_rig, 1.05, 2.0, true)
+	pulse_tween = Animations.pulse(animation_rig, 1.05, 1.0, true)
 
 func stop_pulse_animation() -> void:
 	if not is_pulsing:
