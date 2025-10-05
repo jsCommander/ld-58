@@ -31,6 +31,7 @@ size = Vector2(128, 168)
 [node name="BaseEnemy" type="CharacterBody2D"]
 z_index = 5
 y_sort_enabled = true
+collision_layer = 4
 script = ExtResource("1_kegi0")
 stat = ExtResource("2_hf87f")
 

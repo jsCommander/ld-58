@@ -28,7 +28,7 @@ evade_speed = 600.0
 shoot_cooldown = 0.5
 metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"
 
-[node name="BaseLevel2" instance=ExtResource("1_vp7sh")]
+[node name="BaseLevel3" instance=ExtResource("1_vp7sh")]
 
 [node name="Player" parent="." index="0"]
 position = Vector2(16, 400)
@@ -42,7 +42,6 @@ position = Vector2(1536, 384)
 
 [node name="CollisionShape2D" parent="LevelFinish" index="0"]
 position = Vector2(-8.0531, 15.9459)
-scale = Vector2(5.78823, 3.98649)
 
 [node name="BaseEnemy" parent="." index="6" instance=ExtResource("3_fxdii")]
 position = Vector2(1056, 16)

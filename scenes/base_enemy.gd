@@ -107,7 +107,7 @@ func _physics_process(_delta: float) -> void:
 				_set_state(State.IDLE)
 			else:
 				var move_direction = global_position.direction_to(evade_position)
-				velocity = move_direction * stat.speed
+				velocity = move_direction * stat.evade_speed
 				
 	base_rig.update_walk_animation(velocity)
 	move_and_slide()
@@ -121,6 +121,9 @@ func kill() -> void:
 
 	hurtbox_collider.set_deferred("disabled", true)
 	hitbox_collider.set_deferred("disabled", true)
+	
+	if drop_part:
+		_spawn_drop_part(drop_part, global_position)
 	
 	death_sfx.play()
 	await death_sfx.finished

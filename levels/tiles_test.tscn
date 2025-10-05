@@ -13,7 +13,7 @@ size = Vector2(64, 64)
 resource_local_to_scene = true
 size = Vector2(128, 96)
 
-[node name="BaseLevel2" instance=ExtResource("1_k4yub")]
+[node name="BaseLevel3" instance=ExtResource("1_k4yub")]
 
 [node name="Player" parent="." index="0"]
 legs = ExtResource("7_rwns5")
