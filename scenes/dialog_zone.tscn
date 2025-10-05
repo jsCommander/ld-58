@@ -9,7 +9,7 @@ resource_local_to_scene = true
 size = Vector2(64, 64)
 
 [node name="DialogZone" type="Area2D"]
-z_index = 5
+z_index = 2
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_vtiao")

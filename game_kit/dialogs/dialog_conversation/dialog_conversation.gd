@@ -12,10 +12,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and allow_complitly_skip:
 		close_dialog({"exit": true})
 
-	if event is InputEventKey and event.pressed:
-		show_next_line()
-	
-	elif event is InputEventMouseButton and event.pressed:
+	if Input.is_action_just_released("action_main"):
 		show_next_line()
 
 func set_data(data: Dictionary) -> void:

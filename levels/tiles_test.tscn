@@ -32,13 +32,13 @@ scale = Vector2(5.78823, 4.23564)
 position = Vector2(-576, -64)
 
 [node name="UseboxCollider" parent="PartDropZone" index="0"]
-position = Vector2(32, 0)
-scale = Vector2(3, 10)
+position = Vector2(16, 0)
+scale = Vector2(3.5, 10)
 shape = SubResource("RectangleShape2D_2rgk3")
 
 [node name="Sprite2D" parent="PartDropZone" index="1"]
-position = Vector2(32, 0)
-scale = Vector2(3, 10)
+position = Vector2(16, 0)
+scale = Vector2(3.5, 10)
 
 [node name="DialogZone" parent="." index="8" instance=ExtResource("4_2rgk3")]
 position = Vector2(320, 64)

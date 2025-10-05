@@ -1,3 +1,4 @@
+@tool
 extends CharacterBody2D
 class_name Player
 
@@ -34,9 +35,11 @@ var current_health: int = 0
 
 func _ready() -> void:
 	_update_health(torso.max_health)
+	_update_parts()
+
 
 func _physics_process(_delta: float) -> void:
-	if is_dead:
+	if is_dead or Engine.is_editor_hint():
 		return
 
 	var move_direction = Utils.get_move_input_vector()
@@ -86,7 +89,7 @@ func kill() -> void:
 
 	hurtbox_collider.set_deferred("disabled", true)
 	usebox_collider.set_deferred("disabled", true)
-	
+
 	death_sfx.play()
 	await death_sfx.finished
 	queue_free()
