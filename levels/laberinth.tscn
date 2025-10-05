@@ -24,7 +24,6 @@ position = Vector2(1725, -286)
 
 [node name="CollisionShape2D" parent="LevelFinish" index="0"]
 position = Vector2(-8.05322, 15.9459)
-scale = Vector2(5.78823, 3.98649)
 
 [node name="PartDrop" parent="." index="6" instance=ExtResource("2_eqvwy")]
 position = Vector2(1210, 1748)
