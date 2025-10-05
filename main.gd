@@ -3,13 +3,21 @@ class_name Game
 
 const START_SCREEN = preload("res://levels/start_screen/start_screen.tscn")
 const END_SCREEN = preload("res://levels/end_screen/end_screen.tscn")
-const PART_TEST = preload("res://levels/part_test.tscn")
-const SHOOT_TEST = preload("res://levels/shoot_test.tscn")
+const INTRO = preload("res://levels/intro.tscn")
+const LEVEL_1 = preload("res://levels/Level1.tscn")
+const LEVEL_2 = preload("res://levels/Level2.tscn")
+const LEVEL_3 = preload("res://levels/Level3.tscn")
+const LEVEL_4 = preload("res://levels/Level4.tscn")
+const LEVEL_5 = preload("res://levels/Level5.tscn")
 
 const SCENE_TRANSITIONS: Dictionary[PackedScene, PackedScene] = {
-	START_SCREEN: PART_TEST,
-	PART_TEST: SHOOT_TEST,
-	SHOOT_TEST: END_SCREEN,
+	START_SCREEN: INTRO,
+	INTRO: LEVEL_1,
+	LEVEL_1: LEVEL_2,
+	LEVEL_2: LEVEL_3,
+	LEVEL_3: LEVEL_4,
+	LEVEL_4: LEVEL_5,
+	LEVEL_5: END_SCREEN,
 	END_SCREEN: START_SCREEN
 }
 
