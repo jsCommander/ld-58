@@ -39,7 +39,10 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_dead or Engine.is_editor_hint():
+	if Engine.is_editor_hint():
+		_update_parts()
+	
+	if is_dead:
 		return
 
 	var move_direction = Utils.get_move_input_vector()

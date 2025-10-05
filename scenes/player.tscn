@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bo0k7rb6v04lk"]
+[gd_scene load_steps=21 format=3 uid="uid://bo0k7rb6v04lk"]
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -6,9 +6,7 @@
 [ext_resource type="Resource" uid="uid://cghosthead001" path="res://resources/parts/ghost_head.tres" id="2_smehm"]
 [ext_resource type="Resource" uid="uid://1xamq7y2uemi" path="res://resources/parts/ghost_torso.tres" id="3_ur7pv"]
 [ext_resource type="Resource" uid="uid://cghostleg001" path="res://resources/parts/ghost_leg.tres" id="4_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://bo2dwr43sj36d" path="res://assets/chr/chr_demon_@0.5x.png" id="8_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="9_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://hdt10t37o23b" path="res://assets/chr/chr_bunny_@0.5x.png" id="10_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://d1o8xk5qcpq61" path="res://assets/chr/chr_ghost_@0.5x.png" id="10_f1ej7"]
 [ext_resource type="AudioStream" uid="uid://j17lraixogo4" path="res://assets/sfx/sfx_hurt_normalized.ogg" id="11_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://bvgyu4uqoahr" path="res://game_kit/scenes/damage_number/damage_number.tscn" id="12_3v2ag"]
@@ -96,7 +94,7 @@ texture = SubResource("GradientTexture2D_y4r1p")
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_3v2ag")
 position = Vector2(0, -32)
-texture = ExtResource("10_3v2ag")
+texture = ExtResource("10_f1ej7")
 
 [node name="LegMask" type="Sprite2D" parent="BaseRig/AnimationRig" index="4"]
 clip_children = 1
@@ -107,7 +105,7 @@ texture = SubResource("GradientTexture2D_d2wvv")
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_3v2ag")
 position = Vector2(0, -104)
-texture = ExtResource("8_d2wvv")
+texture = ExtResource("10_f1ej7")
 
 [node name="HealthBar" parent="BaseRig" instance=ExtResource("9_ur7pv")]
 unique_name_in_owner = true
@@ -115,6 +113,7 @@ offset_left = -48.0
 offset_top = -240.0
 offset_bottom = -232.0
 theme_type_variation = &"ProgressBarHealth"
+value = 100.0
 
 [node name="DamageNumber" parent="BaseRig" instance=ExtResource("12_3v2ag")]
 position = Vector2(32, -192)
