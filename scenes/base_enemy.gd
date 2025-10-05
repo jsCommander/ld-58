@@ -10,7 +10,8 @@ const ICN_HEART = preload("res://game_kit/assets/icons/icn_heart.png")
 enum State {
 	IDLE,
 	LOVE_PLAYER,
-	SHOOT,
+	ATTAK_PLAYER,
+	EVADE,
 }
 
 @export var stat: BaseEnemyStat
@@ -68,10 +69,10 @@ func _physics_process(_delta: float) -> void:
 				return
 				
 			if stat.bullet:
-				_set_state(State.SHOOT)
+				_set_state(State.ATTAK_PLAYER)
 				return
 			
-		State.SHOOT:
+		State.ATTAK_PLAYER:
 			if is_shoot_cooldown:
 				return
 
@@ -129,12 +130,12 @@ func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> vo
 		move_and_slide()
 
 func _set_agro() -> void:
-	if current_state == State.SHOOT:
+	if current_state == State.ATTAK_PLAYER:
 		agro_time.start()
 		return
 
-	if stat.bullet and current_state != State.SHOOT:
-		_set_state(State.SHOOT, {"agro_time": stat.agro_time_after_hurt})
+	if stat.bullet and current_state != State.ATTAK_PLAYER:
+		_set_state(State.ATTAK_PLAYER, {"agro_time": stat.agro_time_after_hurt})
 		return
 
 
@@ -187,7 +188,7 @@ func _set_state(new_state: State, data: Dictionary = {}) -> void:
 	Logger.log_debug(self.name, "Changing state from %s to %s" % [Utils.get_enum_key_name(State, old_state), Utils.get_enum_key_name(State, new_state)])
 
 	match old_state:
-		State.SHOOT:
+		State.ATTAK_PLAYER:
 			agro_time.stop()
 			think_buble.visible = false
 
@@ -200,7 +201,7 @@ func _set_state(new_state: State, data: Dictionary = {}) -> void:
 			agro_time.stop()
 			think_buble.visible = false
 		
-		State.SHOOT:
+		State.ATTAK_PLAYER:
 			think_buble.visible = true
 			think_buble.show_bubble(ICN_ANGER)
 			agro_time.wait_time = data.agro_time if data.has("agro_time") else stat.agro_time
@@ -222,12 +223,13 @@ func _spawn_bullet(target_position: Vector2) -> void:
 	get_parent().add_child(bullet)
 	bullet.init_bullet(bullet_spawn.global_position, target_position, Bullet.Type.ENEMY)
 
-	bullet.hit.connect(func(_target: Node2D, _bullet: Bullet):
-		_set_agro()
-	)
-
 	_start_shoot_cooldown(stat.shoot_cooldown)
 
 func _on_agro_time_timeout() -> void:
-	if current_state == State.SHOOT:
-		_set_state(State.IDLE)
+	if current_state == State.ATTAK_PLAYER:
+		var distance_to_player = global_position.distance_to(player.global_position)
+
+		if distance_to_player > stat.agro_range:
+			_set_state(State.IDLE)
+		else:
+			agro_time.start()
