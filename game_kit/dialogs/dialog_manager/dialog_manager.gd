@@ -2,12 +2,16 @@ extends CanvasLayer
 class_name DialogManager
 
 @onready var dialog_root: Control = %DialogRoot
+@onready var color_rect: ColorRect = $Control/ColorRect
 
 func _ready() -> void:
+	color_rect.visible = false
 	self.visible = false
 	
 func open_dialog(scene: PackedScene, data: Dictionary, pause_game := false)-> Signal:
 	self.visible = true
+	color_rect.visible = true
+
 	var dialog_instance: BaseDialog = scene.instantiate()
 
 	dialog_root.add_child(dialog_instance)
@@ -17,6 +21,7 @@ func open_dialog(scene: PackedScene, data: Dictionary, pause_game := false)-> Si
 		Logger.log_info(self.name, "Dialog finished")
 		dialog_instance.queue_free()
 		self.visible = false
+		color_rect.visible = false
 		
 		if pause_game:
 			get_tree().paused = false

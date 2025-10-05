@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvri044otsihk"]
+
+[ext_resource type="Script" uid="uid://b4wysrqgviryt" path="res://scenes/dialog_zone.gd" id="1_vtiao"]
+[ext_resource type="Resource" uid="uid://4jtf7vktiy85" path="res://resources/speakers.tres" id="2_br8i1"]
+[ext_resource type="LabelSettings" uid="uid://h1xjtp0vggpi" path="res://resources/big_label.tres" id="2_vtiao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rbal"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[node name="DialogZone" type="Area2D"]
+z_index = 5
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_vtiao")
+speakers = ExtResource("2_br8i1")
+json_file = "res://data/placeholder_dialog.json"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -128.0
+offset_top = -192.0
+offset_right = 127.0
+offset_bottom = -106.0
+text = "Dialog Zone"
+label_settings = ExtResource("2_vtiao")
+
+[node name="UseboxCollider" type="CollisionShape2D" parent="."]
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_1rbal")
+debug_color = Color(0.713726, 0.141176, 0.709804, 0.301961)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

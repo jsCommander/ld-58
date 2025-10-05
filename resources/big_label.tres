@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://h1xjtp0vggpi"]
+
+[ext_resource type="FontFile" uid="uid://cof01hgecqg2p" path="res://game_kit/assets/fonts/HennyPenny-Regular.ttf" id="1_bx1yv"]
+
+[resource]
+font = ExtResource("1_bx1yv")
+font_size = 48

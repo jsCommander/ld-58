@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://delavb4qooerr"]
 
 [ext_resource type="Script" uid="uid://djds133f6dfbn" path="res://game_kit/dialogs/dialog_conversation/dialog_conversation.gd" id="1_mgx3p"]
-[ext_resource type="Texture2D" uid="uid://dune57ktgvlr4" path="res://assets/bee_vs_bear/chr_man_head_@0.5x.png" id="2_ihtup"]
+[ext_resource type="Texture2D" uid="uid://beplhvlaukcbb" path="res://game_kit/assets/char/char_bee_smile_@0.5x.png" id="2_ihtup"]
 
 [node name="DialogConversation" type="Control"]
 custom_minimum_size = Vector2(0, 400)

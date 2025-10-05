@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://ci3k1w33mph4p"]
+[gd_scene load_steps=6 format=4 uid="uid://ci3k1w33mph4p"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_k4yub"]
 [ext_resource type="PackedScene" uid="uid://cqv0piuxvqabd" path="res://scenes/part_drop_zone.tscn" id="3_c8gw6"]
+[ext_resource type="PackedScene" uid="uid://dvri044otsihk" path="res://scenes/dialog_zone.tscn" id="4_2rgk3"]
 [ext_resource type="Resource" uid="uid://cdemonleg001" path="res://resources/parts/demon_leg.tres" id="7_rwns5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rgk3"]
@@ -38,5 +39,8 @@ shape = SubResource("RectangleShape2D_2rgk3")
 [node name="Sprite2D" parent="PartDropZone" index="1"]
 position = Vector2(32, 0)
 scale = Vector2(3, 10)
+
+[node name="DialogZone" parent="." index="8" instance=ExtResource("4_2rgk3")]
+position = Vector2(320, 64)
 
 [editable path="PartDropZone"]

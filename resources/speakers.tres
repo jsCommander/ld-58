@@ -1,9 +1,25 @@
-[gd_resource type="Resource" script_class="ConversationSpeakerArray" load_steps=3 format=3 uid="uid://4jtf7vktiy85"]
+[gd_resource type="Resource" script_class="ConversationSpeakerArray" load_steps=7 format=3 uid="uid://4jtf7vktiy85"]
 
 [ext_resource type="Script" uid="uid://cfo1dhekpixoi" path="res://game_kit/dialogs/dialog_conversation/conversation_speaker_array.gd" id="1_4lehk"]
 [ext_resource type="Script" uid="uid://ctyppmyv6ebgq" path="res://game_kit/dialogs/dialog_conversation/conversation_speaker.gd" id="2_kfeoj"]
+[ext_resource type="Texture2D" uid="uid://d1o8xk5qcpq61" path="res://assets/chr/chr_ghost_@0.5x.png" id="3_kfeoj"]
+[ext_resource type="Texture2D" uid="uid://bo2dwr43sj36d" path="res://assets/chr/chr_demon_@0.5x.png" id="4_437cj"]
+
+[sub_resource type="Resource" id="Resource_437cj"]
+script = ExtResource("2_kfeoj")
+id = "player"
+name = "Izzi"
+texture = ExtResource("3_kfeoj")
+metadata/_custom_type_script = "uid://ctyppmyv6ebgq"
+
+[sub_resource type="Resource" id="Resource_agdxm"]
+script = ExtResource("2_kfeoj")
+id = "boss"
+name = "Velz"
+texture = ExtResource("4_437cj")
+metadata/_custom_type_script = "uid://ctyppmyv6ebgq"
 
 [resource]
 script = ExtResource("1_4lehk")
-speakers = Array[ExtResource("2_kfeoj")]([])
+speakers = Array[ExtResource("2_kfeoj")]([SubResource("Resource_437cj"), SubResource("Resource_agdxm")])
 metadata/_custom_type_script = "uid://cfo1dhekpixoi"
