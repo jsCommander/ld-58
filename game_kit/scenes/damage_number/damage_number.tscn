@@ -20,3 +20,5 @@ offset_right = 40.0
 offset_bottom = 58.0
 text = "-6"
 label_settings = SubResource("LabelSettings_rmmqo")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

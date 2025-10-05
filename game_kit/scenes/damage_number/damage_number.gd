@@ -3,6 +3,8 @@ class_name DamageNumber
 
 @onready var label_to_clone: Label = %LabelToClone
 
+var spawned_labels: Array = []
+
 func _ready() -> void:
 	label_to_clone.visible = false
 
@@ -17,6 +19,7 @@ func spawn(damage: String, direction: Vector2) -> void:
 	new_label.visible = true
 
 	get_tree().root.add_child(new_label)
+	spawned_labels.append(new_label)
 	new_label.global_position = global_position
 
 	await animate_damage_number(new_label, direction)
@@ -49,3 +52,10 @@ func animate_damage_number(new_label: Label, direction: Vector2) -> void:
 	await fade_tween.finished
 
 	new_label.queue_free()
+
+func _on_tree_exiting() -> void:
+	for label in spawned_labels:
+		if is_instance_valid(label):
+			Animations.fade_out(label, 0.2).finished.connect(func(): 
+				if is_instance_valid(label):
+					label.queue_free())

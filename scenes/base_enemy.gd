@@ -8,6 +8,10 @@ class_name BaseEnemy
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var damage_number: DamageNumber = $DamageNumber
 @onready var hit_sfx: AudioStreamPlayer2D = %HitSfx
+@onready var think_buble: ThinkBubble = %ThinkBuble
+@onready var death_sfx: AudioStreamPlayer2D = %DeathSfx
+@onready var hurtbox_collider: CollisionShape2D = %HurtboxCollider
+@onready var hitbox_collider: CollisionShape2D = %HitboxCollider
 
 var current_health: int = 0
 var is_dead: bool = false
@@ -20,6 +24,13 @@ func kill() -> void:
 		return
 
 	is_dead = true
+	base_rig.visible = false
+
+	hurtbox_collider.set_deferred("disabled", true)
+	hitbox_collider.set_deferred("disabled", true)
+	
+	death_sfx.play()
+	await death_sfx.finished
 	queue_free()
 
 func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> void:

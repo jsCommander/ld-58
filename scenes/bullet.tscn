@@ -9,6 +9,7 @@ resource_local_to_scene = true
 size = Vector2(64, 32)
 
 [node name="Bullet" type="CharacterBody2D"]
+z_index = 6
 script = ExtResource("1_l5glv")
 
 [node name="BulletTexture" type="Sprite2D" parent="."]

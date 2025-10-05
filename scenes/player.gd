@@ -24,6 +24,8 @@ signal killed()
 @onready var bullet_spawn: Marker2D = %BulletSpawn
 @onready var shoot_sfx: AudioStreamPlayer2D = %ShootSfx
 @onready var damage_number: DamageNumber = $BaseRig/DamageNumber
+@onready var death_sfx: AudioStreamPlayer2D = %DeathSfx
+@onready var usebox_collider: CollisionShape2D = %UseboxCollider
 
 var is_dead = false
 var is_shoot_cooldown: bool = false
@@ -80,6 +82,14 @@ func kill() -> void:
 
 	is_dead = true
 	killed.emit()
+	base_rig.visible = false
+
+	hurtbox_collider.set_deferred("disabled", true)
+	usebox_collider.set_deferred("disabled", true)
+	
+	death_sfx.play()
+	await death_sfx.finished
+	queue_free()
 
 func _update_health(health: int) -> void:
 	current_health = clamp(health, 0, torso.max_health)

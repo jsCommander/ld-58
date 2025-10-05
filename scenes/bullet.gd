@@ -51,3 +51,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		var enemy = body as BaseEnemy
 		enemy.apply_damage(stat.damage, self, stat.knockback_force)
 		kill()
+		
+	if body is BreakableWall:
+		var wall = body as BreakableWall
+		wall.apply_damage(stat.damage)
+		kill()
