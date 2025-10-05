@@ -1,10 +1,9 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://daq7yoxlk2w4t"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://daq7yoxlk2w4t"]
 
 [ext_resource type="Texture2D" uid="uid://c06pjqopv1p57" path="res://assets/tiles/tiles_@0.5x.png" id="1_hpfdd"]
 [ext_resource type="PackedScene" uid="uid://lsx8o37kew35" path="res://scenes/tiles/tile_forest.tscn" id="2_fbgq7"]
 [ext_resource type="PackedScene" uid="uid://vd4nnumlya1n" path="res://scenes/tiles/stump.tscn" id="3_yhbi4"]
 [ext_resource type="PackedScene" uid="uid://txadi4x7ek66" path="res://scenes/tiles/dead_tree.tscn" id="4_a3pl1"]
-[ext_resource type="PackedScene" uid="uid://cqv0piuxvqabd" path="res://scenes/part_drop_zone.tscn" id="5_g2blr"]
 [ext_resource type="PackedScene" uid="uid://1rcu5raohpjd" path="res://scenes/tiles/tile_forest2.tscn" id="6_p8e8f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xy01o"]
@@ -56,7 +55,6 @@ texture_region_size = Vector2i(128, 128)
 scenes/1/scene = ExtResource("2_fbgq7")
 scenes/2/scene = ExtResource("3_yhbi4")
 scenes/3/scene = ExtResource("4_a3pl1")
-scenes/4/scene = ExtResource("5_g2blr")
 scenes/5/scene = ExtResource("6_p8e8f")
 
 [resource]
