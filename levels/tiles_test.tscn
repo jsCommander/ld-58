@@ -30,6 +30,7 @@ scale = Vector2(5.78823, 4.23564)
 
 [node name="PartDropZone" parent="." index="7" instance=ExtResource("3_c8gw6")]
 position = Vector2(-576, -64)
+drop_force = 500
 
 [node name="UseboxCollider" parent="PartDropZone" index="0"]
 position = Vector2(16, 0)

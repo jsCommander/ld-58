@@ -146,32 +146,35 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 		if old_part != GHOST_HEAD and old_part != GHOST_TORSO and old_part != GHOST_LEG:
 			_spawn_part(old_part, part_drop.global_position)
 
-func drop_all_parts() -> void:
+func drop_all_parts(drop_direction: Vector2, drop_force: int) -> void:
+	var end_position = global_position + drop_direction.normalized() * drop_force
+	
 	if head != GHOST_HEAD:
-		_spawn_part(head, global_position)
+		_spawn_part(head, global_position, end_position)
 		head = GHOST_HEAD
 
 	if torso != GHOST_TORSO:
-		_spawn_part(torso, global_position)
+		_spawn_part(torso, global_position, end_position)
 		torso = GHOST_TORSO
 
 	if legs != GHOST_LEG:
-		_spawn_part(legs, global_position)
+		_spawn_part(legs, global_position, end_position)
 		legs = GHOST_LEG
 
 	_update_parts()
 
-func _spawn_part(part: BasePart, spawn_position: Vector2) -> void:
+func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2 = Vector2.ZERO) -> void:
 		var part_drop = PART_DROP.instantiate()
 		part_drop.part = part
 		part_drop.global_position = spawn_position
 		
 		get_parent().call_deferred("add_child", part_drop)
 		part_drop.call_deferred("disable_usebox", 2.0)
-
 		part_drop.call_deferred("animate_spawn", 100)
 
-		create_tween().tween_property(part_drop, "global_position", spawn_position, 1)
+		if end_position != Vector2.ZERO:
+			create_tween().tween_property(part_drop, "global_position", end_position, 1)
+
 
 func _spawn_bullet(target_position: Vector2) -> void:
 	if not torso.bullet:
