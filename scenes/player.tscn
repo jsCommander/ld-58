@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="13_jej6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
-size = Vector2(96, 128)
+size = Vector2(96, 96)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
 resource_local_to_scene = true
@@ -63,7 +63,7 @@ torso = ExtResource("3_ur7pv")
 legs = ExtResource("4_ur7pv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -64)
+position = Vector2(0, -48)
 shape = SubResource("RectangleShape2D_smehm")
 
 [node name="BaseRig" parent="." instance=ExtResource("1_3vyb7")]
