@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfd3s04v2gwxx"]
+[gd_scene load_steps=2 format=3 uid="uid://cmif76qphomat"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_gq8fh"]
 
-[node name="BaseLevel" instance=ExtResource("1_gq8fh")]
+[node name="Level3" instance=ExtResource("1_gq8fh")]
 
 [node name="CollisionShape2D" parent="LevelFinish" index="0"]
 position = Vector2(-8.05328, 15.9459)
