@@ -68,7 +68,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		kill()
 		hit.emit(player, self)
 
-	if body is BreakableWall and type == Type.PLAYER:
+	if body is BreakableWall:
 		var wall = body as BreakableWall
 		wall.apply_damage(stat.damage)
 		kill()
