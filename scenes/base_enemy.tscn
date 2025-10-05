@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dpg8ept1feg5s"]
+[gd_scene load_steps=15 format=3 uid="uid://dpg8ept1feg5s"]
 
 [ext_resource type="Script" uid="uid://cqjmakyrpbqh7" path="res://scenes/base_enemy.gd" id="1_kegi0"]
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="2_64ljx"]
-[ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_tonni"]
+[ext_resource type="Resource" uid="uid://2ea2k4wqds5t" path="res://resources/enemy/pumpkin_enemy.tres" id="2_hf87f"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="3_tonni"]
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="5_64ljx"]
 [ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="5_tonni"]
@@ -10,14 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://dptc8rddhfkwn" path="res://assets/sfx/sfx_punch1_normalized.ogg" id="8_0gk8p"]
 [ext_resource type="PackedScene" uid="uid://jgjks03ps4ir" path="res://game_kit/scenes/think_bubble/think_bubble.tscn" id="9_hf87f"]
 [ext_resource type="AudioStream" uid="uid://1rwtd77svoav" path="res://assets/sfx/sfx_pickup_ou_normalized.ogg" id="10_hf87f"]
-
-[sub_resource type="Resource" id="Resource_j4o54"]
-script = ExtResource("2_tonni")
-max_health = 100
-damage = 10
-speed = 400
-knockback_force = 100
-metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwavj"]
 size = Vector2(90, 106)
@@ -37,8 +29,10 @@ resource_local_to_scene = true
 size = Vector2(128, 168)
 
 [node name="BaseEnemy" type="CharacterBody2D"]
+z_index = 5
+y_sort_enabled = true
 script = ExtResource("1_kegi0")
-stat = SubResource("Resource_j4o54")
+stat = ExtResource("2_hf87f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -80)
@@ -102,6 +96,15 @@ stream = ExtResource("8_0gk8p")
 unique_name_in_owner = true
 stream = ExtResource("10_hf87f")
 
+[node name="AgroTime" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -96)
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="AgroTime" to="." method="_on_agro_time_timeout"]
 
 [editable path="BaseRig"]

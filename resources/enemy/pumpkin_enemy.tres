@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=3 format=3 uid="uid://2ea2k4wqds5t"]
+
+[ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_py621"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="3_py621"]
+
+[resource]
+script = ExtResource("2_py621")
+texture = ExtResource("3_py621")
+max_health = 100
+damage = 10
+speed = 400
+knockback_force = 100
+can_move = false
+shoot_cooldown = 0.5
+agro_shoot_range = 600
+agro_time = 2.0
+metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"

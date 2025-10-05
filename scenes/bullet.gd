@@ -1,7 +1,15 @@
 extends CharacterBody2D
 class_name Bullet
 
+enum Type {
+	PLAYER,
+	ENEMY
+}
+
 @export var stat: BulletStat
+@export var type: Type = Type.PLAYER
+
+signal hit(target: Node2D, bullet: Bullet)
 
 @onready var bullet_texture: Sprite2D = %BulletTexture
 @onready var hitbox: Area2D = %Hitbox
@@ -28,7 +36,8 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-func init_bullet(_spawn_position: Vector2, _target_position: Vector2) -> void:
+func init_bullet(_spawn_position: Vector2, _target_position: Vector2, _type: Type) -> void:
+	type = _type
 	spawn_position = _spawn_position
 	fly_direction = spawn_position.direction_to(_target_position)
 	global_position = _spawn_position
@@ -47,12 +56,20 @@ func update_bullet_texture() -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	var body = area.get_parent()
 
-	if body is BaseEnemy:
+	if body is BaseEnemy and type == Type.PLAYER:
 		var enemy = body as BaseEnemy
 		enemy.apply_damage(stat.damage, self, stat.knockback_force)
 		kill()
-		
-	if body is BreakableWall:
+		hit.emit(enemy, self)
+
+	if body is Player and type == Type.ENEMY:
+		var player = body as Player
+		player.apply_damage(stat.damage, self, stat.knockback_force)
+		kill()
+		hit.emit(player, self)
+
+	if body is BreakableWall and type == Type.PLAYER:
 		var wall = body as BreakableWall
 		wall.apply_damage(stat.damage)
 		kill()
+		hit.emit(wall, self)

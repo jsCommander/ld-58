@@ -34,6 +34,7 @@ var is_invulnebility: bool = false
 var current_health: int = 0
 
 func _ready() -> void:
+	add_to_group("player")
 	_update_health(torso.max_health)
 	_update_parts()
 
@@ -184,7 +185,7 @@ func _spawn_bullet(target_position: Vector2) -> void:
 	bullet.stat = torso.bullet
 
 	get_parent().add_child(bullet)
-	bullet.init_bullet(bullet_spawn.global_position, target_position)
+	bullet.init_bullet(bullet_spawn.global_position, target_position, Bullet.Type.PLAYER)
 
 	_start_shoot_cooldown(torso.shoot_cooldown)
 	shoot_sfx.play()
