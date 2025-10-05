@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bb0ds48m2aea" path="res://resources/parts/bunny_torso.tres" id="4_eqvwy"]
 [ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="5_i8yea"]
 
-[node name="BaseLevel3" instance=ExtResource("1_gyelk")]
+[node name="BaseLevel4" instance=ExtResource("1_gyelk")]
 
 [node name="Player" parent="." index="0"]
 position = Vector2(-1109, 1739)

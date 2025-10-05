@@ -43,9 +43,9 @@ var evade_position: Vector2
 func _ready() -> void:
 	_update_health(stat.max_health)
 	_update_texture()
-	_set_state(State.IDLE)
 	# spawn position is evade anchor
 	evade_position = global_position
+	_set_state(State.IDLE)
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -63,23 +63,16 @@ func _physics_process(_delta: float) -> void:
 
 	var distance_to_player = global_position.distance_to(player.global_position)
 	var is_player_in_agro_zone = distance_to_player <= stat.agro_range
-	var new_velocity: Vector2 = Vector2.ZERO
-			
+
 	match current_state:
-		State.IDLE:		
-			if not is_player_in_agro_zone:
-				return
+		State.IDLE:
+			velocity = Vector2.ZERO
 
-			if player.is_player_has_full_set(stat.type):
-				_set_state(State.LOVE_PLAYER)
-				return
-			
-			# do nothing if can't shoot and can't move
-			if not stat.bullet and not stat.can_move:
-				return
-
-			_set_state(State.ATTAK_PLAYER)
-			return
+			if is_player_in_agro_zone:
+				if player.is_player_has_full_set(stat.type):
+					_set_state(State.LOVE_PLAYER)
+				elif stat.bullet or stat.can_move:
+					_set_state(State.ATTAK_PLAYER)
 			
 		State.ATTAK_PLAYER:
 			# evade if too far from evade position
@@ -87,16 +80,14 @@ func _physics_process(_delta: float) -> void:
 
 			if distance_to_evade_position > stat.agro_max_distance:
 				_set_state(State.EVADE)
-				return
-
 			# move to player
-			if stat.can_move:
+			elif stat.can_move:
 				var move_direction = global_position.direction_to(player.global_position)
-				new_velocity = move_direction * stat.speed
+				velocity = move_direction * stat.speed
 
 				# stop following if can shoot and player too close
 				if stat.bullet and distance_to_player < stat.agro_range:
-					new_velocity = Vector2.ZERO
+					velocity = Vector2.ZERO
 
 			#  if can shoot than shoot
 			if stat.bullet and not is_shoot_cooldown:
@@ -105,25 +96,20 @@ func _physics_process(_delta: float) -> void:
 		State.LOVE_PLAYER:
 			if not is_player_in_agro_zone:
 				_set_state(State.IDLE)
-				return
 
-			if not player.is_player_has_full_set(stat.type):
+			elif not player.is_player_has_full_set(stat.type):
 				_set_state(State.IDLE)
-				return
 
 		State.EVADE:
 			var distance_to_evade_position = global_position.distance_to(evade_position)
 
 			if distance_to_evade_position <= 10:
 				_set_state(State.IDLE)
-				return
-
-			var move_direction = global_position.direction_to(evade_position)
-
-			new_velocity = move_direction * stat.speed
-
+			else:
+				var move_direction = global_position.direction_to(evade_position)
+				velocity = move_direction * stat.speed
+				
 	base_rig.update_walk_animation(velocity)
-	velocity = new_velocity
 	move_and_slide()
 
 func kill() -> void:
@@ -169,7 +155,9 @@ func _set_agro() -> void:
 		agro_time.start()
 		return
 
-	if stat.bullet and current_state != State.ATTAK_PLAYER:
+	var can_attack = stat.bullet or stat.can_move
+
+	if can_attack and current_state != State.ATTAK_PLAYER:
 		_set_state(State.ATTAK_PLAYER, {"agro_time": stat.agro_time_after_hurt})
 		return
 

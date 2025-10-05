@@ -9,6 +9,10 @@ var walk_tween: Tween
 var pulse_tween: Tween
 var is_pulsing: bool = false
 
+func _ready() -> void:
+	walk_tween = Animations.walk(animation_rig, 0.1, 0.3, true)
+	walk_tween.pause()
+
 func set_animation_rig_direction(direction: Vector2) -> void:
 	if direction.x > 0 and animation_rig.scale.x < 0:
 		animation_rig.scale.x = abs(animation_rig.scale.x)
@@ -17,15 +21,17 @@ func set_animation_rig_direction(direction: Vector2) -> void:
 
 func update_walk_animation(_velocity: Vector2):
 	if _velocity == Vector2.ZERO and is_moving:
+		# Logger.log_debug(self.name, "kill walk tween")
 		is_moving = false
-		walk_tween.kill()
+		walk_tween.pause()
 		animation_rig.rotation = 0.0 
 		return
 	
 	if _velocity != Vector2.ZERO and not is_moving:
+		# Logger.log_debug(self.name, "start walk tween")
 		is_moving = true
 		animation_rig.rotation = 0.0
-		walk_tween = Animations.walk(animation_rig, 0.1, 0.3, true)
+		walk_tween.play()
 		return
 
 func start_pulse_animation() -> void:

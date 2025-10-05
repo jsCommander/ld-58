@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://ci3k1w33mph4p"]
+[gd_scene load_steps=7 format=4 uid="uid://ci3k1w33mph4p"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_k4yub"]
 [ext_resource type="PackedScene" uid="uid://cqv0piuxvqabd" path="res://scenes/part_drop_zone.tscn" id="3_c8gw6"]
@@ -8,6 +8,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rgk3"]
 resource_local_to_scene = true
 size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50xad"]
+resource_local_to_scene = true
+size = Vector2(128, 96)
 
 [node name="BaseLevel2" instance=ExtResource("1_k4yub")]
 
@@ -44,4 +48,12 @@ scale = Vector2(3.5, 10)
 [node name="DialogZone" parent="." index="8" instance=ExtResource("4_2rgk3")]
 position = Vector2(320, 64)
 
+[node name="UseboxCollider" parent="DialogZone" index="1"]
+position = Vector2(-64, 32)
+shape = SubResource("RectangleShape2D_50xad")
+
+[node name="DialogZone2" parent="." index="9" instance=ExtResource("4_2rgk3")]
+position = Vector2(-160, -224)
+
 [editable path="PartDropZone"]
+[editable path="DialogZone"]
