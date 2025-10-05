@@ -1,17 +1,14 @@
 extends Node2D
 
-@export var damage: int = 5
-@export var knockback_force: int = 50
+@onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	var body = area.get_parent()
-
-	if body is BaseEnemy:
-		var enemy = body as BaseEnemy
-		if enemy.type != Types.SetType.DEMON:
-			enemy.apply_damage(damage, self, knockback_force)
-
+func _on_usebox_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var player = body as Player
-		if player.legs.set_type != Types.SetType.DEMON:
-			player.apply_damage(damage, self, knockback_force)
+		if player.legs.set_type == Types.SetType.PUMKIN:
+			collision_shape_2d.set_deferred("disabled", true)
+
+
+func _on_usebox_body_exited(body: Node2D) -> void:
+	if body is Player:
+		collision_shape_2d.set_deferred("disabled", false)

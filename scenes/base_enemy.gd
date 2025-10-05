@@ -188,8 +188,8 @@ func _spawn_drop_part(part: BasePart, spawn_position: Vector2) -> void:
 func _update_health(health: int) -> void:
 	current_health = clamp(health, 0, stat.max_health)
 
-	health_bar.value = current_health
 	health_bar.max_value = stat.max_health
+	health_bar.value = current_health
 	
 	if current_health <= 0:
 		kill()

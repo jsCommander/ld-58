@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="13_jej6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
-size = Vector2(96, 64)
+size = Vector2(96, 128)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
 resource_local_to_scene = true

@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bthw3j1rb1pl5"]
+[gd_scene load_steps=8 format=3 uid="uid://bthw3j1rb1pl5"]
 
 [ext_resource type="Texture2D" uid="uid://eiw4jcudbojq" path="res://assets/ld-58/prop_bush-red_@0.5x.png" id="1_4wo3t"]
 [ext_resource type="Script" uid="uid://dkddwypibekyy" path="res://scenes/tiles/tile_red_bush.gd" id="1_8gy6q"]
 [ext_resource type="PackedScene" uid="uid://dk56elq863m31" path="res://game_kit/scenes/base_shadow.tscn" id="4_8gy6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gy6q"]
+size = Vector2(128, 64)
 
 [sub_resource type="Shader" id="Shader_1aulc"]
 code = "shader_type canvas_item;
@@ -26,11 +29,16 @@ shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wo3t"]
 resource_local_to_scene = true
-size = Vector2(128, 128)
+size = Vector2(192, 128)
 
-[node name="TileRed-bush" type="Node2D"]
+[node name="TileRed-bush" type="StaticBody2D"]
 y_sort_enabled = true
+collision_mask = 0
 script = ExtResource("1_8gy6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_8gy6q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -43,15 +51,14 @@ texture = ExtResource("1_4wo3t")
 position = Vector2(0, 25)
 scale = Vector2(0.761987, 0.761987)
 
-[node name="Hitbox" type="Area2D" parent="."]
-position = Vector2(0, 32)
+[node name="Usebox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 448
+collision_mask = 2
 monitorable = false
 
-[node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -32)
+[node name="UseboxCollider" type="CollisionShape2D" parent="Usebox"]
 shape = SubResource("RectangleShape2D_4wo3t")
-debug_color = Color(0.717647, 0, 0, 0.286275)
+debug_color = Color(0.713726, 0.141176, 0.709804, 0.301961)
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Usebox" to="." method="_on_usebox_body_entered"]
+[connection signal="body_exited" from="Usebox" to="." method="_on_usebox_body_exited"]
