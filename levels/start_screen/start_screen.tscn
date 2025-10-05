@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bx5c0c3vhjjr"]
 
 [ext_resource type="Script" uid="uid://8hg4x1eob83h" path="res://levels/start_screen/start_screen.gd" id="2_52a50"]
-[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://game_kit/assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_synii"]
+[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_synii"]
 [ext_resource type="FontFile" uid="uid://cof01hgecqg2p" path="res://game_kit/assets/fonts/HennyPenny-Regular.ttf" id="3_qeg8x"]
 
 [sub_resource type="Gradient" id="Gradient_synii"]
