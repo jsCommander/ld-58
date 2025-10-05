@@ -29,6 +29,7 @@ enum State {
 @onready var body: Sprite2D = $BaseRig/AnimationRig/Body
 @onready var agro_time: Timer = %AgroTime
 @onready var bullet_spawn: Marker2D = %BulletSpawn
+@onready var regen_timer: Timer = %RegenTimer
 
 var current_health: int = 0
 var is_dead: bool = false
@@ -37,10 +38,14 @@ var is_shoot_cooldown: bool = false
 var current_state: State = State.IDLE
 var player: Player
 
+var evade_position: Vector2
+
 func _ready() -> void:
 	_update_health(stat.max_health)
 	_update_texture()
 	_set_state(State.IDLE)
+	# spawn position is evade anchor
+	evade_position = global_position
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -50,50 +55,76 @@ func _physics_process(_delta: float) -> void:
 	if is_dead:
 		return
 
+	if not is_instance_valid(player):
+		player = _find_player()
+			
+	if not player:
+		return
+
+	var distance_to_player = global_position.distance_to(player.global_position)
+	var is_player_in_agro_zone = distance_to_player <= stat.agro_range
+	var new_velocity: Vector2 = Vector2.ZERO
+			
 	match current_state:
-		State.IDLE:
-			if not is_instance_valid(player):
-				player = _find_player()
-			
-			if not player:
-				return
-				
-			var distance_to_player = global_position.distance_to(player.global_position)
-			var is_player_in_agro_zone = distance_to_player <= stat.agro_range
-			
+		State.IDLE:		
 			if not is_player_in_agro_zone:
 				return
 
 			if player.is_player_has_full_set(stat.type):
 				_set_state(State.LOVE_PLAYER)
 				return
-				
-			if stat.bullet:
-				_set_state(State.ATTAK_PLAYER)
+			
+			# do nothing if can't shoot and can't move
+			if not stat.bullet and not stat.can_move:
 				return
+
+			_set_state(State.ATTAK_PLAYER)
+			return
 			
 		State.ATTAK_PLAYER:
-			if is_shoot_cooldown:
+			# evade if too far from evade position
+			var distance_to_evade_position = global_position.distance_to(evade_position)
+
+			if distance_to_evade_position > stat.agro_max_distance:
+				_set_state(State.EVADE)
 				return
 
-			_spawn_bullet(player.global_position)
+			# move to player
+			if stat.can_move:
+				var move_direction = global_position.direction_to(player.global_position)
+				new_velocity = move_direction * stat.speed
+
+				# stop following if can shoot and player too close
+				if stat.bullet and distance_to_player < stat.agro_range:
+					new_velocity = Vector2.ZERO
+
+			#  if can shoot than shoot
+			if stat.bullet and not is_shoot_cooldown:
+				_spawn_bullet(player.global_position)
 
 		State.LOVE_PLAYER:
-			if not is_instance_valid(player):
-				player = _find_player()
-			
-			if not player:
-				return
-
-			var distance_to_player = global_position.distance_to(player.global_position)
-
-			if distance_to_player > stat.agro_range:
+			if not is_player_in_agro_zone:
 				_set_state(State.IDLE)
 				return
 
 			if not player.is_player_has_full_set(stat.type):
 				_set_state(State.IDLE)
 				return
+
+		State.EVADE:
+			var distance_to_evade_position = global_position.distance_to(evade_position)
+
+			if distance_to_evade_position <= 10:
+				_set_state(State.IDLE)
+				return
+
+			var move_direction = global_position.direction_to(evade_position)
+
+			new_velocity = move_direction * stat.speed
+
+	base_rig.update_walk_animation(velocity)
+	velocity = new_velocity
+	move_and_slide()
 
 func kill() -> void:
 	if is_dead:
@@ -130,6 +161,10 @@ func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> vo
 		move_and_slide()
 
 func _set_agro() -> void:
+	# do nothing if can't move and can't shoot
+	if not stat.can_move and not stat.bullet:
+		return
+
 	if current_state == State.ATTAK_PLAYER:
 		agro_time.start()
 		return
@@ -137,7 +172,6 @@ func _set_agro() -> void:
 	if stat.bullet and current_state != State.ATTAK_PLAYER:
 		_set_state(State.ATTAK_PLAYER, {"agro_time": stat.agro_time_after_hurt})
 		return
-
 
 func _update_texture() -> void:
 	if body.texture != stat.texture:
@@ -188,6 +222,9 @@ func _set_state(new_state: State, data: Dictionary = {}) -> void:
 	Logger.log_debug(self.name, "Changing state from %s to %s" % [Utils.get_enum_key_name(State, old_state), Utils.get_enum_key_name(State, new_state)])
 
 	match old_state:
+		State.IDLE:
+			regen_timer.stop()
+
 		State.ATTAK_PLAYER:
 			agro_time.stop()
 			think_buble.visible = false
@@ -195,10 +232,10 @@ func _set_state(new_state: State, data: Dictionary = {}) -> void:
 		State.LOVE_PLAYER:
 			think_buble.visible = false
 
-
 	match new_state:
 		State.IDLE:
 			agro_time.stop()
+			regen_timer.start()
 			think_buble.visible = false
 		
 		State.ATTAK_PLAYER:
@@ -233,3 +270,7 @@ func _on_agro_time_timeout() -> void:
 			_set_state(State.IDLE)
 		else:
 			agro_time.start()
+
+func _on_regen_timer_timeout() -> void:
+	if current_state == State.IDLE:
+		_update_health(current_health + stat.health_regen)

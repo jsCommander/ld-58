@@ -1,14 +1,34 @@
-[gd_scene load_steps=10 format=4 uid="uid://che0io3yln5jh"]
+[gd_scene load_steps=13 format=4 uid="uid://che0io3yln5jh"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_pss4d"]
 [ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="2_pss4d"]
 [ext_resource type="Resource" uid="uid://c0b8cnb0drvls" path="res://resources/enemy/bunny_enemy.tres" id="4_1qudv"]
+[ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="4_dty1v"]
 [ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="4_pss4d"]
 [ext_resource type="Resource" uid="uid://bb0ds48m2aea" path="res://resources/parts/bunny_torso.tres" id="5_aips6"]
 [ext_resource type="Resource" uid="uid://bta01s48m2aea" path="res://resources/parts/demon_torso.tres" id="5_kdpsx"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="5_kgd01"]
 [ext_resource type="PackedScene" uid="uid://dpg8ept1feg5s" path="res://scenes/base_enemy.tscn" id="6_aips6"]
 [ext_resource type="Resource" uid="uid://bq6qwgn5aksdc" path="res://resources/parts/pumpkin_torso.tres" id="7_1qudv"]
 [ext_resource type="Resource" uid="uid://cbunnyhead001" path="res://resources/parts/bunny_head.tres" id="9_pp1sg"]
+
+[sub_resource type="Resource" id="Resource_h0jql"]
+script = ExtResource("4_dty1v")
+texture = ExtResource("5_kgd01")
+type = 2
+max_health = 100
+health_regen = 5
+damage = 10
+speed = 400
+knockback_force = 100
+can_move = true
+agro_time = 2.0
+agro_time_after_hurt = 5.0
+agro_range = 600
+agro_max_distance = 500
+evade_speed = 600.0
+shoot_cooldown = 0.5
+metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"
 
 [node name="BaseLevel2" instance=ExtResource("1_pss4d")]
 
@@ -34,6 +54,7 @@ position = Vector2(1072, 448)
 
 [node name="BaseEnemy3" parent="." index="8" instance=ExtResource("6_aips6")]
 position = Vector2(1056, 832)
+stat = SubResource("Resource_h0jql")
 
 [node name="BaseEnemy4" parent="." index="9" instance=ExtResource("6_aips6")]
 position = Vector2(-160, 1904)

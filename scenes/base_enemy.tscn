@@ -104,7 +104,12 @@ one_shot = true
 unique_name_in_owner = true
 position = Vector2(0, -96)
 
+[node name="RegenTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.5
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="AgroTime" to="." method="_on_agro_time_timeout"]
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
 
 [editable path="BaseRig"]
