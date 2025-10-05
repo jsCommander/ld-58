@@ -1,7 +1,7 @@
 extends Node2D
 class_name BreakableWall
 
-@export var max_health: int = 100
+@export var max_health: int = 40
 
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 @onready var sprite_2d: Sprite2D = %Sprite2D

@@ -77,10 +77,11 @@ func _physics_process(_delta: float) -> void:
 		State.ATTAK_PLAYER:
 			# evade if too far from evade position
 			var distance_to_evade_position = global_position.distance_to(evade_position)
+			var shoot_distance = stat.bullet.attack_range if stat.bullet else 0
 
 			if stat.can_move and distance_to_evade_position > stat.agro_max_distance:
 				_set_state(State.EVADE)
-			elif !stat.can_move and stat.bullet and stat.bullet.attack_range < distance_to_player:
+			elif !stat.can_move and stat.bullet and shoot_distance < distance_to_player:
 				_set_state(State.IDLE)
 			# move to player
 			elif stat.can_move:
@@ -92,7 +93,7 @@ func _physics_process(_delta: float) -> void:
 					velocity = Vector2.ZERO
 
 			#  if can shoot than shoot
-			if stat.bullet and not is_shoot_cooldown:
+			if shoot_distance > distance_to_player and not is_shoot_cooldown:
 				_spawn_bullet(player.global_position)
 
 		State.LOVE_PLAYER:
@@ -148,8 +149,10 @@ func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> vo
 
 	if knockback_force > 0.0:
 		var knockback_velocity = attack_direction * knockback_force * 100
+		var old_velocity = velocity
 		velocity = knockback_velocity
 		move_and_slide()
+		velocity = old_velocity
 
 func _set_agro() -> void:
 	# do nothing if can't move and can't shoot
