@@ -79,7 +79,10 @@ func _physics_process(_delta: float) -> void:
 			var distance_to_evade_position = global_position.distance_to(evade_position)
 
 			if distance_to_evade_position > stat.agro_max_distance:
-				_set_state(State.EVADE)
+				if stat.can_move:
+					_set_state(State.EVADE)
+				else:
+					_set_state(State.IDLE)
 			# move to player
 			elif stat.can_move:
 				var move_direction = global_position.direction_to(player.global_position)
