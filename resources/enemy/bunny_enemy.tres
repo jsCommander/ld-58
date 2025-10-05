@@ -7,12 +7,14 @@
 [resource]
 script = ExtResource("2_nmv80")
 texture = ExtResource("3_0ily3")
+type = 0
 max_health = 100
 damage = 10
 speed = 400
 knockback_force = 100
+can_move = false
+agro_time = 2.0
+agro_range = 600
 bullet = ExtResource("1_ei5f2")
 shoot_cooldown = 0.5
-agro_shoot_range = 600
-agro_time = 2.0
 metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"

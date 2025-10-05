@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://che0io3yln5jh"]
+[gd_scene load_steps=10 format=4 uid="uid://che0io3yln5jh"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_pss4d"]
 [ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="2_pss4d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://bta01s48m2aea" path="res://resources/parts/demon_torso.tres" id="5_kdpsx"]
 [ext_resource type="PackedScene" uid="uid://dpg8ept1feg5s" path="res://scenes/base_enemy.tscn" id="6_aips6"]
 [ext_resource type="Resource" uid="uid://bq6qwgn5aksdc" path="res://resources/parts/pumpkin_torso.tres" id="7_1qudv"]
+[ext_resource type="Resource" uid="uid://cbunnyhead001" path="res://resources/parts/bunny_head.tres" id="9_pp1sg"]
 
 [node name="BaseLevel2" instance=ExtResource("1_pss4d")]
 
@@ -53,3 +54,7 @@ part = ExtResource("5_aips6")
 [node name="PartDrop7" parent="." index="14" instance=ExtResource("4_pss4d")]
 position = Vector2(-272, 624)
 part = ExtResource("7_1qudv")
+
+[node name="PartDrop8" parent="." index="15" instance=ExtResource("4_pss4d")]
+position = Vector2(432, 1456)
+part = ExtResource("9_pp1sg")

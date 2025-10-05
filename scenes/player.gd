@@ -213,3 +213,9 @@ func flash(duration: float = 0.1) -> void:
 	head_texture.material.set_shader_parameter("active", false)
 	torso_texture.material.set_shader_parameter("active", false)
 	leg_texture.material.set_shader_parameter("active", false)
+
+func is_player_has_full_set(set_type: Types.SetType) -> bool:
+	if head.set_type == set_type and torso.set_type == set_type and legs.set_type == set_type:
+		return true
+
+	return false

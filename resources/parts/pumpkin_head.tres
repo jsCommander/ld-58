@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="PartHead" load_steps=3 format=3 uid="uid://bvuvw5u75qp1y"]
 
 [ext_resource type="Script" uid="uid://8n1kgor3yh8" path="res://scripts/part_head.gd" id="1_pumpkin"]
-[ext_resource type="Texture2D" uid="uid://pumpkintexture" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="2_pumpkin"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="2_pumpkin"]
 
 [resource]
 script = ExtResource("1_pumpkin")
 texture = ExtResource("2_pumpkin")
+set_type = 2
 metadata/_custom_type_script = "uid://8n1kgor3yh8"

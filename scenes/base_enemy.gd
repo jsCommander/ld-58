@@ -5,10 +5,12 @@ class_name BaseEnemy
 const PART_DROP = preload("res://scenes/part_drop.tscn")
 const ICN_ANGER = preload("res://game_kit/assets/icons/icn_anger.png")
 const BULLET = preload("res://scenes/bullet.tscn")
+const ICN_HEART = preload("res://game_kit/assets/icons/icn_heart.png")
 
 enum State {
 	IDLE,
-	SHOOT
+	LOVE_PLAYER,
+	SHOOT,
 }
 
 @export var stat: BaseEnemyStat
@@ -55,17 +57,42 @@ func _physics_process(_delta: float) -> void:
 			if not player:
 				return
 				
-			if stat.bullet:
-				var distance_to_player = global_position.distance_to(player.global_position)
+			var distance_to_player = global_position.distance_to(player.global_position)
+			var is_player_in_agro_zone = distance_to_player <= stat.agro_range
+			
+			if not is_player_in_agro_zone:
+				return
 
-				if distance_to_player <= stat.agro_shoot_range:
-					_set_state(State.SHOOT)
+			if player.is_player_has_full_set(stat.type):
+				_set_state(State.LOVE_PLAYER)
+				return
+				
+			if stat.bullet:
+				_set_state(State.SHOOT)
+				return
 			
 		State.SHOOT:
 			if is_shoot_cooldown:
 				return
 
 			_spawn_bullet(player.global_position)
+
+		State.LOVE_PLAYER:
+			if not is_instance_valid(player):
+				player = _find_player()
+			
+			if not player:
+				return
+
+			var distance_to_player = global_position.distance_to(player.global_position)
+
+			if distance_to_player > stat.agro_range:
+				_set_state(State.IDLE)
+				return
+
+			if not player.is_player_has_full_set(stat.type):
+				_set_state(State.IDLE)
+				return
 
 func kill() -> void:
 	if is_dead:
@@ -107,7 +134,7 @@ func _set_agro() -> void:
 		return
 
 	if stat.bullet and current_state != State.SHOOT:
-		_set_state(State.SHOOT)
+		_set_state(State.SHOOT, {"agro_time": stat.agro_time_after_hurt})
 		return
 
 
@@ -150,7 +177,7 @@ func _find_player() -> Player:
 	
 	return null
 	
-func _set_state(new_state: State) -> void:
+func _set_state(new_state: State, data: Dictionary = {}) -> void:
 	if current_state == new_state:
 		return
 
@@ -158,6 +185,15 @@ func _set_state(new_state: State) -> void:
 	current_state = new_state
 
 	Logger.log_debug(self.name, "Changing state from %s to %s" % [Utils.get_enum_key_name(State, old_state), Utils.get_enum_key_name(State, new_state)])
+
+	match old_state:
+		State.SHOOT:
+			agro_time.stop()
+			think_buble.visible = false
+
+		State.LOVE_PLAYER:
+			think_buble.visible = false
+
 
 	match new_state:
 		State.IDLE:
@@ -167,8 +203,12 @@ func _set_state(new_state: State) -> void:
 		State.SHOOT:
 			think_buble.visible = true
 			think_buble.show_bubble(ICN_ANGER)
-			agro_time.wait_time = stat.agro_time
+			agro_time.wait_time = data.agro_time if data.has("agro_time") else stat.agro_time
 			agro_time.start()
+
+		State.LOVE_PLAYER:
+			think_buble.visible = true
+			think_buble.show_bubble(ICN_HEART)
 
 func _start_shoot_cooldown(cooldown: float) -> void:
 	is_shoot_cooldown = true
