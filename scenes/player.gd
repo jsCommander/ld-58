@@ -70,7 +70,7 @@ func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> vo
 	_update_health(current_health - damage_to_apply)
 	damage_number.spawn("-%d" % damage_to_apply, Vector2.UP)
 	
-	var attack_direction = attacker.global_position.direction_to(global_position)
+	var attack_direction = attacker.global_position.direction_to(global_position).normalized()
 
 	if knockback_force > 0.0:
 		var knockback_velocity = attack_direction * knockback_force * 100

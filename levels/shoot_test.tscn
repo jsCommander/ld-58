@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://che0io3yln5jh"]
+[gd_scene load_steps=16 format=4 uid="uid://che0io3yln5jh"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_pss4d"]
 [ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="2_pss4d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="4_dty1v"]
 [ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="4_pss4d"]
 [ext_resource type="Resource" uid="uid://bb0ds48m2aea" path="res://resources/parts/bunny_torso.tres" id="5_aips6"]
+[ext_resource type="Resource" uid="uid://b2s2bs6gjbt8c" path="res://resources/bullets/carrot_bullet.tres" id="5_h0jql"]
 [ext_resource type="Resource" uid="uid://bta01s48m2aea" path="res://resources/parts/demon_torso.tres" id="5_kdpsx"]
 [ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="5_kgd01"]
 [ext_resource type="PackedScene" uid="uid://dpg8ept1feg5s" path="res://scenes/base_enemy.tscn" id="6_aips6"]
@@ -27,6 +28,28 @@ agro_time_after_hurt = 5.0
 agro_range = 600
 agro_max_distance = 500
 evade_speed = 600.0
+shoot_cooldown = 0.5
+metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yddla"]
+load_path = "res://.godot/imported/chr_bunny_@0.5x.png-788bfa747f4dfd12f9d64adb057d83ca.ctex"
+
+[sub_resource type="Resource" id="Resource_kgd01"]
+script = ExtResource("4_dty1v")
+texture = SubResource("CompressedTexture2D_yddla")
+type = 0
+max_health = 100
+health_regen = 5
+damage = 10
+speed = 400
+knockback_force = 100
+can_move = false
+agro_time = 2.0
+agro_time_after_hurt = 5.0
+agro_range = 600
+agro_max_distance = 500
+evade_speed = 600.0
+bullet = ExtResource("5_h0jql")
 shoot_cooldown = 0.5
 metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"
 
@@ -63,7 +86,7 @@ stat = ExtResource("4_1qudv")
 
 [node name="BaseEnemy5" parent="." index="10" instance=ExtResource("6_aips6")]
 position = Vector2(752, 1920)
-stat = ExtResource("4_1qudv")
+stat = SubResource("Resource_kgd01")
 
 [node name="PartDrop5" parent="." index="12" instance=ExtResource("4_pss4d")]
 position = Vector2(-272, 384)

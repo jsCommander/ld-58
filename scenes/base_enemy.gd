@@ -78,11 +78,10 @@ func _physics_process(_delta: float) -> void:
 			# evade if too far from evade position
 			var distance_to_evade_position = global_position.distance_to(evade_position)
 
-			if distance_to_evade_position > stat.agro_max_distance:
-				if stat.can_move:
-					_set_state(State.EVADE)
-				else:
-					_set_state(State.IDLE)
+			if stat.can_move and distance_to_evade_position > stat.agro_max_distance:
+				_set_state(State.EVADE)
+			elif !stat.can_move and stat.bullet and stat.bullet.attack_range < distance_to_player:
+				_set_state(State.IDLE)
 			# move to player
 			elif stat.can_move:
 				var move_direction = global_position.direction_to(player.global_position)
@@ -143,7 +142,7 @@ func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> vo
 	_update_health(current_health - damage_to_apply)
 	damage_number.spawn("-%d" % damage_to_apply, Vector2.UP)
 	
-	var attack_direction = attacker.global_position.direction_to(global_position)
+	var attack_direction = attacker.global_position.direction_to(global_position).normalized()
 
 	_set_agro()
 
