@@ -37,10 +37,10 @@ func _ready() -> void:
 	_update_health(torso.max_health)
 	_update_parts()
 
-
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		_update_parts()
+		return
 	
 	if is_dead:
 		return
