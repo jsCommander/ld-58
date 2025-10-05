@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_pumpkin")
-speed = 400
+speed = 500
 texture = ExtResource("2_pumpkin")
 set_type = 2
 metadata/_custom_type_script = "uid://k1r7e4ob2nu6"

@@ -13,6 +13,7 @@ func _ready() -> void:
 	_connect_player_signals()
 	_connect_dialog_zone_signals()
 	camera_man.follow_target(player)
+	camera_man.zoom_to(0.8)
 	get_window().grab_focus()
 
 func _on_level_finish_body_entered(_body: Node2D) -> void:

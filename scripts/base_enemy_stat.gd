@@ -14,9 +14,9 @@ class_name BaseEnemyStat
 
 @export var agro_time: float = 2.0
 @export var agro_time_after_hurt: float = 5.0
-@export var agro_range: int = 600
-@export var agro_max_distance: int = 500
+@export var agro_range: int = 500
+@export var agro_max_distance: int = 600
 @export var evade_speed: float = 600
 
 @export var bullet: BulletStat
-@export var shoot_cooldown: float = 0.5
+@export var shoot_cooldown: float = 1

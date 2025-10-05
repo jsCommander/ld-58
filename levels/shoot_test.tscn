@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_pss4d"]
 [ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="2_pss4d"]
-[ext_resource type="Resource" uid="uid://c0b8cnb0drvls" path="res://resources/enemy/bunny_enemy.tres" id="4_1qudv"]
+[ext_resource type="Resource" uid="uid://c0b8cnb0drvls" path="res://resources/enemy/enemy_bunny.tres" id="4_1qudv"]
 [ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="4_dty1v"]
 [ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="4_pss4d"]
 [ext_resource type="Resource" uid="uid://bb0ds48m2aea" path="res://resources/parts/bunny_torso.tres" id="5_aips6"]

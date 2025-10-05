@@ -74,8 +74,11 @@ func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> vo
 
 	if knockback_force > 0.0:
 		var knockback_velocity = attack_direction * knockback_force * 100
+		var old_velocity = velocity
 		velocity = knockback_velocity
 		move_and_slide()
+
+		velocity = old_velocity
 	
 	flash()
 	hurt_sfx.play()
@@ -219,3 +222,13 @@ func is_player_has_full_set(set_type: Types.SetType) -> bool:
 		return true
 
 	return false
+
+func _on_regen_timer_timeout() -> void:
+	if is_dead:
+		return
+
+	if current_health >= torso.max_health:
+		return
+
+	_update_health(current_health + torso.regen_amount)
+	damage_number.spawn("+%d" % torso.regen_amount, Vector2.UP)

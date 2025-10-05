@@ -1,8 +1,9 @@
 extends Resource
 class_name BulletStat
 
+@export var type: Types.BulletType = Types.BulletType.CARROT
 @export var texture: Texture2D
 @export var speed: int = 800
 @export var damage: int = 10
 @export var attack_range: int = 800
-@export var knockback_force: int = 10
+@export var knockback_force: int = 5

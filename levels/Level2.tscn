@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cqv0piuxvqabd" path="res://scenes/part_drop_zone.tscn" id="11_k6hxo"]
 [ext_resource type="PackedScene" uid="uid://bjmpyefdpx1r" path="res://game_kit/scenes/help_text/help_text.tscn" id="12_46xdq"]
 [ext_resource type="PackedScene" uid="uid://dpg8ept1feg5s" path="res://scenes/base_enemy.tscn" id="13_aa0ii"]
-[ext_resource type="Resource" uid="uid://c0b8cnb0drvls" path="res://resources/enemy/bunny_enemy.tres" id="14_vcbjw"]
+[ext_resource type="Resource" uid="uid://c0b8cnb0drvls" path="res://resources/enemy/enemy_bunny.tres" id="14_vcbjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_086ed"]
 resource_local_to_scene = true

@@ -13,14 +13,18 @@ var current_health: int = 0
 func _ready() -> void:
 	current_health = max_health
 
-func apply_damage(damage: int) -> void:
+func apply_damage(damage: int, bullet_type: Types.BulletType) -> void:
+	if bullet_type != Types.BulletType.FIREBALL:
+		return
+
 	_flash()
-	hit_sfx.play()
 	
 	var damage_to_apply = clamp(damage, 0, current_health)
 	current_health -= damage_to_apply
 
 	damage_number.spawn("-%d" % damage_to_apply, Vector2.UP)
+	hit_sfx.play()
+	await hit_sfx.finished
 
 	if current_health <= 0:
 		queue_free()

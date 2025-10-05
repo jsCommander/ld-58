@@ -70,6 +70,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 	if body is BreakableWall:
 		var wall = body as BreakableWall
-		wall.apply_damage(stat.damage)
+		wall.apply_damage(stat.damage, stat.type)
 		kill()
 		hit.emit(wall, self)

@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("1_pumpkinseed")
+type = 0
 texture = ExtResource("2_pumpkinseed")
 speed = 700
-damage = 8
-attack_range = 800
+damage = 15
+attack_range = 700
+knockback_force = 20
 metadata/_custom_type_script = "uid://bhsrgfx0dgt63"

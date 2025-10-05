@@ -158,6 +158,12 @@ position = Vector2(0, -96)
 unique_name_in_owner = true
 stream = ExtResource("13_jej6c")
 
+[node name="RegenTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true
+
 [connection signal="area_entered" from="Usebox" to="." method="_on_usebox_area_entered"]
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
 
 [editable path="BaseRig"]

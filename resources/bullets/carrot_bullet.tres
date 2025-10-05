@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_carrot")
 texture = ExtResource("2_carrot")
-speed = 600
-damage = 12
-range = 800
+speed = 800
+damage = 10
+attack_range = 800
+knockback_force = 5
 metadata/_custom_type_script = "uid://bhsrgfx0dgt63"

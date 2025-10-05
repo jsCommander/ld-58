@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgvm5btv1j7l8"]
+
+[ext_resource type="Script" uid="uid://dkddwypibekyy" path="res://scenes/tiles/tile_red_bush.gd" id="1_a7xbt"]
+[ext_resource type="Texture2D" uid="uid://b86cumykml4yu" path="res://assets/export/tiles/lava_@0.5x.png" id="2_80gbb"]
+
+[sub_resource type="Shader" id="Shader_1aulc"]
+code = "shader_type canvas_item;
+
+uniform bool active = false;
+uniform vec3 color: source_color = vec3(1.0, 1.0, 1.0);
+
+void fragment() {
+    if (active) {
+		 COLOR = vec4(color.x, color.y, color.z, texture(TEXTURE, UV).a);
+    } else {
+        COLOR = texture(TEXTURE, UV);
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lo71"]
+resource_local_to_scene = true
+shader = SubResource("Shader_1aulc")
+shader_parameter/active = false
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wo3t"]
+resource_local_to_scene = true
+size = Vector2(128, 128)
+
+[node name="TileLava" type="Node2D"]
+z_index = -1
+script = ExtResource("1_a7xbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.156863, 0.152941, 1)
+material = SubResource("ShaderMaterial_7lo71")
+texture = ExtResource("2_80gbb")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 32)
+collision_layer = 0
+collision_mask = 448
+monitorable = false
+
+[node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_4wo3t")
+debug_color = Color(0.717647, 0, 0, 0.286275)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqjmakyrpbqh7" path="res://scenes/base_enemy.gd" id="1_kegi0"]
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="2_64ljx"]
-[ext_resource type="Resource" uid="uid://2ea2k4wqds5t" path="res://resources/enemy/pumpkin_enemy.tres" id="2_hf87f"]
+[ext_resource type="Resource" uid="uid://2ea2k4wqds5t" path="res://resources/enemy/enemy_pumkin.tres" id="2_hf87f"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="3_tonni"]
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="5_64ljx"]
 [ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="5_tonni"]

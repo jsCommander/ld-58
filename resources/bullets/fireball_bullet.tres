@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("1_fireball")
+type = 2
 texture = ExtResource("2_fireball")
-speed = 800
-damage = 15
-range = 1000
+speed = 1000
+damage = 20
+attack_range = 1000
+knockback_force = 5
 metadata/_custom_type_script = "uid://bhsrgfx0dgt63"

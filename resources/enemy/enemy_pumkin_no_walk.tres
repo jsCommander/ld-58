@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=4 format=3 uid="uid://dw3kbeg3imlsq"]
+
+[ext_resource type="Resource" uid="uid://bcjn5rcyr4eyq" path="res://resources/bullets/pumpkin_seed_bullet.tres" id="1_tklsc"]
+[ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_a6ls3"]
+[ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="3_hk6on"]
+
+[resource]
+script = ExtResource("2_a6ls3")
+texture = ExtResource("3_hk6on")
+type = 2
+max_health = 200
+health_regen = 5
+damage = 10
+speed = 400
+knockback_force = 100
+can_move = false
+agro_time = 2.0
+agro_time_after_hurt = 5.0
+agro_range = 600
+agro_max_distance = 800
+evade_speed = 600.0
+bullet = ExtResource("1_tklsc")
+shoot_cooldown = 1.0
+metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"

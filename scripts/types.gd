@@ -7,3 +7,9 @@ enum SetType {
 	PUMKIN,
 	GHOST,
 }
+
+enum BulletType {
+	CARROT,
+	PUMPKIN_SEED,
+	FIREBALL,
+}

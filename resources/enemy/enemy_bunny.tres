@@ -1,26 +1,26 @@
 [gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=4 format=3 uid="uid://c0b8cnb0drvls"]
 
-[ext_resource type="Resource" uid="uid://b2s2bs6gjbt8c" path="res://resources/bullets/carrot_bullet.tres" id="1_ei5f2"]
-[ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_nmv80"]
+[ext_resource type="Resource" uid="uid://b2s2bs6gjbt8c" path="res://resources/bullets/carrot_bullet.tres" id="1_6l87u"]
+[ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_7te1m"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yddla"]
 load_path = "res://.godot/imported/chr_bunny_@0.5x.png-788bfa747f4dfd12f9d64adb057d83ca.ctex"
 
 [resource]
-script = ExtResource("2_nmv80")
+script = ExtResource("2_7te1m")
 texture = SubResource("CompressedTexture2D_yddla")
 type = 0
 max_health = 100
 health_regen = 5
 damage = 10
-speed = 400
+speed = 500
 knockback_force = 100
 can_move = false
 agro_time = 2.0
 agro_time_after_hurt = 5.0
-agro_range = 600
-agro_max_distance = 500
+agro_range = 500
+agro_max_distance = 600
 evade_speed = 600.0
-bullet = ExtResource("1_ei5f2")
-shoot_cooldown = 0.5
+bullet = ExtResource("1_6l87u")
+shoot_cooldown = 1.0
 metadata/_custom_type_script = "uid://d0kfbrr2f1c5l"
