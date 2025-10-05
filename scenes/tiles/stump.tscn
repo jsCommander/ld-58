@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_4y0mu"]
 [ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_vll2o"]
-[ext_resource type="Texture2D" uid="uid://dlxpqrxkm08ki" path="res://assets/ld-58/prop_stump_@0.5x.png" id="3_xstsb"]
+[ext_resource type="Texture2D" uid="uid://le0haasqejxd" path="res://assets/ld-58/prop_stump_@0.5x.png" id="3_xstsb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2aq2g"]
 resource_local_to_scene = true
