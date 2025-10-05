@@ -15,7 +15,7 @@ gradient = SubResource("Gradient_1rbal")
 
 [node name="PartDropZone" type="Area2D"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 2
 script = ExtResource("1_os8f1")
 
 [node name="UseboxCollider" type="CollisionShape2D" parent="."]
@@ -27,3 +27,5 @@ modulate = Color(0, 0, 0, 0.380392)
 position = Vector2(1.90735e-06, 1.90735e-06)
 scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_os8f1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

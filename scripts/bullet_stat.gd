@@ -5,3 +5,4 @@ class_name BulletStat
 @export var speed: int = 800
 @export var damage: int = 10
 @export var attack_range: int = 800
+@export var knockback_force: int = 10

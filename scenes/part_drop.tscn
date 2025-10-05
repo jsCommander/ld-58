@@ -1,16 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://1i76eaj3cd7a"]
+[gd_scene load_steps=10 format=3 uid="uid://1i76eaj3cd7a"]
 
 [ext_resource type="Script" uid="uid://8xg0hm7f67tc" path="res://scenes/part_drop.gd" id="1_8ki5e"]
-[ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_x52g2"]
-[ext_resource type="Shader" uid="uid://bntbkgw4pwjtp" path="res://game_kit/shaders/set_color.gdshader" id="2_t0kxb"]
 [ext_resource type="Texture2D" uid="uid://hdt10t37o23b" path="res://assets/chr/chr_bunny_@0.5x.png" id="5_momu3"]
+[ext_resource type="PackedScene" uid="uid://dk56elq863m31" path="res://game_kit/scenes/base_shadow.tscn" id="6_4ibrm"]
 [ext_resource type="Texture2D" uid="uid://bo2dwr43sj36d" path="res://assets/chr/chr_demon_@0.5x.png" id="6_nuofl"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ki5e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50oqr"]
 resource_local_to_scene = true
-shader = ExtResource("2_t0kxb")
-shader_parameter/active = false
-shader_parameter/color = Color(1, 1, 1, 1)
+size = Vector2(96, 96)
 
 [sub_resource type="Gradient" id="Gradient_d2wvv"]
 offsets = PackedFloat32Array(1)
@@ -31,61 +28,8 @@ gradient = SubResource("Gradient_d2wvv")
 width = 256
 height = 85
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_50oqr"]
-resource_local_to_scene = true
-size = Vector2(96, 96)
-
 [node name="PartDrop" type="Node2D"]
 script = ExtResource("1_8ki5e")
-
-[node name="BaseRig" parent="." instance=ExtResource("1_x52g2")]
-
-[node name="AnimationRig" parent="BaseRig" index="0"]
-material = SubResource("ShaderMaterial_8ki5e")
-
-[node name="shadow" parent="BaseRig/AnimationRig" index="0"]
-scale = Vector2(0.616142, 0.616142)
-
-[node name="Body" parent="BaseRig/AnimationRig" index="1"]
-visible = false
-position = Vector2(0, 57)
-scale = Vector2(0.5, 0.5)
-
-[node name="HeadMask" type="Sprite2D" parent="BaseRig/AnimationRig" index="2"]
-clip_children = 1
-position = Vector2(0, 41)
-texture = SubResource("GradientTexture2D_v503k")
-
-[node name="HeadTexture" type="Sprite2D" parent="BaseRig/AnimationRig/HeadMask"]
-unique_name_in_owner = true
-visible = false
-use_parent_material = true
-position = Vector2(0, 63)
-texture = ExtResource("5_momu3")
-
-[node name="TorsoMask" type="Sprite2D" parent="BaseRig/AnimationRig" index="3"]
-clip_children = 1
-position = Vector2(0, 73)
-texture = SubResource("GradientTexture2D_gyehh")
-
-[node name="TorsoTexture" type="Sprite2D" parent="BaseRig/AnimationRig/TorsoMask"]
-unique_name_in_owner = true
-visible = false
-use_parent_material = true
-position = Vector2(0, -32)
-texture = ExtResource("5_momu3")
-
-[node name="LegMask" type="Sprite2D" parent="BaseRig/AnimationRig" index="4"]
-clip_children = 1
-position = Vector2(0, 98)
-texture = SubResource("GradientTexture2D_y4dr3")
-
-[node name="LegTexture" type="Sprite2D" parent="BaseRig/AnimationRig/LegMask"]
-unique_name_in_owner = true
-visible = false
-use_parent_material = true
-position = Vector2(0, -104)
-texture = ExtResource("6_nuofl")
 
 [node name="Usebox" type="Area2D" parent="."]
 collision_layer = 16
@@ -97,4 +41,47 @@ position = Vector2(0, -48)
 shape = SubResource("RectangleShape2D_50oqr")
 debug_color = Color(0.713726, 0.141176, 0.709804, 0.301961)
 
-[editable path="BaseRig"]
+[node name="Rig" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="shadow" parent="Rig" instance=ExtResource("6_4ibrm")]
+unique_name_in_owner = true
+
+[node name="parts" type="Node2D" parent="Rig"]
+unique_name_in_owner = true
+
+[node name="HeadMask" type="Sprite2D" parent="Rig/parts"]
+clip_children = 1
+position = Vector2(0, -64)
+texture = SubResource("GradientTexture2D_v503k")
+
+[node name="HeadTexture" type="Sprite2D" parent="Rig/parts/HeadMask"]
+unique_name_in_owner = true
+visible = false
+use_parent_material = true
+position = Vector2(0, 63)
+texture = ExtResource("5_momu3")
+
+[node name="TorsoMask" type="Sprite2D" parent="Rig/parts"]
+clip_children = 1
+position = Vector2(0, -32)
+texture = SubResource("GradientTexture2D_gyehh")
+
+[node name="TorsoTexture" type="Sprite2D" parent="Rig/parts/TorsoMask"]
+unique_name_in_owner = true
+visible = false
+use_parent_material = true
+position = Vector2(0, -32)
+texture = ExtResource("5_momu3")
+
+[node name="LegMask" type="Sprite2D" parent="Rig/parts"]
+clip_children = 1
+position = Vector2(0, -7)
+texture = SubResource("GradientTexture2D_y4dr3")
+
+[node name="LegTexture" type="Sprite2D" parent="Rig/parts/LegMask"]
+unique_name_in_owner = true
+visible = false
+use_parent_material = true
+position = Vector2(0, -104)
+texture = ExtResource("6_nuofl")

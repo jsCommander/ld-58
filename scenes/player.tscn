@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo0k7rb6v04lk"]
+[gd_scene load_steps=22 format=3 uid="uid://bo0k7rb6v04lk"]
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="9_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://hdt10t37o23b" path="res://assets/chr/chr_bunny_@0.5x.png" id="10_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://d1o8xk5qcpq61" path="res://assets/chr/chr_ghost_@0.5x.png" id="10_f1ej7"]
+[ext_resource type="AudioStream" uid="uid://j17lraixogo4" path="res://assets/sfx/sfx_hurt_normalized.ogg" id="11_d2wvv"]
+[ext_resource type="PackedScene" uid="uid://bvgyu4uqoahr" path="res://game_kit/scenes/damage_number/damage_number.tscn" id="12_3v2ag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
 size = Vector2(96, 64)
@@ -28,6 +30,11 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_d2wvv")
 width = 256
 height = 128
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3v2ag"]
+shader = ExtResource("2_g2els")
+shader_parameter/active = false
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y4r1p"]
 gradient = SubResource("Gradient_d2wvv")
@@ -75,7 +82,7 @@ texture = SubResource("GradientTexture2D_3v2ag")
 
 [node name="HeadTexture" type="Sprite2D" parent="BaseRig/AnimationRig/HeadMask"]
 unique_name_in_owner = true
-use_parent_material = true
+material = SubResource("ShaderMaterial_3v2ag")
 position = Vector2(0, 63)
 texture = ExtResource("10_f1ej7")
 
@@ -86,7 +93,7 @@ texture = SubResource("GradientTexture2D_y4r1p")
 
 [node name="TorsoTexture" type="Sprite2D" parent="BaseRig/AnimationRig/TorsoMask"]
 unique_name_in_owner = true
-use_parent_material = true
+material = SubResource("ShaderMaterial_3v2ag")
 position = Vector2(0, -32)
 texture = ExtResource("10_3v2ag")
 
@@ -97,7 +104,7 @@ texture = SubResource("GradientTexture2D_d2wvv")
 
 [node name="LegTexture" type="Sprite2D" parent="BaseRig/AnimationRig/LegMask"]
 unique_name_in_owner = true
-use_parent_material = true
+material = SubResource("ShaderMaterial_3v2ag")
 position = Vector2(0, -104)
 texture = ExtResource("8_d2wvv")
 
@@ -107,6 +114,9 @@ offset_left = -48.0
 offset_top = -240.0
 offset_bottom = -232.0
 theme_type_variation = &"ProgressBarHealth"
+
+[node name="DamageNumber" parent="BaseRig" instance=ExtResource("12_3v2ag")]
+position = Vector2(32, -192)
 
 [node name="Usebox" type="Area2D" parent="."]
 visible = false
@@ -132,6 +142,12 @@ debug_color = Color(0.235294, 0.521569, 0.345098, 0.407843)
 
 [node name="HurtSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("11_d2wvv")
+bus = &"Sfx"
+
+[node name="ShootSfx" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+bus = &"Sfx"
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
 unique_name_in_owner = true

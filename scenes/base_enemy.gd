@@ -6,6 +6,8 @@ class_name BaseEnemy
 @onready var base_rig: BaseRig = $BaseRig
 @onready var hitbox: Area2D = $Hitbox
 @onready var health_bar: ProgressBar = %HealthBar
+@onready var damage_number: DamageNumber = $DamageNumber
+@onready var hit_sfx: AudioStreamPlayer2D = %HitSfx
 
 var current_health: int = 0
 var is_dead: bool = false
@@ -20,14 +22,24 @@ func kill() -> void:
 	is_dead = true
 	queue_free()
 
-func apply_damage(damage: int, _attacker: Node2D) -> void:
+func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> void:
 	if is_dead:
 		return
 
-	Logger.log_debug(self.name, "Applied damage: %s from %s" % [damage, _attacker.name])
 	base_rig.flash()
-	_update_health(current_health - damage)
+	hit_sfx.play()
+
+	var damage_to_apply = clamp(damage, 0, current_health)
+	_update_health(current_health - damage_to_apply)
+	damage_number.spawn("-%d" % damage_to_apply, Vector2.UP)
 	
+	var attack_direction = attacker.global_position.direction_to(global_position)
+
+	if knockback_force > 0.0:
+		var knockback_velocity = attack_direction * knockback_force * 100
+		velocity = knockback_velocity
+		move_and_slide()
+
 
 func _update_health(health: int) -> void:
 	current_health = clamp(health, 0, stat.max_health)
@@ -44,4 +56,4 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 	if body is Player:
 		var player = body as Player
-		player.apply_damage(stat.damage, self)
+		player.apply_damage(stat.damage, self, stat.knockback_force)

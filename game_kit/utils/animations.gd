@@ -73,6 +73,17 @@ static func bounce(target: CanvasItem, jump_height: float = -10.0, duration: flo
 	
 	return tween
 
+static func bounce_up(target: CanvasItem, jump_height: float = 10.0, duration: float = 1.0) -> Tween:
+	var tween = target.create_tween()
+	
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	tween.tween_property(target, "position:y", target.position.y - jump_height, duration / 2)
+	tween.tween_property(target, "position:y", target.position.y, duration / 2)
+	
+	return tween
+
 static func walk(target: Node2D, sway_angle: float = 0.1, sway_duration: float = 0.3, loop: bool = true) -> Tween:
 	var tween = target.create_tween()
 	

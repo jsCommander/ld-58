@@ -4,6 +4,10 @@ class_name Player
 const BULLET = preload("res://scenes/bullet.tscn")
 const PART_DROP = preload("res://scenes/part_drop.tscn")
 
+const GHOST_HEAD = preload("res://resources/parts/ghost_head.tres")
+const GHOST_LEG = preload("res://resources/parts/ghost_leg.tres")
+const GHOST_TORSO = preload("res://resources/parts/ghost_torso.tres")
+
 @export var head: PartHead
 @export var torso: PartTorso
 @export var legs: PartLeg
@@ -18,6 +22,8 @@ signal killed()
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var hurtbox_collider: CollisionShape2D = %HurtboxCollider
 @onready var bullet_spawn: Marker2D = %BulletSpawn
+@onready var shoot_sfx: AudioStreamPlayer2D = %ShootSfx
+@onready var damage_number: DamageNumber = $BaseRig/DamageNumber
 
 var is_dead = false
 var is_shoot_cooldown: bool = false
@@ -47,15 +53,22 @@ func _physics_process(_delta: float) -> void:
 
 	_update_parts()
 
-func apply_damage(damage: int, attacker: Node2D) -> void:
+func apply_damage(damage: int, attacker: Node2D, knockback_force: int = 0) -> void:
 	if is_dead or is_invulnebility:
 		return
+	
+	var damage_to_apply = clamp(damage, 0, current_health)
+	_update_health(current_health - damage_to_apply)
+	damage_number.spawn("-%d" % damage_to_apply, Vector2.UP)
+	
+	var attack_direction = attacker.global_position.direction_to(global_position)
 
-	_update_health(current_health - damage)
+	if knockback_force > 0.0:
+		var knockback_velocity = attack_direction * knockback_force * 100
+		velocity = knockback_velocity
+		move_and_slide()
 	
-	Logger.log_debug(self.name, "Applied damage: %s from %s" % [damage, attacker.name])
-	
-	base_rig.flash()
+	flash()
 	hurt_sfx.play()
 
 	if torso.invulnebility_time > 0.0:
@@ -87,40 +100,61 @@ func _update_parts() -> void:
 func _on_usebox_area_entered(area: Area2D) -> void:
 	var body = area.get_parent()
 
-	if not body is PartDrop:
-		return
+	if body is PartDrop:
+		Logger.log_debug(self.name, "Found part drop: %s" % body.part)
 
-	Logger.log_debug(self.name, "Found part drop: %s" % body.part)
+		var part_drop = body as PartDrop
+		var part = part_drop.part
+		var old_part: BasePart
 
-	var part_drop = body as PartDrop
-	var part = part_drop.part
-	var old_part: BasePart
+		if part is PartLeg:
+			old_part = legs
+			legs = part
+			Logger.log_debug(self.name, "Updated legs: %s" % part)
 
-	if part is PartLeg:
-		old_part = legs
-		legs = part
-		Logger.log_debug(self.name, "Updated legs: %s" % part)
+		elif part is PartTorso:
+			old_part = torso
+			torso = part
 
-	elif part is PartTorso:
-		old_part = torso
-		torso = part
+			Logger.log_debug(self.name, "Updated torso: %s" % part)
+		elif part is PartHead:
+			old_part = head
+			head = part
+			Logger.log_debug(self.name, "Updated head: %s" % part)
+		else:
+			assert(false, "Part type is not valid")
 
-		Logger.log_debug(self.name, "Updated torso: %s" % part)
-	elif part is PartHead:
-		old_part = head
-		head = part
-		Logger.log_debug(self.name, "Updated head: %s" % part)
-	else:
-		assert(false, "Part type is not valid")
+		part_drop.kill()
 
-	part_drop.kill()
+		if old_part != GHOST_HEAD and old_part != GHOST_TORSO and old_part != GHOST_LEG:
+			_spawn_part(old_part, part_drop.global_position)
 
-	var old_part_drop = PART_DROP.instantiate()
-	old_part_drop.part = old_part
-	old_part_drop.global_position = part_drop.global_position
-	
-	get_parent().call_deferred("add_child", old_part_drop)
-	old_part_drop.call_deferred("disable_usebox", 2.0)
+func drop_all_parts() -> void:
+	if head != GHOST_HEAD:
+		_spawn_part(head, global_position)
+		head = GHOST_HEAD
+
+	if torso != GHOST_TORSO:
+		_spawn_part(torso, global_position)
+		torso = GHOST_TORSO
+
+	if legs != GHOST_LEG:
+		_spawn_part(legs, global_position)
+		legs = GHOST_LEG
+
+	_update_parts()
+
+func _spawn_part(part: BasePart, spawn_position: Vector2) -> void:
+		var part_drop = PART_DROP.instantiate()
+		part_drop.part = part
+		part_drop.global_position = spawn_position
+		
+		get_parent().call_deferred("add_child", part_drop)
+		part_drop.call_deferred("disable_usebox", 2.0)
+
+		part_drop.call_deferred("animate_spawn", 100)
+
+		create_tween().tween_property(part_drop, "global_position", spawn_position, 1)
 
 func _spawn_bullet(target_position: Vector2) -> void:
 	if not torso.bullet:
@@ -137,6 +171,7 @@ func _spawn_bullet(target_position: Vector2) -> void:
 	bullet.init_bullet(bullet_spawn.global_position, target_position)
 
 	_start_shoot_cooldown(torso.shoot_cooldown)
+	shoot_sfx.play()
 
 func _start_shoot_cooldown(cooldown: float) -> void:
 	is_shoot_cooldown = true
@@ -149,3 +184,12 @@ func _start_invulnebility(time: float) -> void:
 	await get_tree().create_timer(time).timeout
 	is_invulnebility = false
 	hurtbox_collider.set_deferred("disabled", false)
+	
+func flash(duration: float = 0.1) -> void:
+	head_texture.material.set_shader_parameter("active", true)
+	torso_texture.material.set_shader_parameter("active", true)
+	leg_texture.material.set_shader_parameter("active", true)
+	await get_tree().create_timer(duration).timeout
+	head_texture.material.set_shader_parameter("active", false)
+	torso_texture.material.set_shader_parameter("active", false)
+	leg_texture.material.set_shader_parameter("active", false)

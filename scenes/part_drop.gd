@@ -9,11 +9,13 @@ class_name PartDrop
 	get:
 		return _part
 
-@onready var base_rig: BaseRig = $BaseRig
 @onready var usebox_collider: CollisionShape2D = $Usebox/UseboxCollider
 @onready var head_texture: Sprite2D = %HeadTexture
 @onready var torso_texture: Sprite2D = %TorsoTexture
 @onready var leg_texture: Sprite2D = %LegTexture
+@onready var parts: Node2D = %parts
+@onready var rig: Node2D = %Rig
+@onready var shadow: Node2D = %shadow
 
 var _part: BasePart
 
@@ -21,8 +23,7 @@ func _ready() -> void:
 	_update_textures()
 	
 	if not Engine.is_editor_hint():
-		base_rig.start_pulse_animation()
-
+		Animations.fade_in(rig, 0.5)
 
 func kill() -> void:
 	queue_free()
@@ -52,3 +53,7 @@ func _update_textures() -> void:
 		torso_texture.texture = _part.texture
 	elif _part is PartLeg:
 		leg_texture.texture = _part.texture
+		
+func animate_spawn(height: float = 100.0) -> void:
+	Animations.bounce_up(parts, height)
+	Animations.pulse(shadow, 0.3, 1.0, false)
