@@ -214,8 +214,5 @@ stat = ExtResource("11_1wq6r")
 position = Vector2(1328, 3492)
 stat = ExtResource("11_1wq6r")
 
-[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@26858" to="Objects/@Area2D@26858" method="_on_body_entered"]
-
 [editable path="HelpText"]
 [editable path="HelpText2"]

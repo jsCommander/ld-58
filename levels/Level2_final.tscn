@@ -177,18 +177,3 @@ drop_part = ExtResource("12_8476y")
 position = Vector2(2289, -1351)
 stat = ExtResource("13_lre5n")
 drop_part = ExtResource("12_8476y")
-
-[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28004" to="Objects/@Area2D@28004" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28064" to="Objects/@Area2D@28064" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28081" to="Objects/@Area2D@28081" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28082" to="Objects/@Area2D@28082" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28099" to="Objects/@Area2D@28099" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28100" to="Objects/@Area2D@28100" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28101" to="Objects/@Area2D@28101" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28106" to="Objects/@Area2D@28106" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28107" to="Objects/@Area2D@28107" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28211" to="Objects/@Area2D@28211" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28212" to="Objects/@Area2D@28212" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28236" to="Objects/@Area2D@28236" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@28237" to="Objects/@Area2D@28237" method="_on_body_entered"]
