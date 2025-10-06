@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvwnt7vaj6yfi"]
+
+[ext_resource type="Texture2D" uid="uid://jtscs547nkn" path="res://assets/ld-58/prop_chest_@0.5x.png" id="1_sy5e1"]
+[ext_resource type="PackedScene" uid="uid://dk56elq863m31" path="res://game_kit/scenes/base_shadow.tscn" id="2_gqd3d"]
+
+[node name="Chest" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, -96)
+texture = ExtResource("1_sy5e1")
+
+[node name="shadow" parent="." instance=ExtResource("2_gqd3d")]
