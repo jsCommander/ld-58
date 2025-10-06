@@ -1,0 +1,14 @@
+[
+  {
+	"speaker_id": "boss",
+	"text": "Not bad. I'll take this into account when considering your bonus - I think 3% would be a fair assessment."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "You know, I was thinking - you don't actually know how much money was in the treasury, do you? I could just write myself a 100% bonus right now."
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Now you're starting to think like a real demon! The corporation needs employees like you - I'll recommend you for a promotion."
+  }
+]

@@ -12,7 +12,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and allow_complitly_skip:
 		close_dialog({"exit": true})
 
-	if Input.is_action_just_released("action_main"):
+	var is_skip_key_pressed = false
+	
+	if Input.is_action_just_pressed("action_main") or event.is_action_pressed("ui_cancel"):
+		is_skip_key_pressed = true
+	
+	var skip_keys = [KEY_ENTER, KEY_SPACE, KEY_E]
+	for skip_key in skip_keys:
+		if event is InputEventKey and event.keycode == skip_key and event.pressed:
+			is_skip_key_pressed = true
+			break
+	
+	if is_skip_key_pressed:
 		show_next_line()
 
 func set_data(data: Dictionary) -> void:

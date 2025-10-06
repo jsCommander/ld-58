@@ -128,16 +128,43 @@ label_settings = ExtResource("4_euui2")
 
 [node name="Level3Intro" parent="Level3" index="1" instance=ExtResource("3_3w8ql")]
 position = Vector2(-320, 64)
-json_file = "res://data/dialog_json/level2_intro.json"
+json_file = "res://data/dialog_json/level3_intro.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Level3Intro" index="1"]
 shape = SubResource("RectangleShape2D_euui2")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="Level3Outro" parent="Level3" index="2" instance=ExtResource("3_3w8ql")]
-position = Vector2(-1280, 64)
-json_file = "res://data/dialog_json/level2_outro.json"
+position = Vector2(-640, 64)
+json_file = "res://data/dialog_json/level3_outro.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Level3Outro" index="1"]
+shape = SubResource("RectangleShape2D_b67dc")
+debug_color = Color(0.813755, 0.408719, 0, 0.42)
+
+[node name="Level4" type="Node2D" parent="." index="10"]
+position = Vector2(-736, -800)
+
+[node name="Label" type="Label" parent="Level4" index="0"]
+offset_left = -384.0
+offset_top = -384.0
+offset_right = -243.0
+offset_bottom = -298.0
+text = "Level4"
+label_settings = ExtResource("4_euui2")
+
+[node name="Level4Intro" parent="Level4" index="1" instance=ExtResource("3_3w8ql")]
+position = Vector2(-320, 64)
+json_file = "res://data/dialog_json/level4_intro.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Level4Intro" index="1"]
+shape = SubResource("RectangleShape2D_euui2")
+debug_color = Color(0.813755, 0.408719, 0, 0.42)
+
+[node name="Level4Outro" parent="Level4" index="2" instance=ExtResource("3_3w8ql")]
+position = Vector2(-640, 64)
+json_file = "res://data/dialog_json/level4_outro.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level4/Level4Outro" index="1"]
 shape = SubResource("RectangleShape2D_b67dc")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
