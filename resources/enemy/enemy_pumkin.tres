@@ -8,7 +8,7 @@
 script = ExtResource("1_2ugne")
 texture = ExtResource("2_6ccs2")
 type = 2
-max_health = 200
+max_health = 100
 health_regen = 5
 damage = 10
 speed = 400
