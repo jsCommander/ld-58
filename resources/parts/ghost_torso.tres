@@ -8,5 +8,7 @@ script = ExtResource("1_ghost")
 shoot_cooldown = 0.5
 max_health = 100
 invulnebility_time = 0.1
+regen_amount = 10
 texture = ExtResource("2_ghost")
+set_type = 3
 metadata/_custom_type_script = "uid://cbbvmutb7jhuq"
