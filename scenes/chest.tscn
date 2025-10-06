@@ -6,7 +6,10 @@
 [node name="Chest" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(6, -96)
+position = Vector2(3, -48)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_sy5e1")
 
 [node name="shadow" parent="." instance=ExtResource("2_gqd3d")]
+position = Vector2(0, -4)
+scale = Vector2(0.59778, 0.59778)
