@@ -67,26 +67,32 @@ debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="PartDrop" parent="." index="8" instance=ExtResource("3_djkhm")]
 position = Vector2(-43, -378)
+scale = Vector2(1.00236, 1.00236)
 part = ExtResource("4_stlos")
 
 [node name="PartDrop2" parent="." index="9" instance=ExtResource("3_djkhm")]
 position = Vector2(2904, -221)
+scale = Vector2(1.00236, 1.00236)
 part = ExtResource("5_013va")
 
 [node name="PartDrop3" parent="." index="10" instance=ExtResource("3_djkhm")]
 position = Vector2(1007, -486)
+scale = Vector2(1.00236, 1.00236)
 part = ExtResource("6_itjn0")
 
 [node name="PartDrop5" parent="." index="11" instance=ExtResource("3_djkhm")]
 position = Vector2(3909, 2856)
+scale = Vector2(1.00236, 1.00236)
 part = ExtResource("6_itjn0")
 
 [node name="PartDrop4" parent="." index="12" instance=ExtResource("3_djkhm")]
 position = Vector2(1778, 1763)
+scale = Vector2(1.00236, 1.00236)
 part = ExtResource("7_ysp80")
 
 [node name="PartDrop6" parent="." index="13" instance=ExtResource("3_djkhm")]
 position = Vector2(3089, 2342)
+scale = Vector2(1.00236, 1.00236)
 part = ExtResource("4_stlos")
 
 [node name="Level1Parts" parent="." index="14" instance=ExtResource("2_waewm")]
