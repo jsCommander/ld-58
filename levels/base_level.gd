@@ -40,7 +40,7 @@ func _connect_dialog_zone_signals() -> void:
 func handle_player_killed() -> void:
 	reload_requested.emit({})
 
-func handle_dialog_zone_player_entered(dialog_name: String, conversation: Conversation) -> void:
+func handle_dialog_zone_player_entered(_dialog_name: String, conversation: Conversation) -> void:
 	var _result = await dialog_manager.open_dialog(DIALOG_CONVERSATION, {"conversation": conversation}, true)
 
 

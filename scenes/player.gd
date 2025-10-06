@@ -100,7 +100,7 @@ func kill() -> void:
 		return
 
 	is_dead = true
-	killed.emit()
+
 	base_rig.visible = false
 
 	hurtbox_collider.set_deferred("disabled", true)
@@ -108,6 +108,7 @@ func kill() -> void:
 
 	death_sfx.play()
 	await death_sfx.finished
+	killed.emit()
 	queue_free()
 
 func _update_health(health: int) -> void:
@@ -195,7 +196,7 @@ func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2)
 
 		var distance = spawn_position.distance_to(end_position)
 		var min_height = 50.0
-		var max_height = 200.0
+		var max_height = 100.0
 		var max_height_distance = 600.0
 		var t = clamp(distance / max_height_distance, 0.0, 1.0)
 		var height = lerp(min_height, max_height, t)

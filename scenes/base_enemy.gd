@@ -266,6 +266,12 @@ func _on_agro_time_timeout() -> void:
 	if current_state != State.ATTAK_PLAYER:
 		return
 
+	if not is_instance_valid(player):
+		if stat.can_move:
+			_set_state(State.EVADE)
+		else:
+			_set_state(State.IDLE)
+
 	var distance_to_player = global_position.distance_to(player.global_position)
 
 	if distance_to_player <= stat.agro_range:

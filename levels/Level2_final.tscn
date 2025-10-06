@@ -216,7 +216,7 @@ drop_part = ExtResource("12_8476y")
 
 [node name="Level2Stealth" parent="." index="37" instance=ExtResource("2_370ye")]
 position = Vector2(3264, 320)
-json_file = "res://data/dialog_json/level3_intro.json"
+json_file = "res://data/dialog_json/level2_stealth.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2Stealth" index="1"]
 position = Vector2(64, -192)

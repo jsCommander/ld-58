@@ -78,3 +78,10 @@ part = ExtResource("10_61q83")
 position = Vector2(704, 160)
 scale = Vector2(1.09482, 1.09482)
 part = ExtResource("11_0ac2k")
+
+[connection signal="body_entered" from="Zones/PartDropZone" to="Zones/PartDropZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Zones/@Area2D@39294" to="Zones/@Area2D@39294" method="_on_body_entered"]
+[connection signal="body_entered" from="Zones/@Area2D@39295" to="Zones/@Area2D@39295" method="_on_body_entered"]
+[connection signal="body_entered" from="Zones/@Area2D@39296" to="Zones/@Area2D@39296" method="_on_body_entered"]
+[connection signal="body_entered" from="Zones/@Area2D@39297" to="Zones/@Area2D@39297" method="_on_body_entered"]
+[connection signal="body_entered" from="Zones/@Area2D@39298" to="Zones/@Area2D@39298" method="_on_body_entered"]
