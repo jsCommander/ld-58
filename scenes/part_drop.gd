@@ -27,6 +27,8 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		Animations.fade_in(rig, 0.5)
 
+	Animations.pulse(self, 1.1, 1.0, true)
+
 func kill() -> void:
 	queue_free()
 
