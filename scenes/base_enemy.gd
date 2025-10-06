@@ -48,6 +48,7 @@ func _ready() -> void:
 	# spawn position is evade anchor
 	evade_position = global_position
 	_set_state(State.IDLE)
+	love_sfx.stream = stat.love_sound
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=4 format=3 uid="uid://dr0lvc4gs0ckm"]
+[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=5 format=3 uid="uid://dr0lvc4gs0ckm"]
 
 [ext_resource type="Resource" uid="uid://b2s2bs6gjbt8c" path="res://resources/bullets/carrot_bullet.tres" id="1_1mn8i"]
 [ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="2_4rvqx"]
+[ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="2_sty3d"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yddla"]
 load_path = "res://.godot/imported/chr_bunny_@0.5x.png-788bfa747f4dfd12f9d64adb057d83ca.ctex"
@@ -9,6 +10,7 @@ load_path = "res://.godot/imported/chr_bunny_@0.5x.png-788bfa747f4dfd12f9d64adb0
 [resource]
 script = ExtResource("2_4rvqx")
 texture = SubResource("CompressedTexture2D_yddla")
+love_sound = ExtResource("2_sty3d")
 type = 0
 max_health = 100
 health_regen = 5

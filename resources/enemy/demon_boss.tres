@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=4 format=3 uid="uid://bgqmwnr600vxp"]
+[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=5 format=3 uid="uid://bgqmwnr600vxp"]
 
 [ext_resource type="Resource" uid="uid://nnyfewo8ohdi" path="res://resources/bullets/bossFireball.tres" id="1_d6q8p"]
+[ext_resource type="AudioStream" uid="uid://cc1j24v6la1y5" path="res://assets/sfx/sfx_damn_normalized.ogg" id="2_uueea"]
 [ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="3_q8df0"]
 [ext_resource type="Texture2D" uid="uid://bo2dwr43sj36d" path="res://assets/chr/chr_demon_@0.5x.png" id="4_7b4gs"]
 
 [resource]
 script = ExtResource("3_q8df0")
 texture = ExtResource("4_7b4gs")
+love_sound = ExtResource("2_uueea")
 type = 1
 max_health = 1000
 health_regen = 5

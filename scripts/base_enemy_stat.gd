@@ -1,7 +1,10 @@
 extends Resource
 class_name BaseEnemyStat
 
+const SFX_PICKUP_OU_MAI_NORMALIZED = preload("res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg")
+
 @export var texture: Texture2D
+@export var love_sound: AudioStream = SFX_PICKUP_OU_MAI_NORMALIZED
 @export var type: Types.SetType = Types.SetType.GHOST
 
 @export var max_health: int = 100

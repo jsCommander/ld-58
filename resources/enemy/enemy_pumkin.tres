@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=4 format=3 uid="uid://2ea2k4wqds5t"]
+[gd_resource type="Resource" script_class="BaseEnemyStat" load_steps=5 format=3 uid="uid://2ea2k4wqds5t"]
 
 [ext_resource type="Script" uid="uid://d0kfbrr2f1c5l" path="res://scripts/base_enemy_stat.gd" id="1_2ugne"]
 [ext_resource type="Resource" uid="uid://bcjn5rcyr4eyq" path="res://resources/bullets/pumpkin_seed_bullet.tres" id="1_6ccs2"]
 [ext_resource type="Texture2D" uid="uid://oqqghctsgf4a" path="res://assets/chr/chr_pumpkin_@0.5x.png" id="2_6ccs2"]
+[ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="2_tg5by"]
 
 [resource]
 script = ExtResource("1_2ugne")
 texture = ExtResource("2_6ccs2")
+love_sound = ExtResource("2_tg5by")
 type = 2
 max_health = 100
 health_regen = 5
