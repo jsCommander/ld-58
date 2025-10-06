@@ -219,8 +219,5 @@ stat = ExtResource("11_1wq6r")
 [node name="LevelFinish" parent="." index="42" instance=ExtResource("12_waewm")]
 position = Vector2(-672, 3456)
 
-[connection signal="body_entered" from="Zones/PartDropZone" to="Zones/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@27475" to="Zones/@Area2D@27475" method="_on_body_entered"]
-
 [editable path="HelpText"]
 [editable path="HelpText2"]
