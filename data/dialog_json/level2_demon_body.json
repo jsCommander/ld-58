@@ -1,0 +1,18 @@
+[
+  {
+	"speaker_id": "boss",
+	"text": "Ahead is a spider web. Regular attacks are useless against it, but with a demon body you can destroy it with fireballs."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "Fire against spider webs? Logical. These demonic hands might finally be useful for something other than destruction."
+  },
+  {
+	"speaker_id": "boss",
+	"text": "In our line of work, destruction is often creative. Sometimes to clear a path, you need to burn the obstacles first."
+  },
+  {
+	"speaker_id": "player",
+	"text": "Demon philosophy? Alright, testing these hellish abilities in practice!"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+	"speaker_id": "boss",
+	"text": "Ahead is a lava field. Regular matter will burn instantly, but with demon legs you can safely pass through."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "Ah, yes, demon legs... I know you're a demon too. But are you seriously saying you relax in this lava? I can't imagine you being relaxed!"
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Of course. We demons are born in fire - for us lava is like a warm bath. After a workday, there's nothing better than relaxing in molten magma. Even I sometimes allow myself to rest."
+  },
+  {
+	"speaker_id": "player",
+	"text": "Incredible... You, who's always grumbling about plans and reports, and suddenly - relaxing in lava? The world has definitely turned upside down. Okay, testing these hellish limbs!"
+  }
+]

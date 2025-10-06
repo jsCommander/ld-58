@@ -65,10 +65,3 @@ part = ExtResource("10_61q83")
 [node name="PartDrop12" parent="Node" index="8" instance=ExtResource("2_uesfb")]
 position = Vector2(704, 160)
 part = ExtResource("11_0ac2k")
-
-[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@32799" to="Objects/@Area2D@32799" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@32800" to="Objects/@Area2D@32800" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@32801" to="Objects/@Area2D@32801" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@32802" to="Objects/@Area2D@32802" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@32803" to="Objects/@Area2D@32803" method="_on_body_entered"]

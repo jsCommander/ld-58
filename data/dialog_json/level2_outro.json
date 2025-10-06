@@ -1,0 +1,18 @@
+[
+  {
+	"speaker_id": "player",
+	"text": "Hey Boss... have you ever actually tried solving problems with humane methods? Negotiations, compromises, that kind of thing?"
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Humane methods? In our business, that's called 'prolonging the agony'. Sometimes the only humane method is to finish the job quickly and efficiently."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "But can't we at least try? Maybe some debtors just don't understand the situation..."
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Izzy, I've seen enough to know that when it comes to debts, understanding only comes after a demonstration of power."
+  }
+]

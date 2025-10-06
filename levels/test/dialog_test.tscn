@@ -33,10 +33,10 @@ scale = Vector2(5.78823, 3.98649)
 position = Vector2(0, 256)
 
 [node name="Label" type="Label" parent="Level1" index="0"]
-offset_left = -640.0
-offset_top = -192.0
-offset_right = -501.0
-offset_bottom = -106.0
+offset_left = -352.0
+offset_top = -384.0
+offset_right = -213.0
+offset_bottom = -298.0
 text = "Level1"
 label_settings = ExtResource("4_euui2")
 
@@ -49,15 +49,23 @@ shape = SubResource("RectangleShape2D_euui2")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="Level1Parts" parent="Level1" index="2" instance=ExtResource("3_3w8ql")]
-position = Vector2(-800, 64)
+position = Vector2(-608, 64)
 json_file = "res://data/dialog_json/level1_first_part.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Level1Parts" index="1"]
 shape = SubResource("RectangleShape2D_gynph")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
-[node name="Level1Outro" parent="Level1" index="3" instance=ExtResource("3_3w8ql")]
-position = Vector2(-1280, 64)
+[node name="Level1DemonLegs" parent="Level1" index="3" instance=ExtResource("3_3w8ql")]
+position = Vector2(-928, 64)
+json_file = "res://data/dialog_json/level1_demon_legs.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Level1DemonLegs" index="1"]
+shape = SubResource("RectangleShape2D_gynph")
+debug_color = Color(0.813755, 0.408719, 0, 0.42)
+
+[node name="Level1Outro" parent="Level1" index="4" instance=ExtResource("3_3w8ql")]
+position = Vector2(-1248, 64)
 json_file = "res://data/dialog_json/level1_outro.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Level1Outro" index="1"]
@@ -68,10 +76,10 @@ debug_color = Color(0.813755, 0.408719, 0, 0.42)
 position = Vector2(-1504, 256)
 
 [node name="Label" type="Label" parent="Level2" index="0"]
-offset_left = -640.0
-offset_top = -192.0
-offset_right = -501.0
-offset_bottom = -106.0
+offset_left = -384.0
+offset_top = -384.0
+offset_right = -243.0
+offset_bottom = -298.0
 text = "Level2"
 label_settings = ExtResource("4_euui2")
 
@@ -83,18 +91,53 @@ json_file = "res://data/dialog_json/level2_intro.json"
 shape = SubResource("RectangleShape2D_euui2")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
-[node name="Level1Parts" parent="Level2" index="2" instance=ExtResource("3_3w8ql")]
-position = Vector2(-800, 64)
-json_file = "res://data/dialog_json/level1_first_part.json"
+[node name="Level2PumpkinLegs" parent="Level2" index="2" instance=ExtResource("3_3w8ql")]
+position = Vector2(-640, 64)
+json_file = "res://data/dialog_json/level2_pumpkin_legs.json"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Level1Parts" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Level2PumpkinLegs" index="1"]
 shape = SubResource("RectangleShape2D_gynph")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
-[node name="Level2Outro" parent="Level2" index="3" instance=ExtResource("3_3w8ql")]
+[node name="Level2DemonBody" parent="Level2" index="3" instance=ExtResource("3_3w8ql")]
+position = Vector2(-960, 64)
+json_file = "res://data/dialog_json/level2_demon_body.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Level2DemonBody" index="1"]
+shape = SubResource("RectangleShape2D_gynph")
+debug_color = Color(0.813755, 0.408719, 0, 0.42)
+
+[node name="Level2Outro" parent="Level2" index="4" instance=ExtResource("3_3w8ql")]
 position = Vector2(-1280, 64)
-json_file = "res://data/dialog_json/level1_outro.json"
+json_file = "res://data/dialog_json/level2_outro.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Level2Outro" index="1"]
+shape = SubResource("RectangleShape2D_b67dc")
+debug_color = Color(0.813755, 0.408719, 0, 0.42)
+
+[node name="Level3" type="Node2D" parent="." index="9"]
+position = Vector2(0, -800)
+
+[node name="Label" type="Label" parent="Level3" index="0"]
+offset_left = -384.0
+offset_top = -384.0
+offset_right = -243.0
+offset_bottom = -298.0
+text = "Level3"
+label_settings = ExtResource("4_euui2")
+
+[node name="Level3Intro" parent="Level3" index="1" instance=ExtResource("3_3w8ql")]
+position = Vector2(-320, 64)
+json_file = "res://data/dialog_json/level2_intro.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Level3Intro" index="1"]
+shape = SubResource("RectangleShape2D_euui2")
+debug_color = Color(0.813755, 0.408719, 0, 0.42)
+
+[node name="Level3Outro" parent="Level3" index="2" instance=ExtResource("3_3w8ql")]
+position = Vector2(-1280, 64)
+json_file = "res://data/dialog_json/level2_outro.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Level3Outro" index="1"]
 shape = SubResource("RectangleShape2D_b67dc")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)

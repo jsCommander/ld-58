@@ -1,0 +1,14 @@
+[
+  {
+	"speaker_id": "boss",
+	"text": "Ahead is a whole room full of rabbits. I wouldn't recommend getting into a fight - there are too many of them."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "So what should I do? It's impossible to go around, and fighting the crowd is suicide."
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Try a creative approach. If you wear a full set of rabbit parts, they'll accept you as one of their own. Camouflage is sometimes the best weapon."
+  },
+]
