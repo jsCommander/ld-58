@@ -43,27 +43,27 @@ debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="PartDrop" parent="." index="8" instance=ExtResource("3_gh8um")]
 position = Vector2(3759, 3121)
-scale = Vector2(1.04604, 1.04604)
+scale = Vector2(1.00424, 1.00424)
 part = ExtResource("4_wf71a")
 
 [node name="PartDrop2" parent="." index="9" instance=ExtResource("3_gh8um")]
 position = Vector2(3202, 3250)
-scale = Vector2(1.26259, 1.26259)
+scale = Vector2(1.21213, 1.21213)
 part = ExtResource("5_41uds")
 
 [node name="PartDrop4" parent="." index="10" instance=ExtResource("3_gh8um")]
 position = Vector2(2768, 1595)
-scale = Vector2(1.27324, 1.27324)
+scale = Vector2(1.22236, 1.22236)
 part = ExtResource("6_p6g0y")
 
 [node name="PartDrop5" parent="." index="11" instance=ExtResource("3_gh8um")]
 position = Vector2(895, 2031)
-scale = Vector2(1.25333, 1.25333)
+scale = Vector2(1.20325, 1.20325)
 part = ExtResource("7_wp4i6")
 
 [node name="PartDrop3" parent="." index="12" instance=ExtResource("3_gh8um")]
 position = Vector2(2286, 3014)
-scale = Vector2(1.26466, 1.26466)
+scale = Vector2(1.21412, 1.21412)
 part = ExtResource("4_wf71a")
 
 [node name="Level2PumpkinLegs" parent="." index="13" instance=ExtResource("2_370ye")]
