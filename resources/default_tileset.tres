@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://daq7yoxlk2w4t"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://daq7yoxlk2w4t"]
 
 [ext_resource type="Texture2D" uid="uid://c06pjqopv1p57" path="res://assets/tiles/tiles_@0.5x.png" id="1_hpfdd"]
 [ext_resource type="PackedScene" uid="uid://lsx8o37kew35" path="res://scenes/tiles/tile_forest.tscn" id="2_fbgq7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1rcu5raohpjd" path="res://scenes/tiles/tile_forest2.tscn" id="6_p8e8f"]
 [ext_resource type="PackedScene" uid="uid://u4hmkvmn1nt" path="res://scenes/tiles/breakable_wall.tscn" id="6_ygcmc"]
 [ext_resource type="PackedScene" uid="uid://cgvm5btv1j7l8" path="res://scenes/tiles/tile_lava.tscn" id="8_5xtch"]
+[ext_resource type="PackedScene" uid="uid://cqv0piuxvqabd" path="res://scenes/part_drop_zone.tscn" id="9_cg6rq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xy01o"]
 vertices = PackedVector2Array(128, 128, -128, 128, -128, -128, 128, -128)
@@ -62,6 +63,7 @@ scenes/4/scene = ExtResource("5_ygcmc")
 scenes/5/scene = ExtResource("6_p8e8f")
 scenes/6/scene = ExtResource("6_ygcmc")
 scenes/7/scene = ExtResource("8_5xtch")
+scenes/8/scene = ExtResource("9_cg6rq")
 
 [resource]
 tile_size = Vector2i(128, 128)

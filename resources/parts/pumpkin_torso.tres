@@ -10,6 +10,7 @@ bullet = ExtResource("1_8h803")
 shoot_cooldown = 0.5
 max_health = 200
 invulnebility_time = 0.1
+regen_amount = 5
 texture = ExtResource("2_pumpkin")
 set_type = 2
 metadata/_custom_type_script = "uid://cbbvmutb7jhuq"

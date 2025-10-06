@@ -53,6 +53,7 @@ position = Vector2(1744, 747)
 
 [node name="CollisionShape2D" parent="LevelFinish" index="0"]
 position = Vector2(-8.05322, 15.9459)
+scale = Vector2(5.78823, 3.98649)
 
 [node name="DialogZone3" parent="." index="7" instance=ExtResource("2_gqfrg")]
 position = Vector2(-2353, 1423)

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_carrot")
+type = 0
 texture = ExtResource("2_carrot")
 speed = 800
 damage = 10

@@ -33,10 +33,18 @@ var is_shoot_cooldown: bool = false
 var is_invulnebility: bool = false
 var current_health: int = 0
 
+var leg_part_pickup_position: Vector2
+var torso_part_pickup_position: Vector2
+var head_part_pickup_position: Vector2
+
 func _ready() -> void:
 	add_to_group("player")
 	_update_health(torso.max_health)
 	_update_parts()
+
+	leg_part_pickup_position = global_position
+	torso_part_pickup_position = global_position
+	head_part_pickup_position = global_position
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -132,52 +140,61 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 			legs = part
 			Logger.log_debug(self.name, "Updated legs: %s" % part)
 
+			if old_part != GHOST_LEG:
+				_spawn_part(old_part, part_drop.global_position, leg_part_pickup_position)
+
+			leg_part_pickup_position = part_drop.global_position
+
 		elif part is PartTorso:
 			old_part = torso
 			torso = part
-
 			Logger.log_debug(self.name, "Updated torso: %s" % part)
+
+			if old_part != GHOST_TORSO:
+				_spawn_part(old_part, part_drop.global_position, torso_part_pickup_position)
+
+			torso_part_pickup_position = part_drop.global_position
+
 		elif part is PartHead:
 			old_part = head
-			head = part
+			head = part	
 			Logger.log_debug(self.name, "Updated head: %s" % part)
+
+			if old_part != GHOST_HEAD:
+				_spawn_part(old_part, part_drop.global_position, head_part_pickup_position)
+
+			head_part_pickup_position = part_drop.global_position
+
 		else:
 			assert(false, "Part type is not valid")
 
 		part_drop.kill()
 
-		if old_part != GHOST_HEAD and old_part != GHOST_TORSO and old_part != GHOST_LEG:
-			_spawn_part(old_part, part_drop.global_position)
-
-func drop_all_parts(drop_direction: Vector2, drop_force: int) -> void:
-	var end_position = global_position + drop_direction.normalized() * drop_force
-	
+func reset_parts_to_default() -> void:	
 	if head != GHOST_HEAD:
-		_spawn_part(head, global_position, end_position)
+		_spawn_part(head, global_position, head_part_pickup_position)
 		head = GHOST_HEAD
 
 	if torso != GHOST_TORSO:
-		_spawn_part(torso, global_position, end_position)
+		_spawn_part(torso, global_position, torso_part_pickup_position)
 		torso = GHOST_TORSO
 
 	if legs != GHOST_LEG:
-		_spawn_part(legs, global_position, end_position)
+		_spawn_part(legs, global_position, leg_part_pickup_position)
 		legs = GHOST_LEG
 
 	_update_parts()
 
-func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2 = Vector2.ZERO) -> void:
+func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2) -> void:
 		var part_drop = PART_DROP.instantiate()
 		part_drop.part = part
 		part_drop.global_position = spawn_position
 		
 		get_parent().call_deferred("add_child", part_drop)
 		part_drop.call_deferred("disable_usebox", 2.0)
-		part_drop.call_deferred("animate_spawn", 100)
+		part_drop.call_deferred("animate_spawn", 300)
 
-		if end_position != Vector2.ZERO:
-			create_tween().tween_property(part_drop, "global_position", end_position, 1)
-
+		create_tween().tween_property(part_drop, "global_position", end_position, 0.5)
 
 func _spawn_bullet(target_position: Vector2) -> void:
 	if not torso.bullet:

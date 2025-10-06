@@ -18,8 +18,10 @@ class_name PartDrop
 @onready var shadow: Node2D = %shadow
 
 var _part: BasePart
+var spawn_position: Vector2
 
 func _ready() -> void:
+	spawn_position = global_position
 	_update_textures()
 	
 	if not Engine.is_editor_hint():
