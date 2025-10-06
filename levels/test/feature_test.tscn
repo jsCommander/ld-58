@@ -85,40 +85,50 @@ drop_part = ExtResource("4_6xxev")
 
 [node name="PartDrop" parent="." index="20" instance=ExtResource("9_w1dvl")]
 position = Vector2(-320, -128)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("10_3o2p0")
 
 [node name="PartDrop8" parent="." index="21" instance=ExtResource("9_w1dvl")]
 position = Vector2(-416, -960)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("11_yopi3")
 
 [node name="PartDrop9" parent="." index="22" instance=ExtResource("9_w1dvl")]
 position = Vector2(-416, -1152)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("12_jpyy8")
 
 [node name="PartDrop10" parent="." index="23" instance=ExtResource("9_w1dvl")]
 position = Vector2(-416, -1344)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("13_anh04")
 
 [node name="PartDrop6" parent="." index="24" instance=ExtResource("9_w1dvl")]
 position = Vector2(-1696, 768)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("11_yopi3")
 
 [node name="PartDrop7" parent="." index="25" instance=ExtResource("9_w1dvl")]
 position = Vector2(-2560, 0)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("10_3o2p0")
 
 [node name="PartDrop5" parent="." index="26" instance=ExtResource("9_w1dvl")]
 position = Vector2(-1728, -96)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("12_jpyy8")
 
 [node name="PartDrop3" parent="." index="27" instance=ExtResource("9_w1dvl")]
 position = Vector2(-384, 736)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("14_rispa")
 
 [node name="PartDrop4" parent="." index="28" instance=ExtResource("9_w1dvl")]
 position = Vector2(96, 736)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("15_7es2t")
 
 [node name="PartDrop2" parent="." index="29" instance=ExtResource("9_w1dvl")]
 position = Vector2(-160, 128)
+scale = Vector2(1.00018, 1.00018)
 part = ExtResource("4_6xxev")

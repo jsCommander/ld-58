@@ -56,5 +56,5 @@ func _update_textures() -> void:
 		leg_texture.texture = _part.texture
 		
 func animate_spawn(height: float = 100.0) -> void:
-	Animations.bounce_up(parts, height)
+	Animations.bounce_up(parts, height, 1.0)
 	Animations.pulse(shadow, 0.3, 1.0, false)

@@ -192,10 +192,18 @@ func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2)
 		var part_drop = PART_DROP.instantiate()
 		part_drop.part = part
 		part_drop.global_position = spawn_position
+
+		var distance = spawn_position.distance_to(end_position)
+		var min_height = 50.0
+		var max_height = 200.0
+		var max_height_distance = 600.0
+		var t = clamp(distance / max_height_distance, 0.0, 1.0)
+		var height = lerp(min_height, max_height, t)
+		Logger.log_debug(self.name, "Spawn arc height: %.2f (dist=%.2f)" % [height, distance])
 		
 		get_parent().call_deferred("add_child", part_drop)
 		part_drop.call_deferred("disable_usebox", 2.0)
-		part_drop.call_deferred("animate_spawn", 300)
+		part_drop.call_deferred("animate_spawn", height)
 
 		create_tween().tween_property(part_drop, "global_position", end_position, 0.5)
 

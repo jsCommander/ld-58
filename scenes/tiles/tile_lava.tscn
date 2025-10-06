@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgvm5btv1j7l8"]
+[gd_scene load_steps=6 format=3 uid="uid://cgvm5btv1j7l8"]
 
 [ext_resource type="Script" uid="uid://ccpxq2vfxoiwc" path="res://scenes/tiles/tile_lava.gd" id="1_ufpqc"]
 [ext_resource type="Texture2D" uid="uid://b86cumykml4yu" path="res://assets/export/tiles/lava_@0.5x.png" id="2_80gbb"]
@@ -6,32 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80gbb"]
 size = Vector2(128, 128)
 
-[sub_resource type="Shader" id="Shader_1aulc"]
-code = "shader_type canvas_item;
-
-uniform bool active = false;
-uniform vec3 color: source_color = vec3(1.0, 1.0, 1.0);
-
-void fragment() {
-    if (active) {
-		 COLOR = vec4(color.x, color.y, color.z, texture(TEXTURE, UV).a);
-    } else {
-        COLOR = texture(TEXTURE, UV);
-    }
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lo71"]
 resource_local_to_scene = true
-shader = SubResource("Shader_1aulc")
-shader_parameter/active = false
-shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufpqc"]
 resource_local_to_scene = true
 size = Vector2(192, 192)
 
 [node name="TileLava" type="StaticBody2D"]
-z_index = -1
 script = ExtResource("1_ufpqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -40,7 +22,6 @@ shape = SubResource("RectangleShape2D_80gbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 0.156863, 0.152941, 1)
 material = SubResource("ShaderMaterial_7lo71")
 texture = ExtResource("2_80gbb")
 
