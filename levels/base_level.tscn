@@ -45,7 +45,6 @@ unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("5_maq6b")
 autoplay = true
-stream_paused = true
 bus = &"Music"
 
 [node name="LevelFinish" type="Area2D" parent="."]

@@ -1,0 +1,18 @@
+[
+  {
+	"speaker_id": "boss",
+	"text": "Ahead is a suppression zone. Everything material will disappear here - get ready to become a ghost again."
+  },
+  {
+	"speaker_id": "player",
+	"text": "Again? I just got used to these parts... I even remembered what it's like to have a body. Sorry to part with them."
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Don't worry, there are plenty more parts ahead. In this forest, you'll always find something new for your... wardrobe."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "Wardrobe... Yeah, I never thought my professional growth would be measured by the number of limbs I've worn."
+  }
+]

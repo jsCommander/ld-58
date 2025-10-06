@@ -1,10 +1,11 @@
 extends Area2D
 class_name DialogZone
 
+@export var dialog_name: String
 @export var speakers: ConversationSpeakerArray
 @export_file("*.json") var json_file: String
 
-signal player_entered(conversation: Conversation)
+signal player_entered(dialog_name: String,conversation: Conversation)
 
 @onready var label: Label = $Label
 
@@ -21,4 +22,4 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player and not is_visited:
 		is_visited = true
-		player_entered.emit(conversation)
+		player_entered.emit(dialog_name, conversation)
