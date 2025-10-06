@@ -79,4 +79,5 @@ label_settings = ExtResource("6_maq6b")
 
 [node name="DialogManager" parent="." instance=ExtResource("7_maq6b")]
 
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="body_entered" from="LevelFinish" to="." method="_on_level_finish_body_entered"]
