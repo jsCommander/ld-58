@@ -5,11 +5,13 @@ const START_SCREEN = preload("res://levels/start_screen/start_screen.tscn")
 const END_SCREEN = preload("res://levels/end_screen/end_screen.tscn")
 const LEVEL_1_FINAL = preload("res://levels/Level1_final.tscn")
 const LEVEL_2_FINAL = preload("res://levels/Level2_final.tscn")
+const LEVEL_3_FINAL = preload("res://levels/Level3_final.tscn")
 
 const SCENE_TRANSITIONS: Dictionary[PackedScene, PackedScene] = {
 	START_SCREEN: LEVEL_1_FINAL,
 	LEVEL_1_FINAL: LEVEL_2_FINAL,
-	LEVEL_2_FINAL: END_SCREEN,
+	LEVEL_2_FINAL: LEVEL_3_FINAL,
+	LEVEL_3_FINAL: END_SCREEN,
 	END_SCREEN: START_SCREEN
 }
 
