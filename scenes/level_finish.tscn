@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://wdes4dacs5x"]
+
+[ext_resource type="LabelSettings" uid="uid://h1xjtp0vggpi" path="res://resources/big_label.tres" id="1_k847a"]
+[ext_resource type="Script" uid="uid://b84k8wrm1klp" path="res://scenes/level_finish.gd" id="1_kib3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5284"]
+size = Vector2(64.4254, 63.7838)
+
+[sub_resource type="Gradient" id="Gradient_maq6b"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0rg8l"]
+gradient = SubResource("Gradient_maq6b")
+
+[node name="LevelFinish" type="Area2D"]
+scale = Vector2(0.993395, 1.00339)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_kib3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-07, -6.27364e-05)
+scale = Vector2(5.03325, 3.98649)
+shape = SubResource("RectangleShape2D_p5284")
+debug_color = Color(0.248103, 0.000726245, 0.544395, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 0.427451)
+position = Vector2(9.53674e-07, -6.27364e-05)
+scale = Vector2(5.03325, 3.98649)
+texture = SubResource("GradientTexture2D_0rg8l")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D"]
+remote_path = NodePath("../../CollisionShape2D")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -193.277
+offset_top = -191.351
+offset_right = 179.723
+offset_bottom = -105.351
+text = "Level Finish Zone"
+label_settings = ExtResource("1_k847a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

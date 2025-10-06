@@ -15,6 +15,7 @@ func _ready() -> void:
 	super._ready()
 	_connect_player_signals()
 	_connect_dialog_zone_signals()
+	_connect_level_finish_signals()
 	camera_man.follow_target(player)
 	camera_man.zoom_to(0.8)
 	get_window().grab_focus()
@@ -32,9 +33,6 @@ func set_data(_data: Dictionary) -> void:
 	if _data.has("visited_dialog_zones"):
 		visited_dialog_zones = _data.visited_dialog_zones
 
-func _on_level_finish_body_entered(_body: Node2D) -> void:
-	finished.emit({})
-
 func _connect_player_signals() -> void:
 	player.killed.connect(handle_player_killed)
 
@@ -43,6 +41,15 @@ func _connect_dialog_zone_signals() -> void:
 	for node in nodes:
 		var dialog_zone = node as DialogZone
 		dialog_zone.player_entered.connect(handle_dialog_zone_player_entered)
+		
+func _connect_level_finish_signals() -> void:
+	var nodes = get_tree().get_nodes_in_group("level_finish")
+	for node in nodes:
+		var level_finish = node as LevelFinish
+		level_finish.player_entered.connect(handle_level_finish_player_entered)
+
+func handle_level_finish_player_entered() -> void:
+	finished.emit({})
 
 func handle_player_killed() -> void:
 	reload_requested.emit({"visited_dialog_zones": visited_dialog_zones})
