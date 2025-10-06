@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4n5ceqw63m7i"]
+[gd_scene load_steps=7 format=4 uid="uid://c4n5ceqw63m7i"]
 
 [ext_resource type="Script" uid="uid://dp5jij0b6u4ag" path="res://levels/base_level.gd" id="1_wevqg"]
 [ext_resource type="TileSet" uid="uid://daq7yoxlk2w4t" path="res://resources/default_tileset.tres" id="2_ew5uy"]
 [ext_resource type="PackedScene" uid="uid://bo0k7rb6v04lk" path="res://scenes/player.tscn" id="4_satuh"]
 [ext_resource type="AudioStream" uid="uid://dbrj46fnvyfte" path="res://assets/music/music_mellow_normalized.mp3" id="5_maq6b"]
 [ext_resource type="Script" uid="uid://bo41jxf5bh1ru" path="res://game_kit/camera/camera_man.gd" id="5_p5284"]
-[ext_resource type="PackedScene" uid="uid://wdes4dacs5x" path="res://scenes/level_finish.tscn" id="6_maq6b"]
 [ext_resource type="PackedScene" uid="uid://pctqnliuvj64" path="res://game_kit/dialogs/dialog_manager/dialog_manager.tscn" id="7_maq6b"]
 
 [node name="BaseLevel" type="Node2D"]
@@ -39,9 +38,6 @@ process_mode = 3
 stream = ExtResource("5_maq6b")
 autoplay = true
 bus = &"Music"
-
-[node name="LevelFinish" parent="." instance=ExtResource("6_maq6b")]
-position = Vector2(720, -144)
 
 [node name="DialogManager" parent="." instance=ExtResource("7_maq6b")]
 
