@@ -66,35 +66,40 @@ debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="PartDrop" parent="." index="8" instance=ExtResource("3_djkhm")]
 position = Vector2(-43, -378)
-scale = Vector2(1.18122, 1.18122)
+scale = Vector2(1.14266, 1.14266)
 part = ExtResource("4_stlos")
 
 [node name="PartDrop2" parent="." index="9" instance=ExtResource("3_djkhm")]
 position = Vector2(2904, -221)
-scale = Vector2(1.18122, 1.18122)
+scale = Vector2(1.14266, 1.14266)
 part = ExtResource("5_013va")
 
 [node name="PartDrop3" parent="." index="10" instance=ExtResource("3_djkhm")]
 position = Vector2(1007, -486)
-scale = Vector2(1.18122, 1.18122)
+scale = Vector2(1.14266, 1.14266)
 part = ExtResource("6_itjn0")
 
 [node name="PartDrop5" parent="." index="11" instance=ExtResource("3_djkhm")]
 position = Vector2(3909, 2856)
-scale = Vector2(1.18122, 1.18122)
+scale = Vector2(1.14266, 1.14266)
 part = ExtResource("6_itjn0")
 
 [node name="PartDrop4" parent="." index="12" instance=ExtResource("3_djkhm")]
 position = Vector2(1778, 1763)
-scale = Vector2(1.18122, 1.18122)
+scale = Vector2(1.14266, 1.14266)
 part = ExtResource("7_ysp80")
 
-[node name="PartDrop6" parent="." index="13" instance=ExtResource("3_djkhm")]
+[node name="PartDrop7" parent="." index="13" instance=ExtResource("3_djkhm")]
+position = Vector2(2665, 2341)
+scale = Vector2(1.17307, 1.17307)
+part = ExtResource("7_ysp80")
+
+[node name="PartDrop6" parent="." index="14" instance=ExtResource("3_djkhm")]
 position = Vector2(3089, 2342)
-scale = Vector2(1.18122, 1.18122)
+scale = Vector2(1.14266, 1.14266)
 part = ExtResource("4_stlos")
 
-[node name="Level1Parts" parent="." index="14" instance=ExtResource("2_waewm")]
+[node name="Level1Parts" parent="." index="15" instance=ExtResource("2_waewm")]
 position = Vector2(130, -92)
 json_file = "res://data/dialog_json/level1_first_part.json"
 
@@ -103,67 +108,67 @@ position = Vector2(-193, -205)
 shape = SubResource("RectangleShape2D_5rivb")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
-[node name="BaseEnemy" parent="." index="15" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy" parent="." index="16" instance=ExtResource("8_gmkqe")]
 position = Vector2(1134, 407)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy2" parent="." index="16" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy2" parent="." index="17" instance=ExtResource("8_gmkqe")]
 position = Vector2(886, -89)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy4" parent="." index="17" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy4" parent="." index="18" instance=ExtResource("8_gmkqe")]
 position = Vector2(1652, 398)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy6" parent="." index="18" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy6" parent="." index="19" instance=ExtResource("8_gmkqe")]
 position = Vector2(3532, 193)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy7" parent="." index="19" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy7" parent="." index="20" instance=ExtResource("8_gmkqe")]
 position = Vector2(2313, 1430)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy8" parent="." index="20" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy8" parent="." index="21" instance=ExtResource("8_gmkqe")]
 position = Vector2(2554, 913)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy14" parent="." index="21" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy14" parent="." index="22" instance=ExtResource("8_gmkqe")]
 position = Vector2(2550, 1479)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy19" parent="." index="22" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy19" parent="." index="23" instance=ExtResource("8_gmkqe")]
 position = Vector2(3624, 3115)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy13" parent="." index="23" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy13" parent="." index="24" instance=ExtResource("8_gmkqe")]
 position = Vector2(2299, 929)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy12" parent="." index="24" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy12" parent="." index="25" instance=ExtResource("8_gmkqe")]
 position = Vector2(2814, 928)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy9" parent="." index="25" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy9" parent="." index="26" instance=ExtResource("8_gmkqe")]
 position = Vector2(2799, 1422)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy10" parent="." index="26" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy10" parent="." index="27" instance=ExtResource("8_gmkqe")]
 position = Vector2(3073, 966)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy11" parent="." index="27" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy11" parent="." index="28" instance=ExtResource("8_gmkqe")]
 position = Vector2(2055, 979)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy5" parent="." index="28" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy5" parent="." index="29" instance=ExtResource("8_gmkqe")]
 position = Vector2(1386, -63)
 stat = ExtResource("9_e6886")
 
-[node name="BaseEnemy3" parent="." index="29" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy3" parent="." index="30" instance=ExtResource("8_gmkqe")]
 position = Vector2(639, 438)
 stat = ExtResource("9_e6886")
 
-[node name="HelpText" parent="." index="30" instance=ExtResource("10_qirwa")]
+[node name="HelpText" parent="." index="31" instance=ExtResource("10_qirwa")]
 offset_left = 2441.0
 offset_top = 5.0
 offset_right = 3292.0
@@ -173,7 +178,7 @@ offset_bottom = 180.0
 text = "The body gives you the ability to shoot.
 Click left mouse button to shoot"
 
-[node name="HelpText2" parent="." index="31" instance=ExtResource("10_qirwa")]
+[node name="HelpText2" parent="." index="32" instance=ExtResource("10_qirwa")]
 offset_left = 2505.0
 offset_top = 2885.0
 offset_right = 3339.0
@@ -182,7 +187,7 @@ offset_bottom = 3060.0
 [node name="Label" parent="HelpText2" index="0"]
 text = "Enemies don't attack their own kind"
 
-[node name="Level1DemonLegs" parent="." index="32" instance=ExtResource("2_waewm")]
+[node name="Level1DemonLegs" parent="." index="33" instance=ExtResource("2_waewm")]
 position = Vector2(3736, 593)
 json_file = "res://data/dialog_json/level1_demon_legs.json"
 
@@ -191,32 +196,29 @@ position = Vector2(49, 404)
 shape = SubResource("RectangleShape2D_lk0kj")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
-[node name="BaseEnemy16" parent="." index="33" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy16" parent="." index="34" instance=ExtResource("8_gmkqe")]
 position = Vector2(2849, 3902)
 stat = ExtResource("11_1wq6r")
 
-[node name="BaseEnemy17" parent="." index="34" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy17" parent="." index="35" instance=ExtResource("8_gmkqe")]
 position = Vector2(2385, 3785)
 stat = ExtResource("11_1wq6r")
 
-[node name="BaseEnemy21" parent="." index="35" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy21" parent="." index="36" instance=ExtResource("8_gmkqe")]
 position = Vector2(2266, 3103)
 stat = ExtResource("11_1wq6r")
 
-[node name="BaseEnemy20" parent="." index="36" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy20" parent="." index="37" instance=ExtResource("8_gmkqe")]
 position = Vector2(737, 3787)
 stat = ExtResource("11_1wq6r")
 
-[node name="BaseEnemy22" parent="." index="37" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy22" parent="." index="38" instance=ExtResource("8_gmkqe")]
 position = Vector2(756, 3252)
 stat = ExtResource("11_1wq6r")
 
-[node name="BaseEnemy18" parent="." index="38" instance=ExtResource("8_gmkqe")]
+[node name="BaseEnemy18" parent="." index="39" instance=ExtResource("8_gmkqe")]
 position = Vector2(1328, 3492)
 stat = ExtResource("11_1wq6r")
-
-[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@113104" to="Objects/@Area2D@113104" method="_on_body_entered"]
 
 [editable path="HelpText"]
 [editable path="HelpText2"]

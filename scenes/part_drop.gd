@@ -23,9 +23,6 @@ var spawn_position: Vector2
 func _ready() -> void:
 	spawn_position = global_position
 	_update_textures()
-	
-	if not Engine.is_editor_hint():
-		Animations.fade_in(rig, 0.5)
 
 	Animations.pulse(self, 1.1, 1.0, true)
 

@@ -25,7 +25,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().quit()
 			return
 
-
 func _on_level_finish_body_entered(_body: Node2D) -> void:
 	finished.emit({})
 
