@@ -45,6 +45,7 @@ position = Vector2(-624, 3493)
 
 [node name="CollisionShape2D" parent="LevelFinish" index="0"]
 position = Vector2(17.113, -30.8953)
+scale = Vector2(5.78823, 3.98649)
 
 [node name="Sprite2D" parent="LevelFinish" index="1"]
 position = Vector2(17.113, -30.8953)
@@ -66,37 +67,30 @@ debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="PartDrop" parent="." index="8" instance=ExtResource("3_djkhm")]
 position = Vector2(-43, -378)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("4_stlos")
 
 [node name="PartDrop2" parent="." index="9" instance=ExtResource("3_djkhm")]
 position = Vector2(2904, -221)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("5_013va")
 
 [node name="PartDrop3" parent="." index="10" instance=ExtResource("3_djkhm")]
 position = Vector2(1007, -486)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("6_itjn0")
 
 [node name="PartDrop5" parent="." index="11" instance=ExtResource("3_djkhm")]
 position = Vector2(3909, 2856)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("6_itjn0")
 
 [node name="PartDrop4" parent="." index="12" instance=ExtResource("3_djkhm")]
 position = Vector2(1778, 1763)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("7_ysp80")
 
 [node name="PartDrop7" parent="." index="13" instance=ExtResource("3_djkhm")]
 position = Vector2(2665, 2341)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("7_ysp80")
 
 [node name="PartDrop6" parent="." index="14" instance=ExtResource("3_djkhm")]
 position = Vector2(3089, 2342)
-scale = Vector2(1.23288, 1.23288)
 part = ExtResource("4_stlos")
 
 [node name="Level1Parts" parent="." index="15" instance=ExtResource("2_waewm")]
@@ -219,6 +213,9 @@ stat = ExtResource("11_1wq6r")
 [node name="BaseEnemy18" parent="." index="39" instance=ExtResource("8_gmkqe")]
 position = Vector2(1328, 3492)
 stat = ExtResource("11_1wq6r")
+
+[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26858" to="Objects/@Area2D@26858" method="_on_body_entered"]
 
 [editable path="HelpText"]
 [editable path="HelpText2"]

@@ -52,57 +52,46 @@ debug_color = Color(0.813755, 0.408719, 0, 0.42)
 
 [node name="PartDrop" parent="." index="8" instance=ExtResource("3_gh8um")]
 position = Vector2(3759, 3121)
-scale = Vector2(1.05635, 1.05635)
 part = ExtResource("4_wf71a")
 
 [node name="PartDrop7" parent="." index="9" instance=ExtResource("3_gh8um")]
 position = Vector2(4766, 1703)
-scale = Vector2(1.15979, 1.15979)
 part = ExtResource("4_wf71a")
 
 [node name="PartDrop9" parent="." index="10" instance=ExtResource("3_gh8um")]
 position = Vector2(2550, 1151)
-scale = Vector2(1.16043, 1.16043)
 part = ExtResource("7_wp4i6")
 
 [node name="PartDrop11" parent="." index="11" instance=ExtResource("3_gh8um")]
 position = Vector2(4345, 747)
-scale = Vector2(1.15674, 1.15674)
 part = ExtResource("6_ndkcy")
 
 [node name="PartDrop10" parent="." index="12" instance=ExtResource("3_gh8um")]
 position = Vector2(2043, 916)
-scale = Vector2(1.25925, 1.25925)
 part = ExtResource("6_p6g0y")
 
 [node name="PartDrop2" parent="." index="13" instance=ExtResource("3_gh8um")]
 position = Vector2(3454, 2846)
-scale = Vector2(1.27503, 1.27503)
 part = ExtResource("5_41uds")
 
 [node name="PartDrop4" parent="." index="14" instance=ExtResource("3_gh8um")]
 position = Vector2(2768, 1595)
-scale = Vector2(1.28579, 1.28579)
 part = ExtResource("6_p6g0y")
 
 [node name="PartDrop6" parent="." index="15" instance=ExtResource("3_gh8um")]
 position = Vector2(3999, 1641)
-scale = Vector2(1.31741, 1.31741)
 part = ExtResource("9_ojrt2")
 
 [node name="PartDrop8" parent="." index="16" instance=ExtResource("3_gh8um")]
 position = Vector2(5518, 1707)
-scale = Vector2(1.31673, 1.31673)
 part = ExtResource("10_evdio")
 
 [node name="PartDrop5" parent="." index="17" instance=ExtResource("3_gh8um")]
 position = Vector2(895, 2031)
-scale = Vector2(1.26569, 1.26569)
 part = ExtResource("7_wp4i6")
 
 [node name="PartDrop3" parent="." index="18" instance=ExtResource("3_gh8um")]
 position = Vector2(2286, 3014)
-scale = Vector2(1.27712, 1.27712)
 part = ExtResource("4_wf71a")
 
 [node name="Level2PumpkinLegs" parent="." index="19" instance=ExtResource("2_370ye")]
@@ -189,17 +178,17 @@ position = Vector2(2289, -1351)
 stat = ExtResource("13_lre5n")
 drop_part = ExtResource("12_8476y")
 
-[connection signal="body_entered" from="Objects/@Area2D@22344" to="Objects/@Area2D@22344" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22345" to="Objects/@Area2D@22345" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22406" to="Objects/@Area2D@22406" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22423" to="Objects/@Area2D@22423" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22424" to="Objects/@Area2D@22424" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22449" to="Objects/@Area2D@22449" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22450" to="Objects/@Area2D@22450" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22451" to="Objects/@Area2D@22451" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22457" to="Objects/@Area2D@22457" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22458" to="Objects/@Area2D@22458" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22573" to="Objects/@Area2D@22573" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22574" to="Objects/@Area2D@22574" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22598" to="Objects/@Area2D@22598" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/@Area2D@22599" to="Objects/@Area2D@22599" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28004" to="Objects/@Area2D@28004" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28064" to="Objects/@Area2D@28064" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28081" to="Objects/@Area2D@28081" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28082" to="Objects/@Area2D@28082" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28099" to="Objects/@Area2D@28099" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28100" to="Objects/@Area2D@28100" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28101" to="Objects/@Area2D@28101" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28106" to="Objects/@Area2D@28106" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28107" to="Objects/@Area2D@28107" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28211" to="Objects/@Area2D@28211" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28212" to="Objects/@Area2D@28212" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28236" to="Objects/@Area2D@28236" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@28237" to="Objects/@Area2D@28237" method="_on_body_entered"]
