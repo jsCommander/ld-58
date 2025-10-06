@@ -231,20 +231,3 @@ json_file = "res://data/dialog_json/level2_outro.json"
 position = Vector2(96, -160)
 shape = SubResource("RectangleShape2D_itmxl")
 debug_color = Color(0.813755, 0.408719, 0, 0.42)
-
-[connection signal="body_entered" from="Zones/PartDropZone" to="Zones/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29030" to="Zones/@Area2D@29030" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29031" to="Zones/@Area2D@29031" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29032" to="Zones/@Area2D@29032" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29033" to="Zones/@Area2D@29033" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29034" to="Zones/@Area2D@29034" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29035" to="Zones/@Area2D@29035" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29036" to="Zones/@Area2D@29036" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29037" to="Zones/@Area2D@29037" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29038" to="Zones/@Area2D@29038" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29039" to="Zones/@Area2D@29039" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29040" to="Zones/@Area2D@29040" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29041" to="Zones/@Area2D@29041" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29042" to="Zones/@Area2D@29042" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29043" to="Zones/@Area2D@29043" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@29044" to="Zones/@Area2D@29044" method="_on_body_entered"]

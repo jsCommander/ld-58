@@ -9,6 +9,8 @@ const DIALOG_PAUSE = preload("res://game_kit/dialogs/dialog_pause.tscn")
 @onready var camera_man: CameraMan = $CameraMan
 @onready var dialog_manager: DialogManager = $DialogManager
 
+var visited_dialog_zones: Array[String] = []
+
 func _ready() -> void:
 	super._ready()
 	_connect_player_signals()
@@ -25,6 +27,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_tree().quit()
 			return
 
+func set_data(_data: Dictionary) -> void:
+	super.set_data(_data)
+	if _data.has("visited_dialog_zones"):
+		visited_dialog_zones = _data.visited_dialog_zones
+
 func _on_level_finish_body_entered(_body: Node2D) -> void:
 	finished.emit({})
 
@@ -38,9 +45,14 @@ func _connect_dialog_zone_signals() -> void:
 		dialog_zone.player_entered.connect(handle_dialog_zone_player_entered)
 
 func handle_player_killed() -> void:
-	reload_requested.emit({})
+	reload_requested.emit({"visited_dialog_zones": visited_dialog_zones})
 
 func handle_dialog_zone_player_entered(_dialog_name: String, conversation: Conversation) -> void:
+	if visited_dialog_zones.has(_dialog_name):
+		return
+
+	visited_dialog_zones.append(_dialog_name)
+
 	var _result = await dialog_manager.open_dialog(DIALOG_CONVERSATION, {"conversation": conversation}, true)
 
 

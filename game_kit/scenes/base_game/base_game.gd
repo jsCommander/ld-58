@@ -17,7 +17,7 @@ func _ready():
 
 	Logger.log_info(self.name, "Initialized")
 
-func load_scene(scene: PackedScene):
+func load_scene(scene: PackedScene, data: Dictionary = {}):
 	if is_current_scene_deleting:
 		return
 
@@ -49,6 +49,7 @@ func load_scene(scene: PackedScene):
 	current_scene_instance = scene_instance
 	
 	if scene_instance is BaseGameScene:
+		scene_instance.set_data(data)
 		scene_instance.finished.connect(handle_scene_finished)
 		scene_instance.reload_requested.connect(handle_scene_reload_requested)
 	
@@ -59,7 +60,7 @@ func handle_scene_finished(_data: Dictionary):
 
 func handle_scene_reload_requested(_data: Dictionary):
 	Logger.log_info(self.name, "Scene %s reload requested with data: %s" % [current_scene_instance.name, _data])
-	load_scene(current_scene)
+	load_scene(current_scene, _data)
 
 func _start_transition():
 	canvas_layer.visible = true
