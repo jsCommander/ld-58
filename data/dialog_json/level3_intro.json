@@ -1,14 +1,22 @@
 [
   {
 	"speaker_id": "boss",
-	"text": "Ahead is a whole room full of rabbits. I wouldn't recommend getting into a fight - there are too many of them."
+	"text": "Well, we've finally arrived. The treasure vault is right in front of you, but don't think they'll just hand it over. This is your final test, Izzy."
   },
   {
 	"speaker_id": "player", 
-	"text": "So what should I do? It's impossible to go around, and fighting the crowd is suicide."
+	"text": "Final test? So you've been testing my skills all this time?"
   },
   {
 	"speaker_id": "boss",
-	"text": "Try a creative approach. If you wear a full set of rabbit parts, they'll accept you as one of their own. Camouflage is sometimes the best weapon."
+	"text": "Naturally. And know this - the results will directly affect your bonus. Show me what you've learned during this time."
   },
+  {
+	"speaker_id": "player",
+	"text": "A bonus... Alright, now I have an extra incentive not to screw up. I'll show you everything I can do!"
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Now that's the attitude! Remind me to raise your salary if you survive."
+  }
 ]

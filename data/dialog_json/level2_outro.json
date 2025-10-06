@@ -1,18 +1,18 @@
 [
   {
 	"speaker_id": "player",
-	"text": "Hey Boss... have you ever actually tried solving problems with humane methods? Negotiations, compromises, that kind of thing?"
+	"text": "Wait... So we could have just used disguises and avoided violence all along?"
+  },
+  {
+	"speaker_id": "boss", 
+	"text": "Technically - yes. But where would the drama be? It's boring to just walk around in costumes like it's a carnival."
+  },
+  {
+	"speaker_id": "player",
+	"text": "Are you serious? All this chaos and destruction... just because you're bored?!"
   },
   {
 	"speaker_id": "boss",
-	"text": "Humane methods? In our business, that's called 'prolonging the agony'. Sometimes the only humane method is to finish the job quickly and efficiently."
-  },
-  {
-	"speaker_id": "player", 
-	"text": "But can't we at least try? Maybe some debtors just don't understand the situation..."
-  },
-  {
-	"speaker_id": "boss",
-	"text": "Izzy, I've seen enough to know that when it comes to debts, understanding only comes after a demonstration of power."
+	"text": "In the afterlife, you have to entertain yourself somehow. Besides, reports about 'creative problem solving' look much more interesting than 'passed through unnoticed'."
   }
 ]

@@ -1,14 +1,14 @@
 [
   {
 	"speaker_id": "boss",
-	"text": "Rookie, your first task is to collect a debt from the local inhabitants. They're not used to civilized methods, so get ready for... unconventional negotiations."
+	"text": "Junior Debt Collector, welcome to your first day at Afterlife Debt Collector Agency. Your task is simple - collect a debt from the local inhabitants. They're not big on civilized methods, so get ready for... unconventional negotiations."
   },
   {
-	"speaker_id": "player", 
-	"text": "Finally! I'm sure I can find common ground with them. Maybe offer an installment plan or alternative payment method?"
+	"speaker_id": "player",
+	"text": "Finally! I'm sure we can find common ground with them. Maybe offer an installment plan or alternative payment method? There's always room for compromise!"
   },
   {
 	"speaker_id": "boss",
-	"text": "Your enthusiasm is touching, but illusions are deadly here. These creatures won't listen to your pleas about 'goodwill'a. It's time to understand how things really work in this world."
+	"text": "Your enthusiasm is touching, but illusions are deadly here. These creatures won't listen to your pleas about 'goodwill'. It's time to understand how things really work in this world."
   }
 ]

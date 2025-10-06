@@ -181,7 +181,7 @@ func _spawn_drop_part(part: BasePart, spawn_position: Vector2) -> void:
 		drop.global_position = spawn_position
 		
 		get_parent().call_deferred("add_child", drop)
-		drop.call_deferred("disable_usebox", 2.0)
+		drop.call_deferred("disable_usebox", 1.0)
 
 		drop.call_deferred("animate_spawn", 100)
 
@@ -263,13 +263,19 @@ func _spawn_bullet(target_position: Vector2) -> void:
 	_start_shoot_cooldown(stat.shoot_cooldown)
 
 func _on_agro_time_timeout() -> void:
-	if current_state == State.ATTAK_PLAYER:
-		var distance_to_player = global_position.distance_to(player.global_position)
+	if current_state != State.ATTAK_PLAYER:
+		return
 
-		if distance_to_player > stat.agro_range:
-			_set_state(State.IDLE)
-		else:
-			agro_time.start()
+	var distance_to_player = global_position.distance_to(player.global_position)
+
+	if distance_to_player <= stat.agro_range:
+		agro_time.start()
+		return
+
+	if stat.can_move:
+		_set_state(State.EVADE)
+	else:
+		_set_state(State.IDLE)
 
 func _on_regen_timer_timeout() -> void:
 	if current_state == State.IDLE:

@@ -1,18 +1,18 @@
 [
   {
-	"speaker_id": "player",
-	"text": "Wait... So we could have just used disguises and avoided violence all along?"
+	"speaker_id": "boss",
+	"text": "Not bad. I'll take this into account when considering your bonus - I think 3% would be a fair assessment."
   },
   {
-	"speaker_id": "boss", 
-	"text": "Technically - yes. But where would the drama be? It's boring to just walk around in costumes like it's a carnival."
-  },
-  {
-	"speaker_id": "player",
-	"text": "Are you serious? All this chaos and destruction... just because you're bored?!"
+	"speaker_id": "player", 
+	"text": "You know, I was thinking - you don't actually know how much money was in the treasury, do you? I could just write myself a 100% bonus right now."
   },
   {
 	"speaker_id": "boss",
-	"text": "In the afterlife, you have to entertain yourself somehow. Besides, reports about 'creative problem solving' look much more interesting than 'passed through unnoticed'."
+	"text": "Now you're starting to think like a real demon! I'll recommend you for promotion to Middle Debt Collector."
+  },
+  {
+	"speaker_id": "player",
+	"text": "Middle Debt Collector? Fantastic! I'm already thinking about new strategies to collect even more debts!"
   }
 ]

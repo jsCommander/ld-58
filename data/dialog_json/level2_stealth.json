@@ -1,0 +1,14 @@
+[
+  {
+	"speaker_id": "boss",
+	"text": "Ahead is a demon labyrinth. I wouldn't recommend direct confrontation - they're too powerful and numerous."
+  },
+  {
+	"speaker_id": "player", 
+	"text": "So what's the plan? Going around seems impossible, and fighting them head-on would be suicide."
+  },
+  {
+	"speaker_id": "boss",
+	"text": "Try a strategic approach. If you wear a full set of demon parts, they might accept you as one of their own. Sometimes blending in is smarter than fighting."
+  }
+]
