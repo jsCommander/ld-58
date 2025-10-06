@@ -10,5 +10,5 @@ texture = ExtResource("2_carrot")
 speed = 800
 damage = 10
 attack_range = 800
-knockback_force = 5
+knockback_force = 0
 metadata/_custom_type_script = "uid://bhsrgfx0dgt63"

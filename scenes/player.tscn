@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bo0k7rb6v04lk"]
+[gd_scene load_steps=22 format=3 uid="uid://bo0k7rb6v04lk"]
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cghostleg001" path="res://resources/parts/ghost_leg.tres" id="4_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://c1ihsj85a28td" path="res://game_kit/ui/components/ui_progress_bar_small.tscn" id="9_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://d1o8xk5qcpq61" path="res://assets/chr/chr_ghost_@0.5x.png" id="10_f1ej7"]
+[ext_resource type="AudioStream" uid="uid://1rwtd77svoav" path="res://assets/sfx/sfx_pickup_ou_normalized.ogg" id="11_3v2ag"]
 [ext_resource type="AudioStream" uid="uid://j17lraixogo4" path="res://assets/sfx/sfx_hurt_normalized.ogg" id="11_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://bvgyu4uqoahr" path="res://game_kit/scenes/damage_number/damage_number.tscn" id="12_3v2ag"]
 [ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="13_jej6c"]
@@ -150,6 +151,11 @@ bus = &"Sfx"
 unique_name_in_owner = true
 bus = &"Sfx"
 
+[node name="PickupSfx" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_3v2ag")
+bus = &"Sfx"
+
 [node name="BulletSpawn" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -96)
@@ -157,6 +163,7 @@ position = Vector2(0, -96)
 [node name="DeathSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("13_jej6c")
+bus = &"Sfx"
 
 [node name="RegenTimer" type="Timer" parent="."]
 unique_name_in_owner = true

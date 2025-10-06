@@ -30,6 +30,7 @@ enum State {
 @onready var agro_time: Timer = %AgroTime
 @onready var bullet_spawn: Marker2D = %BulletSpawn
 @onready var regen_timer: Timer = %RegenTimer
+@onready var love_sfx: AudioStreamPlayer2D = %LoveSfx
 
 var current_health: int = 0
 var is_dead: bool = false
@@ -243,6 +244,7 @@ func _set_state(new_state: State, data: Dictionary = {}) -> void:
 		State.LOVE_PLAYER:
 			think_buble.visible = true
 			think_buble.show_bubble(ICN_HEART)
+			love_sfx.play()
 
 func _start_shoot_cooldown(cooldown: float) -> void:
 	is_shoot_cooldown = true

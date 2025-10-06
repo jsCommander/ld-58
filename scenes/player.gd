@@ -27,6 +27,7 @@ signal killed()
 @onready var damage_number: DamageNumber = $BaseRig/DamageNumber
 @onready var death_sfx: AudioStreamPlayer2D = %DeathSfx
 @onready var usebox_collider: CollisionShape2D = %UseboxCollider
+@onready var pickup_sfx: AudioStreamPlayer2D = %PickupSfx
 
 var is_dead = false
 var is_shoot_cooldown: bool = false
@@ -134,6 +135,8 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 		var part_drop = body as PartDrop
 		var part = part_drop.part
 		var old_part: BasePart
+
+		pickup_sfx.play()
 
 		if part is PartLeg:
 			old_part = legs
