@@ -24,7 +24,8 @@ func _ready() -> void:
 	spawn_position = global_position
 	_update_textures()
 
-	Animations.pulse(self, 1.1, 1.0, true)
+	if not Engine.is_editor_hint():
+		Animations.pulse(self, 1.1, 1.0, true)
 
 func kill() -> void:
 	queue_free()

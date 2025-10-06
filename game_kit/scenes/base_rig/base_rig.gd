@@ -8,6 +8,9 @@ var walk_tween: Tween
 var pulse_tween: Tween
 var is_pulsing: bool = false
 
+func _ready() -> void:
+	animation_rig.material.set_shader_parameter("active", false)
+
 func set_animation_rig_direction(direction: Vector2) -> void:
 	if direction.x > 0 and animation_rig.scale.x < 0:
 		animation_rig.scale.x = abs(animation_rig.scale.x)

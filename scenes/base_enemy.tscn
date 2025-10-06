@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bvgyu4uqoahr" path="res://game_kit/scenes/damage_number/damage_number.tscn" id="7_j4o54"]
 [ext_resource type="AudioStream" uid="uid://dptc8rddhfkwn" path="res://assets/sfx/sfx_punch1_normalized.ogg" id="8_0gk8p"]
 [ext_resource type="PackedScene" uid="uid://jgjks03ps4ir" path="res://game_kit/scenes/think_bubble/think_bubble.tscn" id="9_hf87f"]
-[ext_resource type="AudioStream" uid="uid://d2fuofmlgr420" path="res://assets/sfx/sfx_burp_normalized.ogg" id="10_rfapk"]
+[ext_resource type="AudioStream" uid="uid://xive4oe5cpwk" path="res://assets/sfx/sfx_explosion.ogg" id="10_2rhgx"]
 [ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="11_rfapk"]
 [ext_resource type="AudioStream" uid="uid://dr0yv4vpspfyt" path="res://assets/sfx/sfx_man_shoot1_normalized.ogg" id="12_2rhgx"]
 
@@ -100,7 +100,7 @@ bus = &"Sfx"
 
 [node name="DeathSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("10_rfapk")
+stream = ExtResource("10_2rhgx")
 bus = &"Sfx"
 
 [node name="LoveSfx" type="AudioStreamPlayer2D" parent="."]

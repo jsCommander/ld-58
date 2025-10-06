@@ -1,7 +1,7 @@
 extends Node
 class_name BaseGame 
 
-@export var transition_time: float = 0.5
+@export var transition_time: float = 0.1
 
 @onready var scene_root: Node2D = %SceneRoot
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -9,6 +9,7 @@ class_name BaseGame
 
 var current_scene: PackedScene
 var current_scene_instance: Node
+var is_current_scene_deleting = false
 
 func _ready():
 	add_to_group("Game")
@@ -17,18 +18,28 @@ func _ready():
 	Logger.log_info(self.name, "Initialized")
 
 func load_scene(scene: PackedScene):
+	if is_current_scene_deleting:
+		return
+
+	if current_scene_instance:
+		is_current_scene_deleting = true
+
+	_start_transition()
+	await get_tree().create_timer(0.1).timeout
+
+
 	var scene_name = scene.resource_path
 	Logger.log_info(self.name, "Starting to load level: %s" % scene_name)
-		
+	
 	if current_scene_instance:
 		var current_scene_name = current_scene_instance.name
 		Logger.log_info(self.name, "Removing current scene: %s" % current_scene_name)
-		_start_transition()
 		current_scene_instance.queue_free()
 		await current_scene_instance.tree_exiting
+		is_current_scene_deleting = false
 		Logger.log_debug(self.name, "Current scene was removed: %s" % name)
 		await get_tree().create_timer(transition_time).timeout
-		
+
 	var scene_instance = scene.instantiate()
 	Logger.log_debug(self.name, "Scene is created: %s" % scene_name)
 	scene_root.call_deferred("add_child", scene_instance)
