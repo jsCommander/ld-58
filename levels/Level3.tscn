@@ -1,5 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmif76qphomat"]
+[gd_scene load_steps=6 format=4 uid="uid://cmif76qphomat"]
 
 [ext_resource type="PackedScene" uid="uid://c4n5ceqw63m7i" path="res://levels/base_level.tscn" id="1_gq8fh"]
+[ext_resource type="PackedScene" uid="uid://1i76eaj3cd7a" path="res://scenes/part_drop.tscn" id="2_mmhpo"]
+[ext_resource type="Resource" uid="uid://cbunnyleg001" path="res://resources/parts/bunny_leg.tres" id="3_rd3y7"]
+[ext_resource type="Resource" uid="uid://co2f6cdbi7m3y" path="res://resources/parts/pumpkin_leg.tres" id="4_liotd"]
+[ext_resource type="Resource" uid="uid://cdemonleg001" path="res://resources/parts/demon_leg.tres" id="5_10eaw"]
 
 [node name="Level3" instance=ExtResource("1_gq8fh")]
+
+[node name="Player" parent="." index="0"]
+position = Vector2(-1936, -1462)
+
+[node name="CameraMan" parent="." index="1"]
+position = Vector2(-1920, -1622)
+
+[node name="Objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AADs//T/AAAAAAQAAADt//T/AAABAAQAAADu//T/AAACAAQAAADz//T/AAAAAAQAAAD0//T/AAABAAQAAAD1//T/AAACAAQAAADs//P/AAAAAAMAAADt//P/AAABAAMAAADu//P/AAACAAMAAADs//L/AAAAAAMAAADt//L/AAABAAMAAADu//L/AAACAAMAAADs//H/AAAAAAMAAADt//H/AAABAAMAAADu//H/AAACAAMAAADs//D/AAAAAAMAAADt//D/AAABAAMAAADu//D/AAACAAMAAADs/+//AAAAAAMAAADt/+//AAABAAMAAADu/+//AAACAAMAAADs/+7/AAAAAAMAAADt/+7/AAABAAMAAADu/+7/AAACAAMAAADs/+3/AAAAAAMAAADt/+3/AAABAAMAAADu/+3/AAACAAMAAADs/+z/AAAAAAMAAADt/+z/AAABAAMAAADu/+z/AAACAAMAAADs/+v/AAAAAAMAAADt/+v/AAABAAMAAADu/+v/AAACAAMAAADz//P/AAAAAAMAAAD0//P/AAABAAMAAAD1//P/AAACAAMAAADz//L/AAAAAAMAAAD0//L/AAABAAMAAAD1//L/AAACAAMAAADz//H/AAAAAAMAAAD0//H/AAABAAMAAAD1//H/AAACAAMAAADz//D/AAAAAAMAAAD0//D/AAABAAMAAAD1//D/AAACAAMAAADz/+//AAAAAAMAAAD0/+//AAABAAMAAAD1/+//AAACAAMAAADz/+7/AAAAAAMAAAD0/+7/AAABAAMAAAD1/+7/AAACAAMAAADz/+3/AAAAAAMAAAD0/+3/AAABAAMAAAD1/+3/AAACAAMAAADz/+z/AAAAAAMAAAD0/+z/AAABAAMAAAD1/+z/AAACAAMAAADz/+v/AAAAAAMAAAD0/+v/AAABAAMAAAD1/+v/AAACAAMAAADv//L/AAABAAQAAADw//L/AAABAAQAAADx//L/AAABAAQAAADx//H/AAABAAIAAADy//H/AAABAAIAAADy//L/AAABAAQAAADw//H/AAABAAIAAADv//H/AAABAAIAAADu//X/AQAAAAAACADu//b/AQAAAAAACADu//f/AQAAAAAACADt//j/AQAAAAAACADt//n/AQAAAAAACADu//j/AQAAAAAACADu//n/AQAAAAAACADw//n/AQAAAAAACADw//j/AQAAAAAABADv//j/AQAAAAAABADv//f/AQAAAAAACAD1//X/AQAAAAAABwD1//b/AQAAAAAABwD1//f/AQAAAAAABwDx//j/AQAAAAAABAA=")
+
+[node name="LevelFinish" parent="." index="5"]
+position = Vector2(-131, 3608)
+
+[node name="CollisionShape2D" parent="LevelFinish" index="0"]
+position = Vector2(-8.05322, 15.946)
+scale = Vector2(5.78823, 3.98649)
+
+[node name="PartDrop" parent="." index="7" instance=ExtResource("2_mmhpo")]
+position = Vector2(-1766, -1304)
+part = ExtResource("3_rd3y7")
+
+[node name="PartDrop2" parent="." index="8" instance=ExtResource("2_mmhpo")]
+position = Vector2(-1936, -1109)
+part = ExtResource("4_liotd")
+
+[node name="PartDrop3" parent="." index="9" instance=ExtResource("2_mmhpo")]
+position = Vector2(-1506, -1227)
+part = ExtResource("5_10eaw")
+
+[connection signal="body_entered" from="Objects/PartDropZone" to="Objects/PartDropZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26490" to="Objects/@Area2D@26490" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26491" to="Objects/@Area2D@26491" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26492" to="Objects/@Area2D@26492" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26493" to="Objects/@Area2D@26493" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26494" to="Objects/@Area2D@26494" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26495" to="Objects/@Area2D@26495" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26496" to="Objects/@Area2D@26496" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/@Area2D@26499" to="Objects/@Area2D@26499" method="_on_body_entered"]
