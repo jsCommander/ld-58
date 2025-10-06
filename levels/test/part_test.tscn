@@ -36,43 +36,45 @@ scale = Vector2(5.78823, 4.23564)
 
 [node name="PartDrops4" parent="Node" index="0" instance=ExtResource("2_uesfb")]
 position = Vector2(-832, -256)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("3_b8lna")
 
 [node name="PartDrop6" parent="Node" index="1" instance=ExtResource("2_uesfb")]
 position = Vector2(-384, -256)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("4_uesfb")
 
 [node name="PartDrop5" parent="Node" index="2" instance=ExtResource("2_uesfb")]
 position = Vector2(-608, -256)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("5_h6awm")
 
 [node name="PartDrop7" parent="Node" index="3" instance=ExtResource("2_uesfb")]
 position = Vector2(480, -256)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("3_6gsvy")
 
 [node name="PartDrop8" parent="Node" index="4" instance=ExtResource("2_uesfb")]
 position = Vector2(928, -256)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("4_d5aux")
 
 [node name="PartDrop9" parent="Node" index="5" instance=ExtResource("2_uesfb")]
 position = Vector2(704, -256)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("8_d5aux")
 
 [node name="PartDrop10" parent="Node" index="6" instance=ExtResource("2_uesfb")]
 position = Vector2(480, 160)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("9_5fuja")
 
 [node name="PartDrop11" parent="Node" index="7" instance=ExtResource("2_uesfb")]
 position = Vector2(928, 160)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("10_61q83")
 
 [node name="PartDrop12" parent="Node" index="8" instance=ExtResource("2_uesfb")]
 position = Vector2(704, 160)
+scale = Vector2(1.09482, 1.09482)
 part = ExtResource("11_0ac2k")
-
-[connection signal="body_entered" from="Zones/PartDropZone" to="Zones/PartDropZone" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@30202" to="Zones/@Area2D@30202" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@30203" to="Zones/@Area2D@30203" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@30204" to="Zones/@Area2D@30204" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@30205" to="Zones/@Area2D@30205" method="_on_body_entered"]
-[connection signal="body_entered" from="Zones/@Area2D@30206" to="Zones/@Area2D@30206" method="_on_body_entered"]

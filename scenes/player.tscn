@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bo0k7rb6v04lk"]
+[gd_scene load_steps=23 format=3 uid="uid://bo0k7rb6v04lk"]
 
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bowk70pg6mxsf" path="res://scenes/player.gd" id="1_qlg0r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1o8xk5qcpq61" path="res://assets/chr/chr_ghost_@0.5x.png" id="10_f1ej7"]
 [ext_resource type="AudioStream" uid="uid://1rwtd77svoav" path="res://assets/sfx/sfx_pickup_ou_normalized.ogg" id="11_3v2ag"]
 [ext_resource type="AudioStream" uid="uid://j17lraixogo4" path="res://assets/sfx/sfx_hurt_normalized.ogg" id="11_d2wvv"]
+[ext_resource type="AudioStream" uid="uid://c1fl3wsxd5n3b" path="res://assets/sfx/sfx_ulia_shoot2_normalized.ogg" id="11_jej6c"]
 [ext_resource type="PackedScene" uid="uid://bvgyu4uqoahr" path="res://game_kit/scenes/damage_number/damage_number.tscn" id="12_3v2ag"]
 [ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="13_jej6c"]
 
@@ -149,6 +150,7 @@ bus = &"Sfx"
 
 [node name="ShootSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("11_jej6c")
 bus = &"Sfx"
 
 [node name="PickupSfx" type="AudioStreamPlayer2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dpg8ept1feg5s"]
+[gd_scene load_steps=17 format=3 uid="uid://dpg8ept1feg5s"]
 
 [ext_resource type="Script" uid="uid://cqjmakyrpbqh7" path="res://scenes/base_enemy.gd" id="1_kegi0"]
 [ext_resource type="PackedScene" uid="uid://2puc6ypy6of" path="res://game_kit/scenes/base_rig/base_rig.tscn" id="2_64ljx"]
@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bvgyu4uqoahr" path="res://game_kit/scenes/damage_number/damage_number.tscn" id="7_j4o54"]
 [ext_resource type="AudioStream" uid="uid://dptc8rddhfkwn" path="res://assets/sfx/sfx_punch1_normalized.ogg" id="8_0gk8p"]
 [ext_resource type="PackedScene" uid="uid://jgjks03ps4ir" path="res://game_kit/scenes/think_bubble/think_bubble.tscn" id="9_hf87f"]
-[ext_resource type="AudioStream" uid="uid://1rwtd77svoav" path="res://assets/sfx/sfx_pickup_ou_normalized.ogg" id="10_hf87f"]
+[ext_resource type="AudioStream" uid="uid://d2fuofmlgr420" path="res://assets/sfx/sfx_burp_normalized.ogg" id="10_rfapk"]
 [ext_resource type="AudioStream" uid="uid://b56dhm4178k15" path="res://assets/sfx/sfx_pickup_ou_mai_normalized.ogg" id="11_rfapk"]
+[ext_resource type="AudioStream" uid="uid://dr0yv4vpspfyt" path="res://assets/sfx/sfx_man_shoot1_normalized.ogg" id="12_2rhgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwavj"]
 size = Vector2(90, 106)
@@ -99,12 +100,17 @@ bus = &"Sfx"
 
 [node name="DeathSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("10_hf87f")
+stream = ExtResource("10_rfapk")
 bus = &"Sfx"
 
 [node name="LoveSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("11_rfapk")
+bus = &"Sfx"
+
+[node name="ShootSfx" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("12_2rhgx")
 bus = &"Sfx"
 
 [node name="AgroTime" type="Timer" parent="."]

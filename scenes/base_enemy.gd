@@ -31,6 +31,7 @@ enum State {
 @onready var bullet_spawn: Marker2D = %BulletSpawn
 @onready var regen_timer: Timer = %RegenTimer
 @onready var love_sfx: AudioStreamPlayer2D = %LoveSfx
+@onready var shoot_sfx: AudioStreamPlayer2D = %ShootSfx
 
 var current_health: int = 0
 var is_dead: bool = false
@@ -258,6 +259,7 @@ func _spawn_bullet(target_position: Vector2) -> void:
 	get_parent().add_child(bullet)
 	bullet.init_bullet(bullet_spawn.global_position, target_position, Bullet.Type.ENEMY)
 
+	shoot_sfx.play()
 	_start_shoot_cooldown(stat.shoot_cooldown)
 
 func _on_agro_time_timeout() -> void:
