@@ -3,15 +3,10 @@ class_name BaseRig
 
 @onready var animation_rig: Node2D = %AnimationRig
 
-var is_moving: bool = false
 var walk_tween: Tween
 
 var pulse_tween: Tween
 var is_pulsing: bool = false
-
-func _ready() -> void:
-	walk_tween = Animations.walk(animation_rig, 0.1, 0.3, true)
-	walk_tween.pause()
 
 func set_animation_rig_direction(direction: Vector2) -> void:
 	if direction.x > 0 and animation_rig.scale.x < 0:
@@ -20,18 +15,12 @@ func set_animation_rig_direction(direction: Vector2) -> void:
 		animation_rig.scale.x = - abs(animation_rig.scale.x)
 
 func update_walk_animation(_velocity: Vector2):
-	if _velocity == Vector2.ZERO and is_moving:
-		# Logger.log_debug(self.name, "kill walk tween")
-		is_moving = false
-		walk_tween.pause()
+	if _velocity == Vector2.ZERO and (not walk_tween or not walk_tween.is_running()):
 		animation_rig.rotation = 0.0 
 		return
 	
-	if _velocity != Vector2.ZERO and not is_moving:
-		# Logger.log_debug(self.name, "start walk tween")
-		is_moving = true
-		animation_rig.rotation = 0.0
-		walk_tween.play()
+	if _velocity != Vector2.ZERO and (not walk_tween or not walk_tween.is_running()):
+		walk_tween = Animations.walk(animation_rig, 0.1, 0.3, false)
 		return
 
 func start_pulse_animation() -> void:
