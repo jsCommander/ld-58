@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dp5jij0b6u4ag" path="res://levels/base_level.gd" id="1_wevqg"]
 [ext_resource type="TileSet" uid="uid://daq7yoxlk2w4t" path="res://resources/default_tileset.tres" id="2_ew5uy"]
-[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="3_63c5o"]
 [ext_resource type="PackedScene" uid="uid://bo0k7rb6v04lk" path="res://scenes/player.tscn" id="4_satuh"]
+[ext_resource type="AudioStream" uid="uid://dbrj46fnvyfte" path="res://assets/music/music_mellow_normalized.mp3" id="5_maq6b"]
 [ext_resource type="Script" uid="uid://bo41jxf5bh1ru" path="res://game_kit/camera/camera_man.gd" id="5_p5284"]
 [ext_resource type="LabelSettings" uid="uid://h1xjtp0vggpi" path="res://resources/big_label.tres" id="6_maq6b"]
 [ext_resource type="PackedScene" uid="uid://pctqnliuvj64" path="res://game_kit/dialogs/dialog_manager/dialog_manager.tscn" id="7_maq6b"]
@@ -43,8 +43,9 @@ tile_set = ExtResource("2_ew5uy")
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
-stream = ExtResource("3_63c5o")
+stream = ExtResource("5_maq6b")
 autoplay = true
+stream_paused = true
 bus = &"Music"
 
 [node name="LevelFinish" type="Area2D" parent="."]

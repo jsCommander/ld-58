@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://df5bshde6e3hs"]
+[gd_scene load_steps=9 format=3 uid="uid://df5bshde6e3hs"]
 
 [ext_resource type="Script" uid="uid://dokceo1klx841" path="res://levels/end_screen/end_screen.gd" id="1_4u58m"]
-[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://game_kit/assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_55l2j"]
+[ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_55l2j"]
 [ext_resource type="FontFile" uid="uid://cof01hgecqg2p" path="res://game_kit/assets/fonts/HennyPenny-Regular.ttf" id="4_156x6"]
+[ext_resource type="Texture2D" uid="uid://ctamg0lkqfxec" path="res://assets/ld-58/chr_ghost_face_@0.5x.png" id="4_evpjk"]
+[ext_resource type="Texture2D" uid="uid://dj8scvffidsmb" path="res://assets/ld-58/chr_demon_boss_@0.5x.png" id="5_bbdb2"]
 
-[sub_resource type="Gradient" id="Gradient_synii"]
+[sub_resource type="Gradient" id="Gradient_kg0xq"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_55l2j"]
-gradient = SubResource("Gradient_synii")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ic45q"]
+gradient = SubResource("Gradient_kg0xq")
 
 [sub_resource type="LabelSettings" id="LabelSettings_skkyb"]
 font = ExtResource("4_156x6")
@@ -27,13 +29,14 @@ bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.00788158, 0.0828845, 0.0995937, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_55l2j")
+texture = SubResource("GradientTexture2D_ic45q")
 
 [node name="MessageContainer" type="CenterContainer" parent="CanvasLayer"]
 anchors_preset = 10
@@ -71,6 +74,20 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ButtonLarge"
 text = "Play again"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 64.0
+offset_top = 496.0
+offset_right = 512.0
+offset_bottom = 950.0
+texture = ExtResource("4_evpjk")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1408.0
+offset_top = 528.0
+offset_right = 1840.0
+offset_bottom = 966.0
+texture = ExtResource("5_bbdb2")
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="button_down" from="CanvasLayer/ActionContainers/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_button_down"]

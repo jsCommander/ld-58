@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx5c0c3vhjjr"]
+[gd_scene load_steps=10 format=3 uid="uid://bx5c0c3vhjjr"]
 
 [ext_resource type="Script" uid="uid://8hg4x1eob83h" path="res://levels/start_screen/start_screen.gd" id="2_52a50"]
 [ext_resource type="AudioStream" uid="uid://bym2751uq5iuo" path="res://assets/music/music_keep_calm_and_play_bass_normalized.mp3" id="2_synii"]
 [ext_resource type="FontFile" uid="uid://cof01hgecqg2p" path="res://game_kit/assets/fonts/HennyPenny-Regular.ttf" id="3_qeg8x"]
+[ext_resource type="Texture2D" uid="uid://ctamg0lkqfxec" path="res://assets/ld-58/chr_ghost_face_@0.5x.png" id="4_t41ii"]
+[ext_resource type="Texture2D" uid="uid://dj8scvffidsmb" path="res://assets/ld-58/chr_demon_boss_@0.5x.png" id="5_reelt"]
 
-[sub_resource type="Gradient" id="Gradient_synii"]
+[sub_resource type="Gradient" id="Gradient_reelt"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_evx84"]
-gradient = SubResource("Gradient_synii")
+gradient = SubResource("Gradient_reelt")
 
 [sub_resource type="LabelSettings" id="LabelSettings_skkyb"]
 font = ExtResource("3_qeg8x")
@@ -32,6 +34,7 @@ bus = &"Music"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.00788158, 0.0828845, 0.0995937, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,22 +45,24 @@ texture = SubResource("GradientTexture2D_evx84")
 [node name="NameContainer" type="CenterContainer" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 132.0
-offset_bottom = 360.0
+offset_top = 16.0
+offset_bottom = 475.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/NameContainer"]
 layout_mode = 2
-text = "LD-58"
+text = "LD-58: Afterlife Debt
+Collectors"
 label_settings = SubResource("LabelSettings_skkyb")
+horizontal_alignment = 1
 
 [node name="ActionContainers" type="CenterContainer" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -242.0
-offset_bottom = -128.0
+offset_top = -264.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -65,5 +70,19 @@ grow_vertical = 0
 layout_mode = 2
 text = "Press any button to start"
 label_settings = SubResource("LabelSettings_jxpo8")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 64.0
+offset_top = 496.0
+offset_right = 512.0
+offset_bottom = 950.0
+texture = ExtResource("4_t41ii")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1408.0
+offset_top = 528.0
+offset_right = 1840.0
+offset_bottom = 966.0
+texture = ExtResource("5_reelt")
 
 [connection signal="finished" from="Music" to="." method="_on_level_music_finished"]
