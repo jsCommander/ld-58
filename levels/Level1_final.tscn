@@ -182,13 +182,14 @@ text = "The body gives you the ability to shoot.
 Click left mouse button to shoot"
 
 [node name="HelpText2" parent="." index="34" instance=ExtResource("10_qirwa")]
-offset_left = 2505.0
-offset_top = 2885.0
-offset_right = 3339.0
-offset_bottom = 3060.0
+offset_left = 2464.0
+offset_top = 3264.0
+offset_right = 3458.0
+offset_bottom = 3439.0
 
 [node name="Label" parent="HelpText2" index="0"]
-text = "Enemies don't attack their own kind"
+text = "Enemies won't attack you if you look like them! 
+Try to find all rabbit parts."
 
 [node name="BaseEnemy16" parent="." index="35" instance=ExtResource("8_gmkqe")]
 position = Vector2(2849, 3902)
@@ -218,6 +219,9 @@ stat = ExtResource("11_1wq6r")
 
 [node name="LevelFinish" parent="." index="42" instance=ExtResource("12_waewm")]
 position = Vector2(-672, 3456)
+
+[connection signal="body_entered" from="Zones/PartDropZone" to="Zones/PartDropZone" method="_on_body_entered"]
+[connection signal="body_entered" from="Zones/@Area2D@23997" to="Zones/@Area2D@23997" method="_on_body_entered"]
 
 [editable path="HelpText"]
 [editable path="HelpText2"]
