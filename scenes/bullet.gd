@@ -19,7 +19,7 @@ var fly_direction: Vector2
 
 func _ready() -> void:
 	update_bullet_texture()
-	Logger.log_debug(self.name, "Bullet spawned")
+	Log.log_debug(self.name, "Bullet spawned")
 	Animations.fade_in(self, 0.3)
 	Animations.shake(bullet_texture, 10, 0.4, true)
 
@@ -45,7 +45,7 @@ func init_bullet(_spawn_position: Vector2, _target_position: Vector2, _type: Typ
 	
 
 func kill() -> void:
-	Logger.log_debug(self.name, "Bullet killed")
+	Log.log_debug(self.name, "Bullet killed")
 	queue_free()
 
 func update_bullet_texture() -> void:

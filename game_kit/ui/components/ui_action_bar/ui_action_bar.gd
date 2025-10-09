@@ -36,7 +36,7 @@ func _update():
 		h_box_container.add_child(scene)
 		
 func _handle_item_clicked(item: UiActionBarItemResource):
-	Logger.log_debug(self.name, "item %s was clicked" % item.id)
+	Log.log_debug(self.name, "item %s was clicked" % item.id)
 	selected_item = item.id
 	
 	var childs:= get_items_nodes()

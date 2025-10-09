@@ -81,28 +81,28 @@ func _handle_arrive_to_point(delta):
 		_current_mode = CameraMode.IDLE
 
 func follow_target(target: Node2D):
-	Logger.log_debug(self.name, "Following target: " + str(target.name) + " with offset: " + str(follow_target_offset))
+	Log.log_debug(self.name, "Following target: " + str(target.name) + " with offset: " + str(follow_target_offset))
 	_target_node = target
 	_current_mode = CameraMode.FOLLOW_TARGET
 
 func arrive_to_point(point: Vector2):
-	Logger.log_debug(self.name, "Arriving to point: " + str(point))
+	Log.log_debug(self.name, "Arriving to point: " + str(point))
 	_arrive_point = point
 	_current_mode = CameraMode.ARRIVE_TO_POINT
 
 func set_idle():
-	Logger.log_debug(self.name, "Camera set to idle")
+	Log.log_debug(self.name, "Camera set to idle")
 	_current_mode = CameraMode.IDLE
 
 func shake(intensity: float = -1, duration: float = -1):
 	var final_intensity = intensity if intensity > 0 else _shake_intensity
 	var final_duration = duration if duration > 0 else _shake_duration
 	
-	Logger.log_debug(self.name, "Shaking with intensity: " + str(final_intensity) + " for: " + str(final_duration) + "s")
+	Log.log_debug(self.name, "Shaking with intensity: " + str(final_intensity) + " for: " + str(final_duration) + "s")
 	_shake_timer = final_duration
 
 func zoom_to(target_zoom: float, duration: float = 1.0):
-	Logger.log_debug(self.name, "Zooming to: " + str(target_zoom) + " over: " + str(duration) + "s")
+	Log.log_debug(self.name, "Zooming to: " + str(target_zoom) + " over: " + str(duration) + "s")
 	_zoom_start = zoom
 	_zoom_target = Vector2(target_zoom, target_zoom)
 	_zoom_duration = duration

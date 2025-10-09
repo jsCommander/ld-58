@@ -25,5 +25,5 @@ func _update_icon() -> void:
 		return
 
 	if current_icon:
-		Logger.log_debug(self.name, "Updating icon to: %s" % current_icon)
+		Log.log_debug(self.name, "Updating icon to: %s" % current_icon)
 		icon_rect.texture = current_icon

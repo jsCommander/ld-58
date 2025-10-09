@@ -4,6 +4,6 @@ globs:
 alwaysApply: true
 ---
 - code comments MUST use english
-- add log for important actions, use for loging `Logger.log_debug(self.name, message)`
+- add log for important actions, use for loging `Log.log_debug(self.name, message)`
 - check what utils method can be usefull [utils.gd](mdc:game_kit/utils/utils.gd)
 - for tween animation use [animations.gd](mdc:game_kit/utils/animations.gd)

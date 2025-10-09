@@ -18,7 +18,7 @@ func open_dialog(scene: PackedScene, data: Dictionary, pause_game := false)-> Si
 	dialog_instance.set_data(data)
 
 	dialog_instance.finished.connect(func(_data):
-		Logger.log_info(self.name, "Dialog finished")
+		Log.log_info(self.name, "Dialog finished")
 		dialog_instance.queue_free()
 		self.visible = false
 		color_rect.visible = false

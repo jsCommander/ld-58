@@ -131,7 +131,7 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 	var body = area.get_parent()
 
 	if body is PartDrop:
-		Logger.log_debug(self.name, "Found part drop: %s" % body.part)
+		Log.log_debug(self.name, "Found part drop: %s" % body.part)
 
 		var part_drop = body as PartDrop
 		var part = part_drop.part
@@ -142,7 +142,7 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 		if part is PartLeg:
 			old_part = legs
 			legs = part
-			Logger.log_debug(self.name, "Updated legs: %s" % part)
+			Log.log_debug(self.name, "Updated legs: %s" % part)
 
 			if old_part != GHOST_LEG:
 				_spawn_part(old_part, part_drop.global_position, leg_part_pickup_position)
@@ -152,7 +152,7 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 		elif part is PartTorso:
 			old_part = torso
 			torso = part
-			Logger.log_debug(self.name, "Updated torso: %s" % part)
+			Log.log_debug(self.name, "Updated torso: %s" % part)
 
 			if old_part != GHOST_TORSO:
 				_spawn_part(old_part, part_drop.global_position, torso_part_pickup_position)
@@ -162,7 +162,7 @@ func _on_usebox_area_entered(area: Area2D) -> void:
 		elif part is PartHead:
 			old_part = head
 			head = part	
-			Logger.log_debug(self.name, "Updated head: %s" % part)
+			Log.log_debug(self.name, "Updated head: %s" % part)
 
 			if old_part != GHOST_HEAD:
 				_spawn_part(old_part, part_drop.global_position, head_part_pickup_position)
@@ -200,7 +200,7 @@ func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2)
 		var max_height_distance = 600.0
 		var t = clamp(distance / max_height_distance, 0.0, 1.0)
 		var height = lerp(min_height, max_height, t)
-		Logger.log_debug(self.name, "Spawn arc height: %.2f (dist=%.2f)" % [height, distance])
+		Log.log_debug(self.name, "Spawn arc height: %.2f (dist=%.2f)" % [height, distance])
 		
 		get_parent().call_deferred("add_child", part_drop)
 		part_drop.call_deferred("disable_usebox", 2.0)
@@ -210,7 +210,7 @@ func _spawn_part(part: BasePart, spawn_position: Vector2, end_position: Vector2)
 
 func _spawn_bullet(target_position: Vector2) -> void:
 	if not torso.bullet:
-		Logger.log_debug(self.name, "Can't spawn bullet, no bullet stat")
+		Log.log_debug(self.name, "Can't spawn bullet, no bullet stat")
 		return
 
 	if is_shoot_cooldown:

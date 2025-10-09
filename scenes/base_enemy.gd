@@ -218,7 +218,7 @@ func _set_state(new_state: State, data: Dictionary = {}) -> void:
 	var old_state = current_state
 	current_state = new_state
 
-	Logger.log_debug(self.name, "Changing state from %s to %s" % [Utils.get_enum_key_name(State, old_state), Utils.get_enum_key_name(State, new_state)])
+	Log.log_debug(self.name, "Changing state from %s to %s" % [Utils.get_enum_key_name(State, old_state), Utils.get_enum_key_name(State, new_state)])
 
 	match old_state:
 		State.IDLE:

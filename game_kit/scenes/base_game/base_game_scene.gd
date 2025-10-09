@@ -8,8 +8,8 @@ signal reload_requested(data: Dictionary)
 
 func _ready() -> void:
 	
-	finished.connect(func(_data: Dictionary): Logger.log_info(self.name, "scene is finished: %s" % _data))
-	reload_requested.connect(func(_data: Dictionary): Logger.log_info(self.name, "scene reload requested: %s" % _data))
+	finished.connect(func(_data: Dictionary): Log.log_info(self.name, "scene is finished: %s" % _data))
+	reload_requested.connect(func(_data: Dictionary): Log.log_info(self.name, "scene reload requested: %s" % _data))
 	
 	get_window().grab_focus()
 

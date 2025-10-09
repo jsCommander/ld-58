@@ -26,5 +26,5 @@ func _update() -> void:
 		item_scene_nodes.append(item_node)
 
 func _handle_item_clicked(item: UiSelectUpgradeDialogItemResource) -> void:
-	Logger.log_debug(self.name, "Item selected: %s" % item.text)
+	Log.log_debug(self.name, "Item selected: %s" % item.text)
 	finished.emit(item)
