@@ -156,30 +156,6 @@ The game is split into a few foundational building blocks. Understanding these w
 
 ---
 
-## How to extend the game
-
-### Add a new enemy
-1. Create a new `BaseEnemyStat` resource (`.tres`) under `resources/enemy/` with texture, HP, movement, agro values, optional bullet stat, sounds, etc.
-2. Duplicate an existing enemy scene from `scenes/` and assign your new stat resource.
-3. Place the enemy instance into a level scene under `levels/`.
-
-### Add a new bullet type
-1. Create a `BulletStat` resource with texture, speed, damage, range, knockback, and set the `Types.BulletType`.
-2. Assign that bullet stat to a Torso part (see below), or to an enemy’s stat if it should shoot it.
-
-### Add a new player part
-1. Duplicate a part resource (`PartHead`, `PartTorso`, or `PartLeg`) in `resources/parts/`.
-2. Set its texture and `Types.SetType`.
-3. For torso: also set `bullet`, `shoot_cooldown`, `max_health`, and regen.
-4. Drop parts can be spawned by enemies (`BaseEnemy.drop_part`) or placed in levels as `PartDrop`.
-
-### Add dialog
-1. Create a JSON file in `data/` with an array of lines: `[ { "speaker_id": "npc", "text": "Hello!" }, ... ]`.
-2. Create or update a speaker array resource to include the speakers.
-3. Add a `DialogZone` to a level and set its `json_file` and `speakers` in the Inspector.
-
----
-
 ## Conventions and notes
 - **Groups**: `player`, `dialog_zone`, `level_finish` are used for signal wiring and lookups.
 - **Physics layers**: see `project.godot` for named 2D physics layers; keep collisions consistent with existing layers.
